@@ -1,0 +1,22 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# 데이터베이스 (seed.py 로 재생성)
+data/*.db
+data/*.db-wal
+data/*.db-shm
+
+# 환경변수 (.env.example 만 커밋)
+.env
+
+# OS / 편집기
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/

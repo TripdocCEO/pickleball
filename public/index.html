@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>정관 피클볼 클럽 — 부산 기장 정관 실내 피클볼 전용 코트 3면</title>
+<meta name="description" content="부산 기장군 정관 실내 피클볼 전용 코트 3면. 패들 무료 대여, 무료 체험, 소셜매치 운영. 혼자 와도, 처음이어도 오늘 바로 칠 수 있습니다.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- ══════════════════════════════════════════════════════════════
+     구조화 데이터 (AEO) — 오픈 전 실제 상호·주소·전화·좌표·요금으로 교체.
+     네이버 플레이스·카카오맵·구글맵과 글자 단위로 일치시킬 것.
+     ══════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "@id": "https://example.com/#place",
+  "name": "정관 피클볼 클럽",
+  "description": "부산 기장군 정관 실내 피클볼 전용 코트 3면. 코트 대관·입문 클래스·소셜매치·유소년 아카데미 운영. 패들과 볼 무료 대여.",
+  "url": "https://example.com",
+  "telephone": "+82-51-000-0000",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "KR",
+    "addressRegion": "부산광역시",
+    "addressLocality": "기장군 정관읍",
+    "streetAddress": "○○로 00"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 35.322, "longitude": 129.183 },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "23:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "08:00", "closes": "22:00" }
+  ],
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "실내 코트", "value": 3 },
+    { "@type": "LocationFeatureSpecification", "name": "패들 대여", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "무료 주차", "value": true }
+  ],
+  "sport": "Pickleball"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "피클볼 라켓이 없어도 되나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "네. 패들과 공은 무료로 대여해 드립니다. 실내화만 준비하시면 됩니다." } },
+    { "@type": "Question", "name": "혼자 가도 피클볼을 칠 수 있나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "네. 소셜매치에 신청하시면 비슷한 실력의 참가자와 4인 복식 경기로 묶어 드립니다. 참가자의 절반 이상이 1인 신청입니다." } },
+    { "@type": "Question", "name": "운동을 안 한 지 오래됐는데 피클볼을 칠 수 있나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "네. 피클볼은 코트가 배드민턴 코트 크기로 작고 공 속도가 느려, 40~60대가 가장 많이 즐기는 라켓 스포츠입니다. 무료 체험에서 20분이면 랠리가 가능합니다." } },
+    { "@type": "Question", "name": "정관 피클볼 클럽 요금은 얼마인가요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "코트 대관은 평일 주간 시간당 20,000원부터, 소셜매치는 회당 10,000원, 입문 클래스는 4주 80,000원입니다. 패들·볼 대여는 무료입니다." } },
+    { "@type": "Question", "name": "주차할 수 있나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "네. 건물 전용 주차장 30면을 무료로 이용하실 수 있습니다." } }
+  ]
+}
+</script>
+
+<style>
+/* ══════════════════ 햇살 팔레트 ══════════════════ */
+:root{
+  --sun:#FFB300;          /* 메인 — 햇살 앰버 */
+  --sun-deep:#F57C00;     /* 진한 오렌지 (호버·강조) */
+  --sun-soft:#FFF3D6;     /* 연노랑 배경 */
+  --sky:#2FA8E0;          /* 하늘색 보조 */
+  --sky-soft:#E3F4FC;     /* 연하늘 배경 */
+  --leaf:#7CB342;         /* 코트 그린 포인트 */
+  --leaf-soft:#EEF6E3;
+  --cream:#FFFDF7;        /* 본문 배경 — 따뜻한 흰색 */
+  --ink:#33302B;          /* 본문 텍스트 — 따뜻한 잉크 */
+  --ink-soft:#7A7266;     /* 보조 텍스트 */
+  --line:#F0E8D8;         /* 헤어라인 */
+  --card:#FFFFFF;
+  --radius:20px;
+  --shadow:0 10px 30px rgba(245,158,11,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--cream);color:var(--ink);
+  font-family:'Pretendard','Malgun Gothic',system-ui,sans-serif;
+  font-size:16px;line-height:1.7;letter-spacing:-0.01em;word-break:keep-all;
+}
+img{max-width:100%}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* ══════════════════ 공통 ══════════════════ */
+.chip{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--sun-soft);color:#B26A00;
+  font-family:'Outfit','Pretendard',sans-serif;
+  font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  padding:7px 16px;border-radius:999px;margin-bottom:16px;
+}
+.chip .ko{font-family:'Pretendard',sans-serif;letter-spacing:0;text-transform:none;font-size:12.5px;color:#C58A2A;font-weight:600;border-left:1px solid #EFD9A8;padding-left:9px}
+h2{font-size:clamp(24px,4.2vw,34px);font-weight:800;line-height:1.35;letter-spacing:-0.03em;margin-bottom:12px}
+.sec-sub{color:var(--ink-soft);font-size:16px;max-width:560px;margin-bottom:36px}
+section{padding:72px 0}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-weight:800;font-size:16px;border-radius:999px;padding:15px 30px;
+  transition:transform .15s ease, box-shadow .15s ease;cursor:pointer;border:none;
+}
+.btn:active{transform:scale(.97)}
+.btn-sun{
+  background:linear-gradient(135deg,#FFC93C,#FFA726);color:#5C3A00;
+  box-shadow:0 8px 22px rgba(255,167,38,.38);
+}
+.btn-sun:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(255,167,38,.48)}
+.btn-line{
+  background:#fff;color:var(--ink);border:2px solid var(--line);
+}
+.btn-line:hover{border-color:var(--sun);color:#B26A00}
+.link-more{font-weight:700;color:var(--sky);font-size:15px}
+.link-more:hover{text-decoration:underline}
+
+/* ══════════════════ 헤더 ══════════════════ */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,253,247,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;gap:28px;height:66px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:-0.02em}
+.logo svg{flex:none}
+.logo-txt{display:flex;flex-direction:column;line-height:1.15}
+.logo-txt small{
+  font-family:'Outfit',sans-serif;font-size:8.5px;font-weight:700;
+  letter-spacing:.22em;color:#D9A93C;text-transform:uppercase;
+}
+.nav-links a.active{color:var(--sun-deep)}
+.nav-links{display:flex;gap:24px;margin-left:auto;font-size:15px;font-weight:600;color:#5C554A}
+.nav-links a:hover{color:var(--sun-deep)}
+.nav .btn{padding:10px 20px;font-size:14px;margin-left:8px}
+
+/* ══════════════════ 히어로 ══════════════════ */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 500px at 85% -10%, rgba(255,214,79,.55), transparent 65%),
+    radial-gradient(700px 420px at -10% 20%, rgba(179,229,252,.5), transparent 60%),
+    linear-gradient(180deg,#FFFBEF 0%, var(--cream) 100%);
+  padding:84px 0 72px;
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1{
+  font-size:clamp(32px,5.2vw,52px);font-weight:900;line-height:1.25;
+  letter-spacing:-0.04em;margin-bottom:18px;
+}
+.hero h1 em{font-style:normal;color:var(--sun-deep)}
+.hero .define{
+  font-size:clamp(16px,2.2vw,19px);color:#5C554A;margin-bottom:10px;font-weight:600;
+}
+.hero .aeo-line{font-size:15px;color:var(--ink-soft);margin-bottom:30px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.trust{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14px;font-weight:600;color:#8A7B5C}
+.trust li{display:flex;align-items:center;gap:6px}
+.trust svg{flex:none}
+
+/* ══════════════════ 스탯 스트립 ══════════════════ */
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  margin-top:52px;padding-top:36px;border-top:1px dashed #F0DFB4;
+}
+.stat b{
+  display:block;font-family:'Outfit','Pretendard',sans-serif;
+  font-size:clamp(26px,3.6vw,38px);font-weight:800;color:var(--sun-deep);
+  line-height:1.1;letter-spacing:-0.02em;
+}
+.stat .en{
+  display:block;font-family:'Outfit',sans-serif;font-size:10.5px;font-weight:700;
+  letter-spacing:.18em;color:#C9A85C;text-transform:uppercase;margin-top:6px;
+}
+.stat .ko{display:block;font-size:13px;font-weight:600;color:#8A7B5C;margin-top:2px}
+.en-script{
+  font-family:'Outfit',sans-serif;font-weight:600;font-style:italic;
+  letter-spacing:.02em;color:#D9A93C;
+}
+.hero-art{position:relative}
+.hero-art img{
+  width:100%;height:auto;aspect-ratio:5/4;object-fit:cover;object-position:50% 35%;display:block;
+  border-radius:28px;box-shadow:0 22px 50px rgba(245,158,11,.25);
+  border:6px solid #fff;
+}
+.hero-art .sun-badge{
+  position:absolute;top:-22px;right:-14px;width:76px;height:76px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%, #FFE082, #FFB300);
+  box-shadow:0 10px 24px rgba(255,179,0,.4);
+  display:flex;align-items:center;justify-content:center;font-size:32px;
+}
+
+/* ══════════════════ 갤러리 ══════════════════ */
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gal-item{
+  position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3;
+  box-shadow:var(--shadow);border:1px solid #FBF3E2;background:#FFF3D6;
+}
+.gal-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease}
+.gal-item:hover img{transform:scale(1.05)}
+.gal-tag{
+  position:absolute;left:12px;bottom:12px;
+  background:rgba(255,255,255,.92);color:#7A5A12;
+  font-size:12.5px;font-weight:800;padding:6px 13px;border-radius:999px;
+  box-shadow:0 4px 12px rgba(0,0,0,.12);
+}
+.gal-note{font-size:13px;color:#B3AB98;margin-top:16px}
+
+/* ══════════════════ 5분 3스텝 ══════════════════ */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{
+  background:var(--card);border-radius:var(--radius);padding:30px 26px;
+  box-shadow:var(--shadow);border:1px solid #FBF3E2;
+}
+.step .num{
+  width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:19px;margin-bottom:16px;
+}
+.step:nth-child(1) .num{background:var(--sun-soft);color:#B26A00}
+.step:nth-child(2) .num{background:var(--sky-soft);color:#1A7FB5}
+.step:nth-child(3) .num{background:var(--leaf-soft);color:#558B2F}
+.step h3{font-size:18px;font-weight:800;margin-bottom:8px;letter-spacing:-0.02em}
+.step p{font-size:14.5px;color:var(--ink-soft)}
+
+/* ══════════════════ 소셜매치 ══════════════════ */
+.social-band{
+  background:linear-gradient(160deg,#FFF6DE 0%,#FFFDF7 70%);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.match-card{
+  background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);
+  border:1px solid #FBF3E2;overflow:hidden;
+}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{padding:14px 18px;text-align:left;border-bottom:1px solid #F6EFDF;vertical-align:middle}
+thead th{
+  background:#FFF8E8;color:#8A6A1F;font-size:13px;font-weight:800;
+  letter-spacing:.04em;border-bottom:1px solid #F3E7C8;white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:none}
+td b{font-weight:800}
+.lvl{display:inline-block;font-size:12.5px;font-weight:800;padding:4px 12px;border-radius:999px}
+.lvl-rookie{background:var(--sun-soft);color:#B26A00}
+.lvl-green{background:var(--leaf-soft);color:#558B2F}
+.lvl-blue{background:var(--sky-soft);color:#1A7FB5}
+.seats{font-weight:800;color:var(--sun-deep)}
+.seats.full{color:#B9B2A4;font-weight:600}
+.match-foot{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding:18px 22px;background:#FFFCF3}
+.match-foot p{font-size:13.5px;color:var(--ink-soft)}
+
+/* ══════════════════ 프로그램 카드 ══════════════════ */
+.prog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.prog{
+  border-radius:var(--radius);padding:28px 24px;min-height:230px;
+  display:flex;flex-direction:column;transition:transform .18s ease, box-shadow .18s ease;
+  border:1px solid transparent;
+}
+.prog:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(245,158,11,.16)}
+.prog-1{background:var(--sun-soft)}
+.prog-2{background:var(--sky-soft)}
+.prog-3{background:var(--leaf-soft)}
+.prog-4{background:#F6EFFB}
+.prog .ico{font-size:30px;margin-bottom:14px}
+.prog h3{font-size:18px;font-weight:800;margin-bottom:6px;letter-spacing:-0.02em}
+.prog p{font-size:14px;color:#6B6353;flex:1}
+.prog .go{font-size:14px;font-weight:800;margin-top:14px}
+.prog-1 .go{color:#B26A00}.prog-2 .go{color:#1A7FB5}.prog-3 .go{color:#558B2F}.prog-4 .go{color:#8E56B8}
+
+/* ══════════════════ 요금 ══════════════════ */
+.price-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #FBF3E2;overflow:hidden}
+.price-note{font-size:13.5px;color:var(--ink-soft);margin-top:14px}
+td.price{font-weight:800;white-space:nowrap}
+
+/* ══════════════════ 후기 ══════════════════ */
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.review{
+  background:var(--card);border-radius:var(--radius);padding:28px 26px;
+  box-shadow:var(--shadow);border:1px solid #FBF3E2;display:flex;flex-direction:column;gap:14px;
+}
+.stars{color:var(--sun);font-size:15px;letter-spacing:2px}
+.review p{font-size:15px;line-height:1.75}
+.review .who{font-size:13.5px;font-weight:700;color:var(--ink-soft);margin-top:auto}
+
+/* ══════════════════ 오시는 길 ══════════════════ */
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:stretch}
+.map-box{
+  border-radius:var(--radius);min-height:300px;position:relative;overflow:hidden;
+  background:linear-gradient(145deg,#E3F4FC,#FFF3D6);
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid #EDE4CF;
+}
+.map-box span{font-weight:800;color:#8A7B5C;font-size:15px;background:#fff;padding:10px 20px;border-radius:999px;box-shadow:0 6px 16px rgba(0,0,0,.06)}
+.loc-list{display:flex;flex-direction:column;gap:0}
+.loc-item{display:grid;grid-template-columns:92px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);font-size:15px}
+.loc-item:last-child{border-bottom:none}
+.loc-item dt{font-weight:800;color:#8A6A1F;font-size:14px;padding-top:2px}
+.loc-item dd{color:#55503F}
+
+/* ══════════════════ FAQ ══════════════════ */
+.faq-list{display:flex;flex-direction:column;gap:12px;max-width:820px}
+details{
+  background:var(--card);border-radius:16px;border:1px solid #FBF3E2;
+  box-shadow:0 4px 14px rgba(245,158,11,.07);overflow:hidden;
+}
+summary{
+  cursor:pointer;list-style:none;display:flex;align-items:center;gap:14px;
+  padding:19px 24px;font-weight:800;font-size:16.5px;letter-spacing:-0.02em;
+}
+summary::-webkit-details-marker{display:none}
+summary .q{
+  flex:none;width:30px;height:30px;border-radius:10px;background:var(--sun-soft);
+  color:#B26A00;font-size:15px;display:flex;align-items:center;justify-content:center;font-weight:900;
+}
+summary .arrow{margin-left:auto;color:#C9BFA9;transition:transform .2s ease;font-size:13px}
+details[open] summary .arrow{transform:rotate(180deg)}
+details .a{padding:0 24px 20px 68px;color:#55503F;font-size:15px}
+details .a b{color:var(--sun-deep)}
+
+/* ══════════════════ 마감 CTA ══════════════════ */
+.final{
+  background:
+    radial-gradient(700px 360px at 50% -40%, rgba(255,214,79,.6), transparent 70%),
+    linear-gradient(160deg,#FFF3D6,#FFE9B8);
+  border-radius:28px;text-align:center;padding:64px 28px;margin:0 20px;
+}
+.final-inner{max-width:640px;margin:0 auto}
+.final h2{margin-bottom:14px}
+.final p{color:#7A6636;margin-bottom:30px;font-size:16.5px}
+.final .btn-line{background:rgba(255,255,255,.85)}
+
+/* ══════════════════ 푸터 ══════════════════ */
+footer{padding:56px 0 110px;border-top:1px solid var(--line);margin-top:72px}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px}
+.foot-grid h4{font-size:14px;font-weight:800;color:#8A6A1F;margin-bottom:12px}
+.foot-grid li{margin-bottom:8px;font-size:14px;color:#7A7266}
+.foot-grid a:hover{color:var(--sun-deep)}
+.foot-info{font-size:13.5px;color:#9A927F;line-height:1.9}
+.foot-info b{color:#6B6353}
+.updated{margin-top:28px;font-size:12.5px;color:#B3AB98}
+
+/* ══════════════════ 카카오 플로팅 ══════════════════ */
+.kakao-fab{
+  position:fixed;right:20px;bottom:20px;z-index:60;
+  display:flex;align-items:center;gap:9px;
+  background:#FEE500;color:#191919;font-weight:800;font-size:14.5px;
+  padding:14px 22px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.18);
+  transition:transform .15s ease;
+}
+.kakao-fab:hover{transform:translateY(-3px)}
+
+/* ══════════════════ 반응형 (모바일 우선 보정) ══════════════════ */
+@media (max-width:960px){
+  .prog-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .hero-art{max-width:480px;margin:0 auto}
+}
+@media (max-width:720px){
+  section{padding:56px 0}
+  .nav-links{display:none}
+  .gal-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .hero-art .sun-badge{width:58px;height:58px;font-size:24px;top:-14px;right:-6px}
+  .stats{grid-template-columns:repeat(2,1fr);gap:22px 14px}
+  .logo-txt small{display:none}
+  .steps,.review-grid,.loc-grid,.foot-grid{grid-template-columns:1fr}
+  .hero{padding:56px 0 52px}
+  .hero-cta .btn{flex:1;min-width:150px}
+  th,td{padding:12px 12px;font-size:14px}
+  .match-card{overflow-x:auto}
+  .match-card table{min-width:520px}
+  .price-card{overflow-x:auto}
+  .price-card table{min-width:480px}
+  details .a{padding-left:24px}
+}
+@media (max-width:480px){
+  .prog-grid{grid-template-columns:1fr}
+}
+/* nav-6 */
+.nav{gap:20px}
+.nav-links{gap:19px;font-size:14.5px}
+@media (max-width:900px){.nav-links{display:none}}
+
+/* ══════════ nav v2 — 카테고리 드롭다운 + 모바일 메뉴 ══════════ */
+.nav{gap:16px}
+.nav-links{display:flex;align-items:center;gap:16px;margin-left:auto;font-size:14px;font-weight:600;color:#5C554A}
+.nav-links > a{white-space:nowrap}
+.nav-links > a.active,.nd.nd-on > .nd-btn{color:var(--sun-deep)}
+.nd{position:relative}
+.nd::after{content:"";position:absolute;left:0;right:0;top:100%;height:16px}
+.nd-btn{background:none;border:none;padding:0;font:inherit;color:inherit;cursor:pointer;display:flex;align-items:center;gap:4px;white-space:nowrap}
+.nd-btn i{font-style:normal;font-size:9px;opacity:.5;transition:transform .16s}
+.nd-btn:hover,.nd:hover > .nd-btn{color:var(--sun-deep)}
+.nd:hover > .nd-btn i,.nd.open > .nd-btn i{transform:rotate(180deg)}
+.nd-menu{
+  position:absolute;top:calc(100% + 16px);left:50%;
+  transform:translateX(-50%) translateY(-6px);
+  background:#fff;border:1px solid var(--line);border-radius:16px;
+  box-shadow:0 18px 44px rgba(120,90,20,.16);padding:10px;min-width:210px;
+  display:flex;flex-direction:column;gap:2px;
+  opacity:0;visibility:hidden;transition:opacity .16s,transform .16s,visibility .16s;z-index:70;
+}
+.nd:hover > .nd-menu,.nd:focus-within > .nd-menu,.nd.open > .nd-menu{
+  opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);
+}
+.nd-menu a{padding:10px 14px;border-radius:10px;font-size:14px;color:#5C554A;white-space:nowrap}
+.nd-menu a:hover{background:var(--sun-soft);color:#B26A00}
+.nd-menu a b{font-weight:800}
+.nav-mcta{display:none}
+.navtoggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;
+  margin-left:auto;background:none;border:1.5px solid var(--line);border-radius:12px;cursor:pointer;padding:0 10px}
+.navtoggle span{display:block;height:2px;background:#7A7266;border-radius:2px;transition:.2s}
+.navtoggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.navtoggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.navtoggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media (max-width:1060px){
+  .nav .btn{display:none}
+  .navtoggle{display:flex}
+  /* 전체 화면 시트 — 내부에서만 스크롤 */
+  .nav-links{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:#FFFDF7;border-top:1px solid var(--line);
+    box-shadow:0 22px 40px rgba(120,90,20,.16);
+    padding:6px 18px 30px;
+    max-height:calc(100dvh - 66px);max-height:calc(100vh - 66px);
+    overflow-y:auto;overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;z-index:80;
+  }
+  .nav-links.open{display:flex}
+  .nav-links > a{padding:15px 8px;border-bottom:1px solid #F6EFDF;font-size:16px;font-weight:700}
+  .nd{border-bottom:1px solid #F6EFDF;position:static}
+  .nd::after{display:none}
+  .nd-btn{width:100%;padding:15px 8px;font-size:16px;font-weight:700}
+  .nd-btn i{margin-left:auto;opacity:.45;font-size:11px}
+  /* 아코디언 — 누른 카테고리만 아래로 펼쳐집니다 (옆으로 나가지 않도록 강제) */
+  .nd-menu{
+    position:static !important;
+    transform:none !important;
+    inset:auto !important;
+    width:auto !important;max-width:100% !important;min-width:0 !important;
+    background:transparent;border:none;box-shadow:none;
+    padding:0 0 10px 14px;gap:0;
+    display:none;opacity:1;visibility:visible;transition:none;
+  }
+  .nd.open > .nd-menu,
+  .nd:hover > .nd-menu,
+  .nd:focus-within > .nd-menu{display:none}
+  .nd.open > .nd-menu{display:flex}
+  .nd-menu a{padding:12px 10px;font-size:14.5px;color:#8A8272;white-space:normal}
+  .nav-mcta{margin-top:18px;display:block}
+  .nav-mcta .btn{display:inline-flex;width:100%}
+  .kakao-fab{z-index:40}
+  body.nav-lock{overflow:hidden}
+}
+
+/* ══════════ btn-fix — 줄바꿈 시 가운데 정렬 + 좁은 화면 CTA 스택 ══════════ */
+.btn{text-align:center;line-height:1.35}
+.btn > *{flex:none}
+@media (max-width:560px){
+  .hero-cta{gap:10px}
+  .hero-cta .btn{flex:1 1 100%;min-width:0;width:100%;padding:16px 22px}
+  .cta-band .hero-cta .btn,
+  .cta-band a.btn{flex:1 1 100%;width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ 헤더 ══════════════════ -->
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">
+      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
+        <circle cx="15" cy="15" r="13" fill="#FFC93C"/>
+        <circle cx="15" cy="15" r="13" fill="none" stroke="#F57C00" stroke-width="2"/>
+        <circle cx="10.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="19.5" cy="11" r="1.7" fill="#F57C00"/>
+        <circle cx="15" cy="17.5" r="1.7" fill="#F57C00"/><circle cx="9.5" cy="19" r="1.7" fill="#F57C00"/>
+        <circle cx="20.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="15" cy="7.5" r="1.7" fill="#F57C00"/>
+      </svg>
+      <span class="logo-txt">정관 피클볼 클럽<small>Jeonggwan Pickleball Club</small></span>
+    </a>
+    <button class="navtoggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" class="active">홈</a>
+      <a href="first-visit.html">처음 오시는 분</a>
+
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false">프로그램<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="social.html">🤝 소셜매치 — 혼자 와도 OK</a>
+          <a href="junior.html">🧒 유소년 아카데미</a>
+          <a href="first-visit.html#trial-form">🌱 무료 체험·입문 클래스</a>
+        </div>
+      </div>
+
+      <a href="pricing.html">이용요금</a>
+
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false">가이드<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="guide.html"><b>📚 가이드 전체 보기</b></a>
+          <a href="what-is-pickleball.html">피클볼이 뭔가요?</a>
+          <a href="pickleball-what-to-prepare.html">뭘 준비해야 하나요?</a>
+          <a href="pickleball-alone.html">혼자 가도 되나요?</a>
+          <a href="kids-pickleball.html">초등학생도 되나요?</a>
+          <a href="pickleball-lesson-cost.html">레슨 비용은 얼마?</a>
+        </div>
+      </div>
+
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false">커뮤니티<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="board.html">💬 게시판</a>
+          <a href="events.html">🏆 대회 · 정관 리그</a>
+        </div>
+      </div>
+
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false">오시는 길<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="index.html#location">📍 위치 · 주차 안내</a>
+          <a href="pickleball-jeonggwan.html">정관에서 오시는 분</a>
+          <a href="pickleball-gijang.html">기장에서 오시는 분</a>
+          <a href="pickleball-busan.html">부산 도심에서 오시는 분</a>
+        </div>
+      </div>
+      <div class="nav-mcta"><a class="btn btn-sun" href="first-visit.html#trial-form">🎾 무료 체험 신청</a></div>
+    </nav>
+    <a class="btn btn-sun" href="first-visit.html#trial-form">무료 체험 신청</a>
+  </div>
+</header>
+
+<!-- ══════════════════ 히어로 ══════════════════ -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="chip">☀️ Sunny Court, Every Day<span class="ko">부산 기장군 정관읍 · 실내 전용 코트 3면</span></span>
+      <h1>라켓을 처음 잡아도,<br><em>오늘 바로</em> 칠 수 있는 운동</h1>
+      <p class="define">피클볼은 테니스보다 쉽고 배드민턴보다 느긋한, 5분이면 배우는 라켓 스포츠입니다. <span class="en-script">Easy to learn, hard to stop.</span></p>
+      <p class="aeo-line">정관 피클볼 클럽은 부산 기장군 정관에 실내 피클볼 전용 코트 3면을 갖추고 코트 대관·입문 클래스·소셜매치를 운영합니다. 패들과 볼은 무료로 대여해 드립니다.</p>
+      <div class="hero-cta">
+        <a class="btn btn-sun" href="first-visit.html#trial-form">🎾 무료 체험 신청하기</a>
+        <a class="btn btn-line" href="pricing.html">코트 예약</a>
+      </div>
+      <ul class="trust">
+        <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FFC93C"/><path d="M4.5 8.2l2.3 2.3 4.7-4.8" stroke="#5C3A00" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>패들·볼 무료 대여</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FFC93C"/><path d="M4.5 8.2l2.3 2.3 4.7-4.8" stroke="#5C3A00" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>혼자 와도 경기 가능</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FFC93C"/><path d="M4.5 8.2l2.3 2.3 4.7-4.8" stroke="#5C3A00" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>무료 주차 30면</li>
+      </ul>
+    </div>
+    <div class="hero-art">
+      <!-- 예시 이미지(Unsplash) — 오픈 전 실제 코트 광각 사진으로 교체 (기획서: 사진 8~12컷) -->
+      <img class="hero-img" src="assets/hero.jpg" data-fallback="https://images.unsplash.com/photo-1777382141976-1cf3373f5c16?q=80&w=1200&auto=format&fit=crop"
+           alt="실내 블루 코트에서 패들로 공을 받아치는 피클볼 플레이어">
+      <div class="sun-badge" aria-hidden="true">☀️</div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><b>03</b><span class="en">Indoor Courts</span><span class="ko">실내 전용 코트</span></div>
+      <div class="stat"><b>30</b><span class="en">Free Parking</span><span class="ko">무료 주차 공간</span></div>
+      <div class="stat"><b>365</b><span class="en">Days Open</span><span class="ko">날씨 걱정 없이 연중무휴</span></div>
+      <div class="stat"><b>5<small style="font-size:.55em">min</small></b><span class="en">To Learn</span><span class="ko">배우는 데 걸리는 시간</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 02 · 5분이면 칩니다 ══════════════════ -->
+<section>
+  <div class="wrap">
+    <span class="chip">🌤️ How to Play<span class="ko">이렇게 쉬워요</span></span>
+    <h2>피클볼, 5분이면 칩니다</h2>
+    <p class="sec-sub">규칙은 세 가지만 기억하면 됩니다. 나머지는 코트에서 코치가 알려 드려요.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>패들을 받으세요</h3>
+        <p>탁구채보다 조금 큰 패들과 구멍 뚫린 플라스틱 공. 전부 무료로 빌려 드립니다. 실내화만 신고 오세요.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>서브는 아래에서</h3>
+        <p>테니스처럼 내리치지 않고 허리 아래에서 살짝 올려 칩니다. 그래서 첫날부터 랠리가 이어집니다.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>11점을 먼저 내면 승리</h3>
+        <p>배드민턴 코트 크기라 뛸 거리가 짧고, 복식이 기본이라 체력 부담이 적습니다. 40~60대가 가장 많이 즐기는 이유예요.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 02.5 · 갤러리 ══════════════════ -->
+<section id="gallery" style="padding-top:0">
+  <div class="wrap">
+    <span class="chip">📸 Court Gallery<span class="ko">코트 미리보기</span></span>
+    <h2>햇살 좋은 날도, 비 오는 날도<br>코트는 늘 열려 있습니다</h2>
+    <p class="sec-sub">실내 전용 코트 3면이라 날씨 걱정 없이 연중 이용할 수 있어요.</p>
+    <div class="gal-grid">
+      <!-- 예시 이미지(Unsplash 무료 라이선스) — 오픈 전 실제 촬영본으로 교체 -->
+      <figure class="gal-item">
+        <img src="assets/group.jpg" data-fallback="https://images.unsplash.com/photo-1777382141965-68d47862eaf9?q=80&w=900&auto=format&fit=crop" alt="실내 코트에서 여러 명이 함께 피클볼 복식 경기를 하는 모습" loading="lazy">
+        <figcaption class="gal-tag">🏟️ 실내 코트 · 소셜매치</figcaption>
+      </figure>
+      <figure class="gal-item">
+        <img src="assets/solo.jpg" data-fallback="https://images.unsplash.com/photo-1779862766057-0929f1b077f4?q=80&w=900&auto=format&fit=crop" alt="블루 실내 코트에서 패들로 리턴하는 플레이어" loading="lazy">
+        <figcaption class="gal-tag">🤝 4인 복식 경기</figcaption>
+      </figure>
+      <figure class="gal-item">
+        <img src="assets/outdoor.jpg" data-fallback="https://images.unsplash.com/photo-1665855031742-a87f5964adf1?q=80&w=900&auto=format&fit=crop" alt="야외 코트에서 단체로 피클볼을 즐기는 참가자들" loading="lazy">
+        <figcaption class="gal-tag">🌤️ 야외 클래스 (여름 시즌)</figcaption>
+      </figure>
+      <figure class="gal-item">
+        <img src="assets/gear.jpg" data-fallback="https://images.unsplash.com/photo-1693142518820-78d7a05f1546?q=80&w=900&auto=format&fit=crop" alt="코트 위에 놓인 피클볼 패들 두 개와 공 세 개" loading="lazy">
+        <figcaption class="gal-tag">🎾 패들·볼 무료 대여</figcaption>
+      </figure>
+      <figure class="gal-item">
+        <img src="assets/wide.jpg" data-fallback="https://images.unsplash.com/photo-1779862761891-1fff60bda7cb?q=80&w=900&auto=format&fit=crop" alt="실내 피클볼 전용 코트 전경과 경기 중인 플레이어" loading="lazy">
+        <figcaption class="gal-tag">🌱 원포인트 레슨</figcaption>
+      </figure>
+      <figure class="gal-item">
+        <img src="assets/court.jpg" data-fallback="https://images.unsplash.com/photo-1761644273884-83839f8f22e5?q=80&w=900&auto=format&fit=crop" alt="흰 라인이 선명한 파란 피클볼 전용 코트" loading="lazy">
+        <figcaption class="gal-tag">✨ 전용 코트 3면</figcaption>
+      </figure>
+    </div>
+    <p class="gal-note">※ 위 사진은 예시 이미지입니다. 오픈 전 실제 코트·수업 촬영본(광각 포함 각 3컷 이상)으로 교체합니다.</p>
+  </div>
+</section>
+
+<!-- ══════════════════ 03 · 소셜매치 ══════════════════ -->
+<section class="social-band" id="social">
+  <div class="wrap">
+    <span class="chip">🤝 Social Match<span class="ko">혼자 오셔도 됩니다</span></span>
+    <h2>이번 주 소셜매치</h2>
+    <p class="sec-sub">신청만 하면 비슷한 실력끼리 4인 복식으로 묶어 드립니다. 참가자의 절반이 1인 신청이에요.</p>
+    <div class="match-card">
+      <table>
+        <thead>
+          <tr><th>요일</th><th>시간</th><th>난이도</th><th>정원</th><th>잔여석</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>화요일</b></td><td>19:30 – 21:30</td><td><span class="lvl lvl-rookie">루키 · 입문</span></td><td>12명</td><td class="seats">4석 남음</td></tr>
+          <tr><td><b>목요일</b></td><td>19:30 – 21:30</td><td><span class="lvl lvl-green">그린 · 초중급</span></td><td>12명</td><td class="seats">2석 남음</td></tr>
+          <tr><td><b>토요일</b></td><td>10:00 – 12:00</td><td><span class="lvl lvl-rookie">루키 · 입문</span></td><td>12명</td><td class="seats">6석 남음</td></tr>
+          <tr><td><b>토요일</b></td><td>15:00 – 17:00</td><td><span class="lvl lvl-blue">블루 · 중급+</span></td><td>12명</td><td class="seats full">마감</td></tr>
+        </tbody>
+      </table>
+      <div class="match-foot">
+        <p>회당 참가비 10,000원 · 12명 → 3코트 로테이션 · 매주 월요일 새 일정 오픈</p>
+        <a class="btn btn-sun" href="social.html">이번 주 소셜매치 신청</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 04 · 프로그램 ══════════════════ -->
+<section id="programs">
+  <div class="wrap">
+    <span class="chip">🌻 Programs<span class="ko">나에게 맞는 시작</span></span>
+    <h2>나에게 맞는 시작을 고르세요</h2>
+    <p class="sec-sub">처음이라면 입문 클래스, 아이라면 유소년 아카데미. 전부 정관에서 걸어올 수 있는 거리입니다.</p>
+    <div class="prog-grid">
+      <a class="prog prog-1" href="first-visit.html">
+        <span class="ico">🌱</span>
+        <h3>성인 입문 클래스</h3>
+        <p>4주 만에 경기 가능. 라켓 스포츠가 처음인 분 기준으로 커리큘럼을 짰습니다.</p>
+        <span class="go">자세히 보기 →</span>
+      </a>
+      <a class="prog prog-2" href="junior.html">
+        <span class="ico">🧒</span>
+        <h3>유소년 아카데미</h3>
+        <p>부상 위험이 낮고 규칙이 단순해 초등학생도 한 달이면 경기합니다. 학부모 관람석 완비.</p>
+        <span class="go">자세히 보기 →</span>
+      </a>
+      <a class="prog prog-3" href="#trial">
+        <span class="ico">🌞</span>
+        <h3>시니어 주간반</h3>
+        <p>무릎 부담이 적은 저강도 수업. 평일 오전, 또래끼리 천천히 배웁니다.</p>
+        <span class="go">자세히 보기 →</span>
+      </a>
+      <a class="prog prog-4" href="pricing.html">
+        <span class="ico">🏆</span>
+        <h3>동호회 정기대관</h3>
+        <p>매주 같은 시간, 우리 팀 전용 코트. 리그·대회 연계 혜택까지.</p>
+        <span class="go">자세히 보기 →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 05 · 요금 ══════════════════ -->
+<section id="pricing">
+  <div class="wrap">
+    <span class="chip">💛 Pricing<span class="ko">숨기지 않는 요금</span></span>
+    <h2>이용요금 한눈에 보기</h2>
+    <p class="sec-sub">전화로 물어보지 않아도 됩니다. 모든 요금을 공개합니다.</p>
+    <div class="price-card">
+      <table>
+        <thead>
+          <tr><th>구분</th><th>내용</th><th>요금</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>코트 대관</b></td><td>평일 주간 (09:00–18:00) · 1면 1시간</td><td class="price">20,000원</td></tr>
+          <tr><td><b>코트 대관</b></td><td>평일 저녁·주말 · 1면 1시간</td><td class="price">30,000원</td></tr>
+          <tr><td><b>소셜매치</b></td><td>2시간 · 코트비·진행 포함</td><td class="price">회당 10,000원</td></tr>
+          <tr><td><b>입문 클래스</b></td><td>주 1회 × 4주 · 장비 포함</td><td class="price">80,000원</td></tr>
+          <tr><td><b>패들·볼 대여</b></td><td>이용 시간 내</td><td class="price" style="color:var(--leaf)">무료</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="price-note">유소년·시니어 수강료, 정기권, 단체 대관은 <a class="link-more" href="pricing.html">이용요금 전체 보기 →</a> 에서 확인하세요. (환불 규정 포함)</p>
+  </div>
+</section>
+
+<!-- ══════════════════ 06 · 후기 ══════════════════ -->
+<section class="social-band">
+  <div class="wrap">
+    <span class="chip">🌼 Reviews<span class="ko">먼저 시작한 이웃들</span></span>
+    <h2>"운동 못하는 저도 됐어요"</h2>
+    <p class="sec-sub">초보로 시작한 정관 주민들의 이야기입니다.</p>
+    <div class="review-grid">
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"라켓 운동은 학교 이후 처음이었는데 첫날 20분 만에 랠리가 됐어요. 공이 느려서 무섭지가 않아요. 지금은 화요일 소셜매치 고정 멤버입니다."</p>
+        <div class="who">김○○ · 40대 · 입문 클래스 수료</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"혼자 신청하는 게 제일 걱정이었는데, 가니까 절반이 혼자 온 분들이더라고요. 실력 맞춰 조를 짜 줘서 민폐 걱정 없이 쳤습니다."</p>
+        <div class="who">박○○ · 30대 · 소셜매치 참가</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"아이가 태권도는 석 달 만에 그만뒀는데 피클볼은 먼저 가자고 해요. 관람석에서 수업을 다 볼 수 있는 것도 안심이 됩니다."</p>
+        <div class="who">이○○ · 초3 학부모 · 유소년 아카데미</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 07 · 오시는 길 ══════════════════ -->
+<section id="location">
+  <div class="wrap">
+    <span class="chip">📍 Location<span class="ko">오시는 길</span></span>
+    <h2>정관 어디서든 10분 안에</h2>
+    <p class="sec-sub">부산 기장군 정관읍 ○○로 00 · 건물 전용 무료 주차 30면</p>
+    <div class="loc-grid">
+      <div class="map-box">
+        <!-- 오픈 전 네이버/카카오 지도 임베드로 교체 -->
+        <span>🗺️ 지도 영역 — 네이버 지도 임베드</span>
+      </div>
+      <dl class="loc-list">
+        <div class="loc-item"><dt>주소</dt><dd>부산광역시 기장군 정관읍 ○○로 00 (2층)</dd></div>
+        <div class="loc-item"><dt>운영시간</dt><dd>평일 09:00–23:00 · 주말 08:00–22:00 · 연중무휴</dd></div>
+        <div class="loc-item"><dt>주차</dt><dd>건물 전용 주차장 30면 무료 · 입구는 ○○사거리 방면</dd></div>
+        <div class="loc-item"><dt>대중교통</dt><dd>정관 ○○정류장 하차 도보 3분 (마을버스 ○번)</dd></div>
+        <div class="loc-item"><dt>전화</dt><dd>051-000-0000 · 카카오 채널 상담 가능</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 08 · FAQ ══════════════════ -->
+<section>
+  <div class="wrap">
+    <span class="chip">💬 FAQ<span class="ko">자주 묻는 질문</span></span>
+    <h2>이런 걱정, 안 하셔도 됩니다</h2>
+    <p class="sec-sub">전화 주시기 전에 여기서 먼저 확인하세요.</p>
+    <div class="faq-list">
+      <details open>
+        <summary><span class="q">Q</span>피클볼 라켓이 없어도 되나요?<span class="arrow">▼</span></summary>
+        <div class="a"><b>네.</b> 패들과 공은 무료로 대여해 드립니다. 실내화만 준비하시면 됩니다.</div>
+      </details>
+      <details>
+        <summary><span class="q">Q</span>혼자 가도 피클볼을 칠 수 있나요?<span class="arrow">▼</span></summary>
+        <div class="a"><b>네.</b> 소셜매치에 신청하시면 비슷한 실력의 참가자와 4인 복식 경기로 묶어 드립니다. 참가자의 절반 이상이 1인 신청입니다.</div>
+      </details>
+      <details>
+        <summary><span class="q">Q</span>운동을 안 한 지 오래됐는데 괜찮을까요?<span class="arrow">▼</span></summary>
+        <div class="a"><b>네.</b> 코트가 배드민턴 코트 크기로 작고 공 속도가 느려, 40~60대가 가장 많이 즐기는 라켓 스포츠입니다. 무료 체험에서 20분이면 랠리가 가능합니다.</div>
+      </details>
+      <details>
+        <summary><span class="q">Q</span>요금은 얼마인가요?<span class="arrow">▼</span></summary>
+        <div class="a">코트 대관은 평일 주간 시간당 <b>20,000원</b>부터, 소셜매치는 회당 <b>10,000원</b>, 입문 클래스는 4주 <b>80,000원</b>입니다. 패들·볼 대여는 무료입니다.</div>
+      </details>
+      <details>
+        <summary><span class="q">Q</span>주차할 수 있나요?<span class="arrow">▼</span></summary>
+        <div class="a"><b>네.</b> 건물 전용 주차장 30면을 무료로 이용하실 수 있습니다.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 마감 CTA ══════════════════ -->
+<section style="padding-top:0" id="trial">
+  <div class="wrap">
+    <div class="final">
+      <div class="final-inner">
+        <span class="chip" style="background:rgba(255,255,255,.75)">☀️ Free Trial<span class="ko">첫 방문은 무료입니다</span></span>
+        <h2>이번 주말, 햇살 좋은 코트에서<br>첫 랠리를 쳐 보세요</h2>
+        <p>준비물은 실내화 하나. 패들도, 공도, 같이 칠 사람도 저희가 준비해 둘게요.<br><span class="en-script">Your first rally is on us.</span></p>
+        <div class="hero-cta" style="justify-content:center">
+          <a class="btn btn-sun" href="first-visit.html#trial-form">🎾 무료 체험 신청하기</a>
+          <a class="btn btn-line" href="pricing.html">코트 예약</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 푸터 ══════════════════ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="#top" style="margin-bottom:14px">
+          <svg width="26" height="26" viewBox="0 0 30 30" aria-hidden="true">
+            <circle cx="15" cy="15" r="13" fill="#FFC93C"/>
+            <circle cx="15" cy="15" r="13" fill="none" stroke="#F57C00" stroke-width="2"/>
+            <circle cx="10.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="19.5" cy="11" r="1.7" fill="#F57C00"/>
+            <circle cx="15" cy="17.5" r="1.7" fill="#F57C00"/><circle cx="9.5" cy="19" r="1.7" fill="#F57C00"/>
+            <circle cx="20.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="15" cy="7.5" r="1.7" fill="#F57C00"/>
+          </svg>
+          <span class="logo-txt">정관 피클볼 클럽<small>Jeonggwan Pickleball Club</small></span>
+        </a>
+        <p class="foot-info" style="margin-top:12px">
+          <b>정관 피클볼 클럽</b><br>
+          부산광역시 기장군 정관읍 ○○로 00 (2층)<br>
+          051-000-0000 · hello@example.com<br>
+          평일 09:00–23:00 · 주말 08:00–22:00
+        </p>
+      </div>
+      <div>
+        <h4>시작하기 · Get Started</h4>
+        <ul>
+          <li><a href="first-visit.html">처음 오시는 분</a></li>
+          <li><a href="first-visit.html#trial-form">무료 체험 신청</a></li>
+          <li><a href="social.html">소셜매치</a></li>
+          <li><a href="pricing.html">이용요금</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>더 알아보기 · Explore</h4>
+        <ul>
+          <li><a href="guide.html">피클볼 가이드</a></li>
+          <li><a href="junior.html">유소년 아카데미</a></li>
+          <li><a href="events.html">대회 · 정관 리그</a></li>
+          <li><a href="pickleball-jeonggwan.html">정관 지역 안내</a></li>
+          <li><a href="pickleball-gijang.html">기장에서 오시는 분</a></li>
+          <li><a href="pickleball-busan.html">부산 실내 피클볼</a></li>
+          <li><a href="#location">오시는 길·주차</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="updated">최종 수정일: 2026년 7월 29일 · 요금·일정은 분기마다 갱신합니다.<br>© 2026 Jeonggwan Pickleball Club · Busan, Korea. All rights reserved.</p>
+  </div>
+</footer>
+
+<a class="kakao-fab" href="#" aria-label="카카오 채널 상담">
+  <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+    <path fill="#191919" d="M12 3C6.48 3 2 6.58 2 11c0 2.84 1.86 5.33 4.64 6.74l-.95 3.52c-.08.3.25.54.51.37l4.18-2.77c.53.07 1.07.14 1.62.14 5.52 0 10-3.58 10-8S17.52 3 12 3z"/>
+  </svg>
+  카카오 상담
+</a>
+
+
+<script>
+/* 사진 시스템 — assets/*.jpg 가 있으면 그것을, 없으면 예시 이미지를 사용합니다.
+   실제 촬영본을 public/assets/ 에 같은 이름으로 넣기만 하면 즉시 반영됩니다. */
+(function(){
+  function fit(img){
+    var r = img.naturalWidth / img.naturalHeight;
+    if (!r) return;
+    if (img.classList.contains('hero-img')){
+      // 세로 사진은 인물 상반신이 살도록 3:4로, 그 외에는 원본 비율 그대로(무크롭).
+      if (r < 0.85){                                   // 세로 사진
+        img.style.aspectRatio = '3 / 4';
+        img.style.objectPosition = '50% 20%';
+      } else if (r > 1.6){                             // 지나치게 넓은 사진
+        img.style.aspectRatio = '3 / 2';
+        img.style.objectPosition = '50% 40%';
+      } else {                                         // 일반 가로 사진 — 원본 비율
+        img.style.aspectRatio = String(r.toFixed(3));
+        img.style.objectPosition = '50% 40%';
+      }
+    }
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('img[data-fallback]'), function(img){
+    img.addEventListener('error', function(){
+      if (img.dataset.fellBack) return;
+      img.dataset.fellBack = '1';
+      img.src = img.dataset.fallback;
+    });
+    if (img.complete && img.naturalWidth) fit(img);
+    img.addEventListener('load', function(){ fit(img); });
+  });
+})();
+</script>
+
+<script>
+/* 모바일 메뉴 토글 + 데스크톱 드롭다운 키보드/터치 지원 */
+(function(){
+  var t = document.getElementById('navToggle');
+  var n = document.getElementById('navLinks');
+  if (!t || !n) return;
+
+  function setOpen(v){
+    n.classList.toggle('open', v);
+    document.body.classList.toggle('nav-lock', v);
+    t.setAttribute('aria-expanded', v ? 'true' : 'false');
+    t.setAttribute('aria-label', v ? '메뉴 닫기' : '메뉴 열기');
+    if (v){
+      // 모바일: 현재 보고 있는 카테고리를 미리 펼쳐 둔다
+      var cur = n.querySelector('.nd.nd-on');
+      if (cur && window.innerWidth <= 1060 && !cur.classList.contains('open')){
+        cur.classList.add('open');
+        cur.querySelector('.nd-btn').setAttribute('aria-expanded','true');
+      }
+    }
+  }
+  t.addEventListener('click', function(){ setOpen(!n.classList.contains('open')); });
+
+  // 링크를 누르면 메뉴 닫기
+  n.addEventListener('click', function(e){
+    if (e.target.closest('a')) setOpen(false);
+  });
+
+  // 바깥 클릭 / ESC 로 닫기
+  function closeDropdowns(){
+    Array.prototype.forEach.call(document.querySelectorAll('.nd.open'), function(d){
+      d.classList.remove('open');
+      d.querySelector('.nd-btn').setAttribute('aria-expanded','false');
+    });
+  }
+  document.addEventListener('click', function(e){
+    if (!n.contains(e.target) && !t.contains(e.target)){
+      setOpen(false);
+      closeDropdowns();
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape'){
+      setOpen(false);
+      Array.prototype.forEach.call(document.querySelectorAll('.nd.open'), function(d){
+        d.classList.remove('open');
+        d.querySelector('.nd-btn').setAttribute('aria-expanded','false');
+      });
+    }
+  });
+
+  // 드롭다운: 데스크톱은 hover, 터치·키보드는 클릭으로도 열리게
+  Array.prototype.forEach.call(document.querySelectorAll('.nd'), function(d){
+    var b = d.querySelector('.nd-btn');
+    b.addEventListener('click', function(e){
+      e.stopPropagation();
+      var willOpen = !d.classList.contains('open');
+      Array.prototype.forEach.call(document.querySelectorAll('.nd'), function(o){
+        if (o !== d){ o.classList.remove('open'); o.querySelector('.nd-btn').setAttribute('aria-expanded','false'); }
+      });
+      d.classList.toggle('open', willOpen);
+      b.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+  });
+
+  // 뷰포트가 데스크톱으로 넓어지면 모바일 메뉴 상태 초기화
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 1060){ setOpen(false); document.body.classList.remove('nav-lock'); }
+  });
+})();
+</script>
+</body>
+</html>

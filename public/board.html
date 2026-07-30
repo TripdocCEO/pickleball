@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>커뮤니티 게시판 — 공지·후기·파트너 구함 | 정관 피클볼 클럽</title>
+<meta name="description" content="정관 피클볼 클럽 커뮤니티. 공지사항, 이용 후기, 함께 칠 파트너 구하기, 중고 장터까지. 회원들과 소통하세요.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "정관 피클볼 클럽 커뮤니티 게시판",
+  "description": "공지사항, 이용 후기, 파트너 모집, 중고 장터 게시판"
+}
+</script>
+
+<style>
+:root{
+  --sun:#FFB300;--sun-deep:#F57C00;--sun-soft:#FFF3D6;
+  --sky:#2FA8E0;--sky-soft:#E3F4FC;--leaf:#7CB342;--leaf-soft:#EEF6E3;
+  --plum:#8E56B8;--plum-soft:#F6EFFB;
+  --cream:#FFFDF7;--ink:#33302B;--ink-soft:#7A7266;--line:#F0E8D8;--card:#FFFFFF;
+  --radius:20px;--shadow:0 10px 30px rgba(245,158,11,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font-family:'Pretendard','Malgun Gothic',system-ui,sans-serif;font-size:16px;line-height:1.7;letter-spacing:-0.01em;word-break:keep-all}
+img{max-width:100%}a{color:inherit;text-decoration:none}ul,ol{list-style:none}
+button,input,textarea,select{font-family:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+.chip{display:inline-flex;align-items:center;gap:7px;background:var(--sun-soft);color:#B26A00;font-family:'Outfit','Pretendard',sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:16px}
+.chip .ko{font-family:'Pretendard',sans-serif;letter-spacing:0;text-transform:none;font-size:12.5px;color:#C58A2A;font-weight:600;border-left:1px solid #EFD9A8;padding-left:9px}
+h2{font-size:clamp(22px,3.6vw,30px);font-weight:800;line-height:1.35;letter-spacing:-0.03em;margin-bottom:12px}
+section{padding:56px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:16px;border-radius:999px;padding:15px 30px;transition:transform .15s ease,box-shadow .15s ease;cursor:pointer;border:none}
+.btn:active{transform:scale(.97)}
+.btn-sun{background:linear-gradient(135deg,#FFC93C,#FFA726);color:#5C3A00;box-shadow:0 8px 22px rgba(255,167,38,.38)}
+.btn-sun:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(255,167,38,.48)}
+.btn-line{background:#fff;color:var(--ink);border:2px solid var(--line)}
+.btn-line:hover{border-color:var(--sun);color:#B26A00}
+.btn-sm{padding:10px 20px;font-size:14px}
+header{position:sticky;top:0;z-index:50;background:rgba(255,253,247,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:20px;height:66px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:-0.02em}
+.logo svg{flex:none}
+.logo-txt{display:flex;flex-direction:column;line-height:1.15}
+.logo-txt small{font-family:'Outfit',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:.22em;color:#D9A93C;text-transform:uppercase}
+.nav-links{display:flex;gap:19px;margin-left:auto;font-size:14.5px;font-weight:600;color:#5C554A}
+.nav-links a:hover{color:var(--sun-deep)}
+.nav-links a.active{color:var(--sun-deep)}
+.nav .btn{padding:10px 18px;font-size:14px;margin-left:6px}
+.page-hero{position:relative;overflow:hidden;background:radial-gradient(800px 420px at 85% -10%,rgba(255,214,79,.5),transparent 65%),radial-gradient(600px 380px at -10% 30%,rgba(179,229,252,.45),transparent 60%),linear-gradient(180deg,#FFFBEF 0%,var(--cream) 100%);padding:60px 0 40px}
+.page-hero h1{font-size:clamp(28px,4.4vw,42px);font-weight:900;line-height:1.28;letter-spacing:-0.04em;margin-bottom:12px}
+.page-hero h1 em{font-style:normal;color:var(--sun-deep)}
+.page-hero .sub{font-size:clamp(15px,2vw,17px);color:#5C554A;max-width:620px}
+.crumb{font-family:'Outfit','Pretendard',sans-serif;font-size:12.5px;color:#B3A886;margin-bottom:20px;font-weight:600}
+.crumb a:hover{color:var(--sun-deep)}
+
+/* ── 카테고리 탭 ── */
+.tabs{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+.tab{font-family:'Pretendard',sans-serif;font-size:14px;font-weight:700;padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:#7A7266;cursor:pointer;transition:.15s}
+.tab:hover{border-color:#EFD9A8;color:#B26A00}
+.tab.on{background:var(--sun-soft);border-color:#F3D9A0;color:#B26A00}
+.tab .cnt{font-family:'Outfit',sans-serif;font-size:11.5px;opacity:.65;margin-left:5px}
+
+/* ── 툴바 ── */
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:18px}
+.search{position:relative;flex:1;min-width:220px;max-width:380px}
+.search input{width:100%;font-size:14.5px;padding:12px 16px 12px 42px;border:1.5px solid #EFE6D2;border-radius:999px;background:#fff;color:var(--ink);outline:none;transition:border-color .15s}
+.search input:focus{border-color:var(--sun)}
+.search .ico{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:14px;opacity:.5}
+.sort{font-size:13.5px;color:var(--ink-soft);font-weight:600;margin-left:auto}
+.sort select{border:1.5px solid #EFE6D2;border-radius:999px;padding:9px 14px;background:#fff;font-size:13.5px;font-weight:700;color:#7A7266;outline:none;cursor:pointer}
+
+/* ── 게시글 리스트 ── */
+.board{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #FBF3E2;overflow:hidden}
+.b-head{display:grid;grid-template-columns:96px 1fr 96px 84px 62px;gap:12px;padding:14px 22px;background:#FFF8E8;border-bottom:1px solid #F3E7C8;font-family:'Outfit','Pretendard',sans-serif;font-size:12px;font-weight:800;letter-spacing:.06em;color:#8A6A1F;text-transform:uppercase}
+.row{display:grid;grid-template-columns:96px 1fr 96px 84px 62px;gap:12px;padding:15px 22px;border-bottom:1px solid #F6EFDF;align-items:center;cursor:pointer;transition:background .12s}
+.row:last-child{border-bottom:none}
+.row:hover{background:#FFFCF3}
+.row.pin{background:#FFFBF0}
+.row.pin:hover{background:#FFF6E2}
+.cat{display:inline-block;font-size:11.5px;font-weight:800;padding:4px 11px;border-radius:999px;white-space:nowrap}
+.cat-notice{background:var(--sun-soft);color:#B26A00}
+.cat-free{background:var(--sky-soft);color:#1A7FB5}
+.cat-review{background:var(--leaf-soft);color:#558B2F}
+.cat-partner{background:var(--plum-soft);color:var(--plum)}
+.cat-market{background:#FDEBEB;color:#C0504D}
+.r-title{font-size:15.5px;font-weight:700;letter-spacing:-0.02em;display:flex;align-items:center;gap:8px;min-width:0}
+.r-title span.t{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.r-title .cm{flex:none;font-family:'Outfit',sans-serif;font-size:12px;font-weight:800;color:var(--sun-deep);background:var(--sun-soft);padding:1px 8px;border-radius:999px}
+.r-title .pin-b{flex:none;font-size:11px;font-weight:800;color:#B26A00;background:#FFE9B8;padding:2px 8px;border-radius:6px}
+.r-meta{font-size:13.5px;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.r-date,.r-view{font-family:'Outfit',sans-serif;font-size:12.5px;color:#B3AB98;font-weight:600}
+.empty{padding:56px 22px;text-align:center;color:#B3AB98;font-size:14.5px}
+
+/* ── 상세 ── */
+.detail{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #FBF3E2;overflow:hidden}
+.d-head{padding:26px 30px 20px;border-bottom:1px solid #F6EFDF}
+.d-head h3{font-size:clamp(19px,3vw,25px);font-weight:800;letter-spacing:-0.03em;margin:10px 0 12px;line-height:1.4}
+.d-meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13.5px;color:var(--ink-soft)}
+.d-meta b{color:#55503F;font-weight:700}
+.d-body{padding:28px 30px;font-size:16px;line-height:1.85;color:#44403A;white-space:pre-wrap;min-height:140px}
+.d-foot{padding:18px 30px;background:#FFFCF3;border-top:1px solid #F6EFDF;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.like{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:800;color:var(--sun-deep);background:#fff;border:1.5px solid #F3D9A0;border-radius:999px;padding:9px 18px;cursor:pointer;transition:.15s}
+.like:hover{background:var(--sun-soft)}
+.like.on{background:var(--sun-soft)}
+/* 댓글 */
+.cmts{padding:22px 30px 28px;border-top:1px solid #F6EFDF}
+.cmts h4{font-size:14.5px;font-weight:800;color:#8A6A1F;margin-bottom:14px}
+.cmt{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid #F6EFDF}
+.cmt:last-of-type{border-bottom:none}
+.av{flex:none;width:36px;height:36px;border-radius:12px;background:var(--sun-soft);color:#B26A00;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+.cmt-b{min-width:0;flex:1}
+.cmt-b .who{font-size:13.5px;font-weight:800;margin-bottom:2px}
+.cmt-b .who span{font-family:'Outfit',sans-serif;font-size:12px;color:#B3AB98;font-weight:600;margin-left:8px}
+.cmt-b p{font-size:14.5px;color:#55503F}
+.cmt-form{display:flex;gap:10px;margin-top:16px}
+.cmt-form input{flex:1;font-size:14.5px;padding:12px 16px;border:1.5px solid #EFE6D2;border-radius:14px;background:#FFFDF7;outline:none}
+.cmt-form input:focus{border-color:var(--sun)}
+
+/* ── 글쓰기 모달 ── */
+.modal{position:fixed;inset:0;z-index:80;background:rgba(51,48,43,.5);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;padding:20px}
+.modal.on{display:flex}
+.m-card{background:var(--card);border-radius:24px;box-shadow:0 24px 60px rgba(0,0,0,.25);width:100%;max-width:620px;max-height:90vh;overflow-y:auto}
+.m-head{padding:22px 28px;border-bottom:1px solid #F6EFDF;display:flex;align-items:center}
+.m-head h3{font-size:19px;font-weight:800;letter-spacing:-0.02em}
+.m-close{margin-left:auto;background:none;border:none;font-size:22px;color:#B3AB98;cursor:pointer;line-height:1;padding:4px 8px}
+.m-close:hover{color:var(--sun-deep)}
+.m-body{padding:24px 28px}
+.f{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+.f label{font-size:13.5px;font-weight:800;color:#8A6A1F}
+.f input,.f select,.f textarea{font-size:15px;padding:13px 15px;border:1.5px solid #EFE6D2;border-radius:12px;background:#FFFDF7;color:var(--ink);outline:none;transition:border-color .15s}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--sun)}
+.f textarea{min-height:170px;resize:vertical;line-height:1.7}
+.f-row{display:grid;grid-template-columns:180px 1fr;gap:14px}
+.m-foot{padding:18px 28px 26px;display:flex;gap:10px}
+.m-foot .btn{flex:1}
+.note{font-size:12.5px;color:#B3AB98;margin-top:6px}
+
+/* ── 연결 상태 배지 ── */
+.mode{
+  display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;
+  padding:5px 12px;border-radius:999px;letter-spacing:-0.01em;white-space:nowrap;
+}
+.mode.on{background:var(--leaf-soft);color:#4A7A22}
+.mode.off{background:#F1EEE7;color:#8A8272}
+
+/* ── 토스트 ── */
+.toast{
+  position:fixed;left:50%;bottom:92px;transform:translate(-50%,14px);
+  background:#33302B;color:#FFF6DE;font-size:14.5px;font-weight:700;
+  padding:14px 24px;border-radius:14px;box-shadow:0 12px 30px rgba(0,0,0,.28);
+  z-index:90;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;
+  max-width:min(92vw,460px);white-space:pre-line;text-align:center;
+}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* ── 커뮤니티 규칙 ── */
+.rules{background:#FFFCF3;border:1.5px dashed #EFD9A8;border-radius:18px;padding:24px 28px;margin-top:26px}
+.rules h4{font-size:14.5px;font-weight:800;color:#8A6A1F;margin-bottom:12px}
+.rules li{position:relative;padding-left:22px;margin-bottom:8px;font-size:14px;color:#9A8A63}
+.rules li::before{content:"·";position:absolute;left:8px;color:var(--sun-deep);font-weight:900}
+
+footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
+.foot-info{font-size:13.5px;color:#9A927F;line-height:1.9}
+.foot-info b{color:#6B6353}
+.updated{margin-top:20px;font-size:12.5px;color:#B3AB98}
+.kakao-fab{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;align-items:center;gap:9px;background:#FEE500;color:#191919;font-weight:800;font-size:14.5px;padding:14px 22px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.18)}
+.kakao-fab:hover{transform:translateY(-3px)}
+
+@media (max-width:860px){
+  .nav-links{display:none}
+  .logo-txt small{display:none}
+  .b-head{display:none}
+  .row{
+    grid-template-columns:1fr auto auto;
+    grid-template-areas:'cat cat cat' 'title title title' 'meta date view';
+    gap:8px 12px;padding:16px 18px;
+  }
+  .row > :nth-child(1){grid-area:cat}
+  .row > :nth-child(2){grid-area:title}
+  .row > :nth-child(3){grid-area:meta}
+  .row > :nth-child(4){grid-area:date;text-align:right}
+  .row > :nth-child(5){grid-area:view;text-align:right}
+  .r-view::before{content:"조회 ";opacity:.7}
+  .r-title{white-space:normal}
+  .r-title span.t{white-space:normal;overflow:visible}
+  .f-row{grid-template-columns:1fr}
+  .d-head,.d-body,.d-foot,.cmts{padding-left:20px;padding-right:20px}
+}
+/* nav-6 */
+.nav{gap:20px}
+.nav-links{gap:19px;font-size:14.5px}
+@media (max-width:900px){.nav-links{display:none}}
+
+/* ══════════ nav v2 — 카테고리 드롭다운 + 모바일 메뉴 ══════════ */
+.nav{gap:16px}
+.nav-links{display:flex;align-items:center;gap:16px;margin-left:auto;font-size:14px;font-weight:600;color:#5C554A}
+.nav-links > a{white-space:nowrap}
+.nav-links > a.active,.nd.nd-on > .nd-btn{color:var(--sun-deep)}
+.nd{position:relative}
+.nd::after{content:"";position:absolute;left:0;right:0;top:100%;height:16px}
+.nd-btn{background:none;border:none;padding:0;font:inherit;color:inherit;cursor:pointer;display:flex;align-items:center;gap:4px;white-space:nowrap}
+.nd-btn i{font-style:normal;font-size:9px;opacity:.5;transition:transform .16s}
+.nd-btn:hover,.nd:hover > .nd-btn{color:var(--sun-deep)}
+.nd:hover > .nd-btn i,.nd.open > .nd-btn i{transform:rotate(180deg)}
+.nd-menu{
+  position:absolute;top:calc(100% + 16px);left:50%;
+  transform:translateX(-50%) translateY(-6px);
+  background:#fff;border:1px solid var(--line);border-radius:16px;
+  box-shadow:0 18px 44px rgba(120,90,20,.16);padding:10px;min-width:210px;
+  display:flex;flex-direction:column;gap:2px;
+  opacity:0;visibility:hidden;transition:opacity .16s,transform .16s,visibility .16s;z-index:70;
+}
+.nd:hover > .nd-menu,.nd:focus-within > .nd-menu,.nd.open > .nd-menu{
+  opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);
+}
+.nd-menu a{padding:10px 14px;border-radius:10px;font-size:14px;color:#5C554A;white-space:nowrap}
+.nd-menu a:hover{background:var(--sun-soft);color:#B26A00}
+.nd-menu a b{font-weight:800}
+.nav-mcta{display:none}
+.navtoggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;
+  margin-left:auto;background:none;border:1.5px solid var(--line);border-radius:12px;cursor:pointer;padding:0 10px}
+.navtoggle span{display:block;height:2px;background:#7A7266;border-radius:2px;transition:.2s}
+.navtoggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.navtoggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.navtoggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media (max-width:1060px){
+  .nav .btn{display:none}
+  .navtoggle{display:flex}
+  /* 전체 화면 시트 — 내부에서만 스크롤 */
+  .nav-links{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:#FFFDF7;border-top:1px solid var(--line);
+    box-shadow:0 22px 40px rgba(120,90,20,.16);
+    padding:6px 18px 30px;
+    max-height:calc(100dvh - 66px);max-height:calc(100vh - 66px);
+    overflow-y:auto;overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;z-index:80;
+  }
+  .nav-links.open{display:flex}
+  .nav-links > a{padding:15px 8px;border-bottom:1px solid #F6EFDF;font-size:16px;font-weight:700}
+  .nd{border-bottom:1px solid #F6EFDF;position:static}
+  .nd::after{display:none}
+  .nd-btn{width:100%;padding:15px 8px;font-size:16px;font-weight:700}
+  .nd-btn i{margin-left:auto;opacity:.45;font-size:11px}
+  /* 아코디언 — 누른 카테고리만 아래로 펼쳐집니다 (옆으로 나가지 않도록 강제) */
+  .nd-menu{
+    position:static !important;
+    transform:none !important;
+    inset:auto !important;
+    width:auto !important;max-width:100% !important;min-width:0 !important;
+    background:transparent;border:none;box-shadow:none;
+    padding:0 0 10px 14px;gap:0;
+    display:none;opacity:1;visibility:visible;transition:none;
+  }
+  .nd.open > .nd-menu,
+  .nd:hover > .nd-menu,
+  .nd:focus-within > .nd-menu{display:none}
+  .nd.open > .nd-menu{display:flex}
+  .nd-menu a{padding:12px 10px;font-size:14.5px;color:#8A8272;white-space:normal}
+  .nav-mcta{margin-top:18px;display:block}
+  .nav-mcta .btn{display:inline-flex;width:100%}
+  .kakao-fab{z-index:40}
+  body.nav-lock{overflow:hidden}
+}
+
+/* ══════════ btn-fix — 줄바꿈 시 가운데 정렬 + 좁은 화면 CTA 스택 ══════════ */
+.btn{text-align:center;line-height:1.35}
+.btn > *{flex:none}
+@media (max-width:560px){
+  .hero-cta{gap:10px}
+  .hero-cta .btn{flex:1 1 100%;min-width:0;width:100%;padding:16px 22px}
+  .cta-band .hero-cta .btn,
+  .cta-band a.btn{flex:1 1 100%;width:100%}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html">
+      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
+        <circle cx="15" cy="15" r="13" fill="#FFC93C"/><circle cx="15" cy="15" r="13" fill="none" stroke="#F57C00" stroke-width="2"/>
+        <circle cx="10.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="19.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="15" cy="17.5" r="1.7" fill="#F57C00"/>
+        <circle cx="9.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="20.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="15" cy="7.5" r="1.7" fill="#F57C00"/>
+      </svg>
+      <span class="logo-txt">정관 피클볼 클럽<small>Jeonggwan Pickleball Club</small></span>
+    </a>
+    <button class="navtoggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">홈</a>
+      <a href="first-visit.html">처음 오시는 분</a>
+
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false">프로그램<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="social.html">🤝 소셜매치 — 혼자 와도 OK</a>
+          <a href="junior.html">🧒 유소년 아카데미</a>
+          <a href="first-visit.html#trial-form">🌱 무료 체험·입문 클래스</a>
+        </div>
+      </div>
+
+      <a href="pricing.html">이용요금</a>
+
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false">가이드<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="guide.html"><b>📚 가이드 전체 보기</b></a>
+          <a href="what-is-pickleball.html">피클볼이 뭔가요?</a>
+          <a href="pickleball-what-to-prepare.html">뭘 준비해야 하나요?</a>
+          <a href="pickleball-alone.html">혼자 가도 되나요?</a>
+          <a href="kids-pickleball.html">초등학생도 되나요?</a>
+          <a href="pickleball-lesson-cost.html">레슨 비용은 얼마?</a>
+        </div>
+      </div>
+
+      <div class="nd nd-on">
+        <button type="button" class="nd-btn" aria-expanded="false">커뮤니티<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="board.html">💬 게시판</a>
+          <a href="events.html">🏆 대회 · 정관 리그</a>
+        </div>
+      </div>
+
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false">오시는 길<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="index.html#location">📍 위치 · 주차 안내</a>
+          <a href="pickleball-jeonggwan.html">정관에서 오시는 분</a>
+          <a href="pickleball-gijang.html">기장에서 오시는 분</a>
+          <a href="pickleball-busan.html">부산 도심에서 오시는 분</a>
+        </div>
+      </div>
+      <div class="nav-mcta"><a class="btn btn-sun" href="first-visit.html#trial-form">🎾 무료 체험 신청</a></div>
+    </nav>
+    <a class="btn btn-sun" href="first-visit.html#trial-form">무료 체험 신청</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="index.html">HOME</a> / COMMUNITY</p>
+    <span class="chip">💬 Community<span class="ko">커뮤니티 게시판</span></span>
+    <h1>코트 밖에서도<br><em>계속</em> 이어집니다</h1>
+    <p class="sub">공지사항부터 오늘의 후기, 같이 칠 파트너 구하기, 안 쓰는 패들 나눔까지. 정관 피클볼 이웃들의 공간입니다.</p>
+    <div class="tabs" id="tabs"></div>
+  </div>
+</section>
+
+<section style="padding-top:8px">
+  <div class="wrap">
+
+    <!-- 리스트 뷰 -->
+    <div id="listView">
+      <div class="toolbar">
+        <div class="search">
+          <span class="ico">🔍</span>
+          <input type="text" id="q" placeholder="제목·내용·작성자 검색">
+        </div>
+        <span class="mode off" id="mode" title="연결 상태">● 확인 중…</span>
+        <div class="sort">
+          <select id="sort">
+            <option value="new">최신순</option>
+            <option value="view">조회순</option>
+            <option value="cmt">댓글순</option>
+          </select>
+        </div>
+        <button class="btn btn-sun btn-sm" id="writeBtn">✏️ 글쓰기</button>
+      </div>
+
+      <div class="board">
+        <div class="b-head">
+          <div>분류</div><div>제목</div><div>작성자</div><div>작성일</div><div>조회</div>
+        </div>
+        <div id="rows"></div>
+      </div>
+
+      <div class="rules">
+        <h4>🤝 커뮤니티 이용 안내</h4>
+        <ul>
+          <li>실명이 아니어도 됩니다. 다만 코트에서 만날 이웃이라는 점만 기억해 주세요.</li>
+          <li>파트너 구함 글에는 <b>희망 날짜·시간·난이도</b>를 적어 주시면 매칭이 훨씬 빠릅니다.</li>
+          <li>중고 장터는 개인 간 거래입니다. 클럽은 거래를 중개하지 않으며 직거래는 클럽 라운지를 이용하세요.</li>
+          <li>광고·비방·타 시설 홍보 글은 예고 없이 삭제됩니다.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 상세 뷰 -->
+    <div id="detailView" style="display:none">
+      <button class="btn btn-line btn-sm" id="backBtn" style="margin-bottom:16px">← 목록으로</button>
+      <div class="detail">
+        <div class="d-head">
+          <span class="cat" id="dCat"></span>
+          <h3 id="dTitle"></h3>
+          <div class="d-meta">
+            <span>작성자 <b id="dAuthor"></b></span>
+            <span id="dDate"></span>
+            <span>조회 <b id="dViews"></b></span>
+          </div>
+        </div>
+        <div class="d-body" id="dBody"></div>
+        <div class="d-foot">
+          <button class="like" id="likeBtn">👍 좋아요 <b id="dLikes">0</b></button>
+          <span style="font-size:13px;color:#B3AB98">도움이 됐다면 눌러 주세요</span>
+        </div>
+        <div class="cmts">
+          <h4>💬 댓글 <span id="cCount">0</span></h4>
+          <div id="cmtList"></div>
+          <div class="cmt-form">
+            <input type="text" id="cmtInput" placeholder="따뜻한 댓글 한 줄 남겨 주세요">
+            <button class="btn btn-sun btn-sm" id="cmtBtn">등록</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 글쓰기 모달 -->
+<div class="modal" id="modal">
+  <div class="m-card">
+    <div class="m-head">
+      <h3>✏️ 새 글 쓰기</h3>
+      <button class="m-close" id="mClose" aria-label="닫기">×</button>
+    </div>
+    <div class="m-body">
+      <div class="f-row">
+        <div class="f">
+          <label for="wCat">분류</label>
+          <select id="wCat">
+            <option value="free">💬 자유게시판</option>
+            <option value="review">⭐ 이용 후기</option>
+            <option value="partner">🤝 파트너 구함</option>
+            <option value="market">🛒 중고 장터</option>
+          </select>
+        </div>
+        <div class="f">
+          <label for="wAuthor">닉네임</label>
+          <input type="text" id="wAuthor" placeholder="정관러버" maxlength="12">
+        </div>
+      </div>
+      <div class="f">
+        <label for="wTitle">제목</label>
+        <input type="text" id="wTitle" placeholder="예) 토요일 오전 같이 치실 분 구해요 (루키)" maxlength="60">
+      </div>
+      <div class="f">
+        <label for="wBody">내용</label>
+        <textarea id="wBody" placeholder="파트너 구함이라면 희망 날짜·시간·난이도를 함께 적어 주세요."></textarea>
+        <p class="note">※ 서버 연결 시 글은 클럽 DB에 저장됩니다. 서버가 꺼져 있으면 이 브라우저에만 임시 저장돼요(데모 모드).</p>
+      </div>
+    </div>
+    <div class="m-foot">
+      <button class="btn btn-line" id="mCancel">취소</button>
+      <button class="btn btn-sun" id="mSubmit">등록하기</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p class="foot-info">
+      <b>정관 피클볼 클럽 · Jeonggwan Pickleball Club</b><br>
+      부산광역시 기장군 정관읍 ○○로 00 (2층) · 051-000-0000<br>
+      평일 09:00–23:00 · 주말 08:00–22:00 · 연중무휴
+    </p>
+    <p class="updated">최종 수정일: 2026년 7월 29일 · © 2026 Jeonggwan Pickleball Club, Busan, Korea.</p>
+  </div>
+</footer>
+
+<a class="kakao-fab" href="#" aria-label="카카오 채널 상담">
+  <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#191919" d="M12 3C6.48 3 2 6.58 2 11c0 2.84 1.86 5.33 4.64 6.74l-.95 3.52c-.08.3.25.54.51.37l4.18-2.77c.53.07 1.07.14 1.62.14 5.52 0 10-3.58 10-8S17.52 3 12 3z"/></svg>
+  카카오 상담
+</a>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ────────────────────────────────────────────────────────────
+   커뮤니티 게시판 — 데모 구현
+   저장소: localStorage ('jgpc_board_v1'). 오픈 시 서버 API로 교체.
+   교체 지점: load() / save() 두 함수만 fetch로 바꾸면 됩니다.
+   ──────────────────────────────────────────────────────────── */
+
+var CATS = {
+  notice:  { label: '📢 공지',      cls: 'cat-notice'  },
+  free:    { label: '💬 자유',      cls: 'cat-free'    },
+  review:  { label: '⭐ 후기',      cls: 'cat-review'  },
+  partner: { label: '🤝 파트너',    cls: 'cat-partner' },
+  market:  { label: '🛒 장터',      cls: 'cat-market'  }
+};
+
+var SEED = [
+  { id:1, cat:'notice', pinned:true, title:'8월 소셜매치 일정 오픈 안내 (화·목·토)', author:'운영팀', date:'2026-07-28', views:412, likes:23,
+    body:'8월 소셜매치 일정이 열렸습니다.\n\n· 화/목 19:30–21:30 (루키 · 그린)\n· 토 10:00–12:00 (루키) / 15:00–17:00 (블루)\n\n신청은 매주 월요일 오전 10시에 다음 주 회차가 열립니다. 정원 12명이며 마감 시 대기 신청을 받습니다.\n회당 참가비 10,000원, 월 패스(4회) 32,000원입니다.\n\n처음이신 분은 무료 체험을 먼저 받으신 뒤 루키 회차로 오시는 것을 권합니다.',
+    comments:[ {author:'초보탈출', body:'토요일 오전 신청했습니다! 처음인데 잘 부탁드려요', date:'2026-07-28'},
+               {author:'정관주민', body:'월 패스가 훨씬 이득이네요 ㅎㅎ', date:'2026-07-29'} ] },
+
+  { id:2, cat:'notice', pinned:true, title:'추석 연휴 운영 시간 안내 (9/24–9/27)', author:'운영팀', date:'2026-07-26', views:288, likes:11,
+    body:'추석 연휴 기간 운영 시간을 안내드립니다.\n\n· 9/24(목) 정상 운영\n· 9/25(금)–9/26(토) 09:00–18:00 단축 운영\n· 9/27(일) 휴무\n\n연휴 기간 소셜매치는 운영하지 않으며, 코트 대관만 가능합니다. 미리 예약해 주세요.',
+    comments:[] },
+
+  { id:3, cat:'partner', pinned:false, title:'토요일 오전에 같이 치실 분! (루키·30대)', author:'주말러', date:'2026-07-29', views:96, likes:8,
+    body:'안녕하세요, 입문 클래스 4주 수료하고 이제 막 랠리가 되는 30대입니다.\n\n· 희망 날짜: 매주 토요일 오전 10–12시\n· 난이도: 루키 (서브·리턴만 겨우)\n· 인원: 2~3명 더 모이면 코트 대관해서 나눠 내려고요\n\n부담 없이 공 주고받으실 분 댓글 주세요. 정관 중심상가 근처라 근처 분이면 더 좋습니다!',
+    comments:[ {author:'매학리아빠', body:'저요! 저도 딱 그 정도 실력입니다 ㅋㅋ 토요일 좋아요', date:'2026-07-29'},
+               {author:'주말러', body:'좋습니다 :) 카카오 채널로 연락드릴게요', date:'2026-07-29'} ] },
+
+  { id:4, cat:'review', pinned:false, title:'운동 10년 쉰 40대의 첫 방문 후기', author:'김코트', date:'2026-07-27', views:231, likes:34,
+    body:'라켓 운동은 학창시절 이후 처음이었습니다. 솔직히 민폐일까 봐 걱정하며 갔는데요.\n\n결론부터 말하면 20분 만에 랠리가 됐습니다.\n공이 느려서 눈으로 따라가지고, 코트가 작아서 뛸 일도 별로 없더라고요. 패들도 무료로 빌려줘서 진짜 실내화만 들고 갔습니다.\n\n코치님이 규칙 4개만 딱 알려주시고 바로 코트로 넣어주시는데, 이게 신의 한 수 같아요. 이론 설명 길었으면 지루했을 듯.\n\n지금 화요일 소셜매치 고정입니다. 같은 고민 하시는 분들 그냥 한 번 가보세요.',
+    comments:[ {author:'무릎환자', body:'무릎은 좀 어떠셨나요? 저도 고민 중이라...', date:'2026-07-27'},
+               {author:'김코트', body:'다음 날 종아리만 좀 뻐근했고 무릎은 괜찮았습니다. 준비운동은 꼭 하세요!', date:'2026-07-28'},
+               {author:'정관맘', body:'후기 감사해요 남편이랑 같이 가봐야겠어요', date:'2026-07-28'} ] },
+
+  { id:5, cat:'review', pinned:false, title:'초3 아들 유소년반 한 달 후기 (학부모)', author:'정관맘', date:'2026-07-25', views:187, likes:26,
+    body:'태권도 3개월 만에 그만뒀던 아이인데, 피클볼은 먼저 가자고 합니다.\n\n좋았던 점\n· 관람석에서 수업 전 과정을 볼 수 있어요. 이게 제일 컸습니다.\n· 정원 8명에 선생님 두 분이라 아이가 방치되지 않아요.\n· 4주 차에 미니 게임을 하는데, 성취감이 빠르니까 안 질려 하네요.\n\n아쉬운 점은 인기 시간대(4시반) 자리가 빨리 찬다는 것 정도입니다.',
+    comments:[ {author:'초등맘2', body:'혹시 몇 시 반이 자리 여유 있나요?', date:'2026-07-26'},
+               {author:'정관맘', body:'월수 4시반은 대기 걸렸고, 화목반은 자리 있다고 들었어요', date:'2026-07-26'} ] },
+
+  { id:6, cat:'market', pinned:false, title:'[나눔] 입문용 패들 2자루 무료로 드려요', author:'장비병말기', date:'2026-07-24', views:154, likes:19,
+    body:'상급기로 갈아타면서 쓰던 입문용 패들 2자루 정리합니다.\n\n· 폴리머 코어 경량 (215g 내외)\n· 6개월 사용, 면판 잔기스 있으나 성능 이상 없음\n· 그립테이프는 새것으로 교체해뒀습니다\n\n이제 막 시작하신 분께 무료로 드립니다. 클럽 라운지에서 직접 전달할게요. 댓글 남겨주세요!',
+    comments:[ {author:'뉴비입니다', body:'혹시 아직 있을까요? 지난주에 체험 다녀온 완전 초보입니다', date:'2026-07-25'},
+               {author:'장비병말기', body:'네 있습니다! 토요일 오전에 클럽에서 뵐까요?', date:'2026-07-25'} ] },
+
+  { id:7, cat:'free', pinned:false, title:'키친 라인 자꾸 밟습니다... 다들 어떻게 고치셨나요', author:'키친불법침입', date:'2026-07-23', views:203, likes:15,
+    body:'딩크 주고받다가 흥분하면 나도 모르게 발이 들어가 있습니다.\n\n머리로는 아는데 몸이 안 따라주네요. 소셜매치에서 세 번 연속 폴트 내고 파트너분께 죄송했습니다 ㅠㅠ\n고수님들은 이거 어떻게 극복하셨나요?',
+    comments:[ {author:'딩크장인', body:'라인 보지 말고 라인 30cm 뒤에 가상의 선을 그어두세요. 저는 그렇게 고쳤습니다', date:'2026-07-23'},
+               {author:'코치님', body:'발을 멈추는 연습보다 "치고 나서 뒤로 한 발" 습관을 들이는 게 빠릅니다. 다음 수업 때 봐드릴게요', date:'2026-07-24'},
+               {author:'키친불법침입', body:'두 분 다 감사합니다! 오늘 저녁에 해볼게요', date:'2026-07-24'} ] },
+
+  { id:8, cat:'free', pinned:false, title:'비 오는 날 실내 코트의 소중함을 느낍니다', author:'장마싫어', date:'2026-07-22', views:118, likes:12,
+    body:'야외에서 치다가 장마 시작되고 두 달 쉬었었는데, 실내로 오니까 세상이 달라졌네요.\n습도만 좀 있고 바람 변수가 없으니 공이 생각한 대로 갑니다. 진작 올 걸 그랬어요.',
+    comments:[ {author:'실내파', body:'여름엔 무조건 실내죠 ㅋㅋ', date:'2026-07-22'} ] },
+
+  { id:9, cat:'partner', pinned:false, title:'평일 오전 시니어 함께하실 분 (60대)', author:'해운대신사', date:'2026-07-21', views:87, likes:9,
+    body:'무릎 때문에 테니스 접고 피클볼로 넘어온 60대입니다.\n평일 오전 시간이 자유로우신 또래분들, 주 2회 정도 함께 치면 좋겠습니다.\n\n· 희망: 화·목 오전 10–12시\n· 난이도: 루키~그린 사이\n\n천천히, 오래 즐기실 분 환영합니다.',
+    comments:[ {author:'정관실버', body:'저도 관심 있습니다. 시니어 주간반이랑 병행해도 될까요?', date:'2026-07-22'} ] },
+
+  { id:10, cat:'free', pinned:false, title:'대회 나가보신 분 계신가요? (루키 부문)', author:'첫대회', date:'2026-07-20', views:142, likes:7,
+    body:'10월 정관 오픈 루키 부문 나가볼까 고민 중입니다.\n입문 5개월 차인데 너무 무모할까요? 대회 분위기가 어떤지 궁금합니다.',
+    comments:[ {author:'대회중독', body:'루키 부문은 진짜 화기애애합니다. 셀프 콜이라 심판 눈치도 없고요. 강추!', date:'2026-07-21'},
+               {author:'운영팀', body:'루키 부문은 입문 6개월 미만 기준이라 딱 맞으십니다 :) 소셜매치에서 감 잡고 오세요', date:'2026-07-21'} ] }
+];
+
+var KEY = 'jgpc_board_v1';
+var CID_KEY = 'jgpc_client_id';
+var MODE = 'demo';            // 'api' = 서버 연결 / 'demo' = 브라우저 저장
+var curCat = 'all';
+var curId = null;
+var curPost = null;
+var lastCounts = null;
+
+/* 좋아요 중복 방지용 클라이언트 토큰 */
+function clientId(){
+  var v = null;
+  try { v = localStorage.getItem(CID_KEY); } catch(e) {}
+  if (!v){
+    v = 'c-' + Math.random().toString(36).slice(2) + Date.now().toString(36);
+    try { localStorage.setItem(CID_KEY, v); } catch(e) {}
+  }
+  return v;
+}
+
+function esc(s){
+  return String(s).replace(/[&<>"']/g, function(m){
+    return ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' })[m];
+  });
+}
+function today(){
+  var d = new Date();
+  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+}
+
+/* ══════════════ 데이터 계층 ══════════════
+   api  : FastAPI 백엔드 (/api/*)
+   demo : 서버가 없을 때 localStorage 로 동작 (정적 파일로 열어도 체험 가능)
+   두 구현이 같은 인터페이스를 제공하므로 화면 코드는 동일합니다. */
+
+async function jfetch(url, opt){
+  var res = await fetch(url, Object.assign({ headers: { 'Content-Type': 'application/json' } }, opt || {}));
+  var data = null;
+  try { data = await res.json(); } catch(e) {}
+  if (!res.ok){
+    var msg = (data && (data.error || data.detail)) || ('요청 실패 (' + res.status + ')');
+    if (Array.isArray(msg)) msg = msg.map(function(d){ return d.msg; }).join('\n');
+    throw new Error(msg);
+  }
+  return data;
+}
+
+var api = {
+  async list(o){
+    var p = new URLSearchParams({ category: o.cat, q: o.q, sort: o.sort, size: '50' });
+    var d = await jfetch('/api/posts?' + p.toString());
+    return { items: d.items.map(fromApi), counts: d.counts };
+  },
+  async get(id){ return fromApi((await jfetch('/api/posts/' + id)).post); },
+  async create(p){
+    return fromApi((await jfetch('/api/posts', {
+      method: 'POST',
+      body: JSON.stringify({ category: p.cat, title: p.title, body: p.body, author: p.author })
+    })).post);
+  },
+  async comment(id, body){
+    return fromApi((await jfetch('/api/posts/' + id + '/comments', {
+      method: 'POST', body: JSON.stringify({ body: body, author: '나' })
+    })).post);
+  },
+  async like(id){
+    var d = await jfetch('/api/posts/' + id + '/like', {
+      method: 'POST', body: JSON.stringify({ client_id: clientId() })
+    });
+    return d.likes;
+  }
+};
+
+function fromApi(p){
+  return {
+    id: p.id, cat: p.category, title: p.title, body: p.body || '',
+    author: p.author, pinned: !!p.pinned, views: p.views,
+    likes: p.likes || 0, date: (p.created_at || '').slice(0, 10),
+    comments: (p.comments || []).map(function(c){
+      return { author: c.author, body: c.body, date: (c.created_at || '').slice(0, 10) };
+    }),
+    commentCount: p.comment_count != null ? p.comment_count : (p.comments || []).length
+  };
+}
+
+var demo = {
+  _all: function(){
+    try {
+      var raw = localStorage.getItem(KEY);
+      if (raw) return JSON.parse(raw);
+    } catch(e) {}
+    return SEED.slice();
+  },
+  _save: function(rows){ try { localStorage.setItem(KEY, JSON.stringify(rows)); } catch(e) {} },
+  async list(o){
+    var rows = demo._all();
+    var counts = { all: rows.length };
+    ['notice','free','review','partner','market'].forEach(function(k){
+      counts[k] = rows.filter(function(p){ return p.cat === k; }).length;
+    });
+    var q = o.q.toLowerCase();
+    var out = rows.filter(function(p){
+      if (o.cat !== 'all' && p.cat !== o.cat) return false;
+      if (!q) return true;
+      return (p.title + p.body + p.author).toLowerCase().indexOf(q) > -1;
+    });
+    out.sort(function(a,b){
+      if (a.pinned !== b.pinned) return a.pinned ? -1 : 1;
+      if (o.sort === 'view') return b.views - a.views;
+      if (o.sort === 'cmt')  return b.comments.length - a.comments.length;
+      return b.date.localeCompare(a.date) || b.id - a.id;
+    });
+    return { items: out.map(function(p){
+      return Object.assign({}, p, { commentCount: p.comments.length });
+    }), counts: counts };
+  },
+  async get(id){
+    var rows = demo._all();
+    var p = rows.filter(function(x){ return x.id === id; })[0];
+    if (!p) throw new Error('글을 찾을 수 없습니다.');
+    p.views++; demo._save(rows);
+    return Object.assign({}, p, { commentCount: p.comments.length });
+  },
+  async create(p){
+    var rows = demo._all();
+    var np = {
+      id: rows.length ? Math.max.apply(null, rows.map(function(x){ return x.id; })) + 1 : 1,
+      cat: p.cat, pinned: false, title: p.title, body: p.body, author: p.author,
+      date: today(), views: 0, likes: 0, comments: []
+    };
+    rows.unshift(np); demo._save(rows);
+    return Object.assign({}, np, { commentCount: 0 });
+  },
+  async comment(id, body){
+    var rows = demo._all();
+    var p = rows.filter(function(x){ return x.id === id; })[0];
+    p.comments.push({ author: '나', body: body, date: today() });
+    demo._save(rows);
+    return Object.assign({}, p, { commentCount: p.comments.length });
+  },
+  async like(id){
+    var rows = demo._all();
+    var p = rows.filter(function(x){ return x.id === id; })[0];
+    p.likes = (p.likes || 0) + 1; demo._save(rows);
+    return p.likes;
+  }
+};
+
+function store(){ return MODE === 'api' ? api : demo; }
+
+function toast(msg){
+  var el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('on');
+  clearTimeout(el._t);
+  el._t = setTimeout(function(){ el.classList.remove('on'); }, 3200);
+}
+
+/* ══════════════ 렌더 ══════════════ */
+function renderTabs(counts){
+  lastCounts = counts || lastCounts || {};
+  var order = ['all','notice','free','review','partner','market'];
+  document.getElementById('tabs').innerHTML = order.map(function(k){
+    var label = k === 'all' ? '전체' : CATS[k].label;
+    var n = lastCounts[k] != null ? lastCounts[k] : 0;
+    return '<button class="tab' + (curCat===k?' on':'') + '" data-cat="' + k + '">' +
+           label + '<span class="cnt">' + n + '</span></button>';
+  }).join('');
+  Array.prototype.forEach.call(document.querySelectorAll('.tab'), function(t){
+    t.addEventListener('click', function(){ curCat = t.dataset.cat; renderTabs(); refresh(); });
+  });
+}
+
+async function refresh(){
+  var el = document.getElementById('rows');
+  var opts = {
+    cat: curCat,
+    q: document.getElementById('q').value.trim(),
+    sort: document.getElementById('sort').value
+  };
+  try {
+    var d = await store().list(opts);
+    renderTabs(d.counts);
+    if (!d.items.length){
+      el.innerHTML = '<div class="empty">🔍 조건에 맞는 글이 없습니다.<br>첫 글을 남겨 주세요!</div>';
+      return;
+    }
+    el.innerHTML = d.items.map(function(p){
+      var c = CATS[p.cat];
+      return '<div class="row' + (p.pinned?' pin':'') + '" data-id="' + p.id + '">' +
+        '<div><span class="cat ' + c.cls + '">' + c.label + '</span></div>' +
+        '<div class="r-title">' +
+          (p.pinned ? '<span class="pin-b">고정</span>' : '') +
+          '<span class="t">' + esc(p.title) + '</span>' +
+          (p.commentCount ? '<span class="cm">' + p.commentCount + '</span>' : '') +
+        '</div>' +
+        '<div class="r-meta">' + esc(p.author) + '</div>' +
+        '<div class="r-date">' + String(p.date).slice(5).replace('-','.') + '</div>' +
+        '<div class="r-view">' + p.views + '</div>' +
+      '</div>';
+    }).join('');
+    Array.prototype.forEach.call(document.querySelectorAll('.row'), function(r){
+      r.addEventListener('click', function(){ openDetail(Number(r.dataset.id)); });
+    });
+  } catch(err){
+    el.innerHTML = '<div class="empty">⚠️ 목록을 불러오지 못했습니다.<br>' + esc(err.message) + '</div>';
+  }
+}
+
+async function openDetail(id){
+  try {
+    var p = await store().get(id);
+    curId = id; curPost = p;
+    var c = CATS[p.cat];
+    var dc = document.getElementById('dCat');
+    dc.className = 'cat ' + c.cls;
+    dc.textContent = c.label;
+    document.getElementById('dTitle').textContent = p.title;
+    document.getElementById('dAuthor').textContent = p.author;
+    document.getElementById('dDate').textContent = p.date;
+    document.getElementById('dViews').textContent = p.views;
+    document.getElementById('dBody').textContent = p.body;   // textContent → XSS 차단
+    document.getElementById('dLikes').textContent = p.likes;
+    document.getElementById('likeBtn').classList.remove('on');
+    renderComments(p);
+    document.getElementById('listView').style.display = 'none';
+    document.getElementById('detailView').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } catch(err){ toast(err.message); }
+}
+
+function renderComments(p){
+  document.getElementById('cCount').textContent = p.comments.length;
+  var el = document.getElementById('cmtList');
+  if (!p.comments.length){
+    el.innerHTML = '<p style="font-size:14px;color:#B3AB98;padding:8px 0">아직 댓글이 없습니다. 첫 댓글의 주인공이 되어 주세요 🌞</p>';
+    return;
+  }
+  el.innerHTML = p.comments.map(function(c){
+    return '<div class="cmt">' +
+      '<div class="av">' + esc(c.author.slice(0,1)) + '</div>' +
+      '<div class="cmt-b"><div class="who">' + esc(c.author) + '<span>' + c.date + '</span></div>' +
+      '<p>' + esc(c.body) + '</p></div></div>';
+  }).join('');
+}
+
+function backToList(){
+  document.getElementById('detailView').style.display = 'none';
+  document.getElementById('listView').style.display = 'block';
+  curId = null; curPost = null;
+  refresh();
+}
+
+/* ══════════════ 이벤트 ══════════════ */
+var qTimer = null;
+document.getElementById('q').addEventListener('input', function(){
+  clearTimeout(qTimer);
+  qTimer = setTimeout(refresh, 220);            // 서버 호출 디바운스
+});
+document.getElementById('sort').addEventListener('change', refresh);
+document.getElementById('backBtn').addEventListener('click', backToList);
+
+document.getElementById('likeBtn').addEventListener('click', async function(){
+  if (curId == null || this.classList.contains('on')) return;
+  var btn = this;
+  btn.classList.add('on');
+  try {
+    document.getElementById('dLikes').textContent = await store().like(curId);
+  } catch(err){ btn.classList.remove('on'); toast(err.message); }
+});
+
+document.getElementById('cmtBtn').addEventListener('click', addComment);
+document.getElementById('cmtInput').addEventListener('keydown', function(e){
+  if (e.key === 'Enter') addComment();
+});
+async function addComment(){
+  var input = document.getElementById('cmtInput');
+  var v = input.value.trim();
+  if (!v || curId == null) return;
+  var btn = document.getElementById('cmtBtn');
+  btn.disabled = true;
+  try {
+    var p = await store().comment(curId, v);
+    input.value = '';
+    curPost = p;
+    renderComments(p);
+  } catch(err){ toast(err.message); }
+  finally { btn.disabled = false; }
+}
+
+var modal = document.getElementById('modal');
+document.getElementById('writeBtn').addEventListener('click', function(){ modal.classList.add('on'); });
+document.getElementById('mClose').addEventListener('click', closeModal);
+document.getElementById('mCancel').addEventListener('click', closeModal);
+modal.addEventListener('click', function(e){ if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeModal(); });
+function closeModal(){ modal.classList.remove('on'); }
+
+document.getElementById('mSubmit').addEventListener('click', async function(){
+  var title = document.getElementById('wTitle').value.trim();
+  var body  = document.getElementById('wBody').value.trim();
+  var author= document.getElementById('wAuthor').value.trim() || '익명';
+  if (title.length < 2 || body.length < 2){ toast('제목과 내용을 2자 이상 입력해 주세요.'); return; }
+
+  var btn = this;
+  btn.disabled = true;
+  try {
+    await store().create({ cat: document.getElementById('wCat').value, title: title, body: body, author: author });
+    document.getElementById('wTitle').value = '';
+    document.getElementById('wBody').value = '';
+    closeModal();
+    curCat = 'all';
+    await refresh();
+    toast('글이 등록됐습니다 🌞');
+    window.scrollTo({ top: document.getElementById('listView').offsetTop - 80, behavior: 'smooth' });
+  } catch(err){ toast(err.message); }
+  finally { btn.disabled = false; }
+});
+
+/* ══════════════ 부팅 ══════════════ */
+(async function boot(){
+  try {
+    var ctl = new AbortController();
+    var t = setTimeout(function(){ ctl.abort(); }, 2500);
+    var r = await fetch('/api/health', { cache: 'no-store', signal: ctl.signal });
+    clearTimeout(t);
+    if (r.ok) MODE = 'api';
+  } catch(e) { MODE = 'demo'; }
+
+  var badge = document.getElementById('mode');
+  if (MODE === 'api'){
+    badge.className = 'mode on';
+    badge.textContent = '● 서버 연결됨';
+    badge.title = '게시글이 서버 DB에 저장됩니다';
+  } else {
+    badge.className = 'mode off';
+    badge.textContent = '● 데모 모드';
+    badge.title = '서버가 꺼져 있어 이 브라우저에만 저장됩니다';
+  }
+
+  renderTabs();
+  await refresh();
+})();
+</script>
+
+
+<script>
+/* 모바일 메뉴 토글 + 데스크톱 드롭다운 키보드/터치 지원 */
+(function(){
+  var t = document.getElementById('navToggle');
+  var n = document.getElementById('navLinks');
+  if (!t || !n) return;
+
+  function setOpen(v){
+    n.classList.toggle('open', v);
+    document.body.classList.toggle('nav-lock', v);
+    t.setAttribute('aria-expanded', v ? 'true' : 'false');
+    t.setAttribute('aria-label', v ? '메뉴 닫기' : '메뉴 열기');
+    if (v){
+      // 모바일: 현재 보고 있는 카테고리를 미리 펼쳐 둔다
+      var cur = n.querySelector('.nd.nd-on');
+      if (cur && window.innerWidth <= 1060 && !cur.classList.contains('open')){
+        cur.classList.add('open');
+        cur.querySelector('.nd-btn').setAttribute('aria-expanded','true');
+      }
+    }
+  }
+  t.addEventListener('click', function(){ setOpen(!n.classList.contains('open')); });
+
+  // 링크를 누르면 메뉴 닫기
+  n.addEventListener('click', function(e){
+    if (e.target.closest('a')) setOpen(false);
+  });
+
+  // 바깥 클릭 / ESC 로 닫기
+  function closeDropdowns(){
+    Array.prototype.forEach.call(document.querySelectorAll('.nd.open'), function(d){
+      d.classList.remove('open');
+      d.querySelector('.nd-btn').setAttribute('aria-expanded','false');
+    });
+  }
+  document.addEventListener('click', function(e){
+    if (!n.contains(e.target) && !t.contains(e.target)){
+      setOpen(false);
+      closeDropdowns();
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape'){
+      setOpen(false);
+      Array.prototype.forEach.call(document.querySelectorAll('.nd.open'), function(d){
+        d.classList.remove('open');
+        d.querySelector('.nd-btn').setAttribute('aria-expanded','false');
+      });
+    }
+  });
+
+  // 드롭다운: 데스크톱은 hover, 터치·키보드는 클릭으로도 열리게
+  Array.prototype.forEach.call(document.querySelectorAll('.nd'), function(d){
+    var b = d.querySelector('.nd-btn');
+    b.addEventListener('click', function(e){
+      e.stopPropagation();
+      var willOpen = !d.classList.contains('open');
+      Array.prototype.forEach.call(document.querySelectorAll('.nd'), function(o){
+        if (o !== d){ o.classList.remove('open'); o.querySelector('.nd-btn').setAttribute('aria-expanded','false'); }
+      });
+      d.classList.toggle('open', willOpen);
+      b.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+  });
+
+  // 뷰포트가 데스크톱으로 넓어지면 모바일 메뉴 상태 초기화
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 1060){ setOpen(false); document.body.classList.remove('nav-lock'); }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>처음 오시는 분 — 정관 피클볼 클럽 | First Visit</title>
+<meta name="description" content="피클볼이 처음이어도 걱정 마세요. 라켓 없어도, 혼자여도, 운동을 오래 쉬었어도 됩니다. 부산 정관 실내 코트에서 무료 체험을 신청하세요.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- AEO: 불안 5개를 검색 질의 그대로 — FAQPage 스키마와 본문 h2 동일 문장 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "피클볼 라켓이 없는데 가도 되나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "네. 패들과 공은 무료로 대여해 드립니다. 실내화만 신고 오시면 됩니다." } },
+    { "@type": "Question", "name": "혼자 가도 되나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "네. 체험과 소셜매치 모두 1인 신청이 기본입니다. 비슷한 실력의 참가자와 4인 복식으로 묶어 드립니다." } },
+    { "@type": "Question", "name": "운동을 안 한 지 오래됐는데 괜찮을까요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "네. 피클볼은 코트가 작고 공이 느려 40~60대가 가장 많이 즐기는 라켓 스포츠입니다. 첫날 20분이면 랠리가 가능합니다." } },
+    { "@type": "Question", "name": "피클볼 규칙을 몰라도 되나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "네. 첫 방문 때 코치가 5분 안에 핵심 규칙 4가지를 알려 드리고 바로 랠리로 넘어갑니다." } },
+    { "@type": "Question", "name": "피클볼 복장은 어떻게 입어야 하나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "움직이기 편한 평상복이면 충분합니다. 바닥이 미끄럽지 않은 실내화(운동화)만 준비해 주세요." } }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --sun:#FFB300;--sun-deep:#F57C00;--sun-soft:#FFF3D6;
+  --sky:#2FA8E0;--sky-soft:#E3F4FC;--leaf:#7CB342;--leaf-soft:#EEF6E3;
+  --cream:#FFFDF7;--ink:#33302B;--ink-soft:#7A7266;--line:#F0E8D8;--card:#FFFFFF;
+  --radius:20px;--shadow:0 10px 30px rgba(245,158,11,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font-family:'Pretendard','Malgun Gothic',system-ui,sans-serif;font-size:16px;line-height:1.7;letter-spacing:-0.01em;word-break:keep-all}
+img{max-width:100%}a{color:inherit;text-decoration:none}ul,ol{list-style:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+.chip{display:inline-flex;align-items:center;gap:7px;background:var(--sun-soft);color:#B26A00;font-family:'Outfit','Pretendard',sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:16px}
+.chip .ko{font-family:'Pretendard',sans-serif;letter-spacing:0;text-transform:none;font-size:12.5px;color:#C58A2A;font-weight:600;border-left:1px solid #EFD9A8;padding-left:9px}
+h2{font-size:clamp(24px,4.2vw,34px);font-weight:800;line-height:1.35;letter-spacing:-0.03em;margin-bottom:12px}
+.sec-sub{color:var(--ink-soft);font-size:16px;max-width:560px;margin-bottom:36px}
+section{padding:64px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:16px;border-radius:999px;padding:15px 30px;transition:transform .15s ease,box-shadow .15s ease;cursor:pointer;border:none}
+.btn:active{transform:scale(.97)}
+.btn-sun{background:linear-gradient(135deg,#FFC93C,#FFA726);color:#5C3A00;box-shadow:0 8px 22px rgba(255,167,38,.38)}
+.btn-sun:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(255,167,38,.48)}
+.btn-line{background:#fff;color:var(--ink);border:2px solid var(--line)}
+.btn-line:hover{border-color:var(--sun);color:#B26A00}
+.en-script{font-family:'Outfit',sans-serif;font-weight:600;font-style:italic;letter-spacing:.02em;color:#D9A93C}
+header{position:sticky;top:0;z-index:50;background:rgba(255,253,247,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:28px;height:66px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:-0.02em}
+.logo svg{flex:none}
+.logo-txt{display:flex;flex-direction:column;line-height:1.15}
+.logo-txt small{font-family:'Outfit',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:.22em;color:#D9A93C;text-transform:uppercase}
+.nav-links{display:flex;gap:24px;margin-left:auto;font-size:15px;font-weight:600;color:#5C554A}
+.nav-links a:hover{color:var(--sun-deep)}
+.nav-links a.active{color:var(--sun-deep)}
+.nav .btn{padding:10px 20px;font-size:14px;margin-left:8px}
+.page-hero{position:relative;overflow:hidden;background:radial-gradient(800px 420px at 85% -10%,rgba(255,214,79,.5),transparent 65%),radial-gradient(600px 380px at -10% 30%,rgba(179,229,252,.45),transparent 60%),linear-gradient(180deg,#FFFBEF 0%,var(--cream) 100%);padding:72px 0 60px}
+.page-hero h1{font-size:clamp(30px,4.8vw,46px);font-weight:900;line-height:1.28;letter-spacing:-0.04em;margin-bottom:14px}
+.page-hero h1 em{font-style:normal;color:var(--sun-deep)}
+.page-hero .sub{font-size:clamp(15px,2.1vw,18px);color:#5C554A;max-width:600px;margin-bottom:26px}
+.crumb{font-family:'Outfit','Pretendard',sans-serif;font-size:12.5px;color:#B3A886;margin-bottom:22px;font-weight:600}
+.crumb a:hover{color:var(--sun-deep)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{padding:14px 18px;text-align:left;border-bottom:1px solid #F6EFDF;vertical-align:top}
+thead th{background:#FFF8E8;color:#8A6A1F;font-size:13px;font-weight:800;letter-spacing:.04em;border-bottom:1px solid #F3E7C8;white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+.table-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #FBF3E2;overflow:hidden}
+/* 걱정 카드 */
+.worry{background:var(--card);border-radius:18px;border:1px solid #FBF3E2;box-shadow:var(--shadow);padding:26px 28px;margin-bottom:14px}
+.worry h3{font-size:18px;font-weight:800;letter-spacing:-0.02em;margin-bottom:8px;display:flex;gap:12px;align-items:baseline}
+.worry h3 .q{flex:none;font-family:'Outfit',sans-serif;font-size:13px;font-weight:800;color:#fff;background:var(--sun);border-radius:8px;padding:2px 9px}
+.worry p{color:#55503F;font-size:15px}
+.worry p b{color:var(--sun-deep)}
+/* 3단계 */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{background:var(--card);border-radius:var(--radius);padding:28px 26px;box-shadow:var(--shadow);border:1px solid #FBF3E2;position:relative}
+.step .num{width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:800;font-size:18px;margin-bottom:14px}
+.step:nth-child(1) .num{background:var(--sun-soft);color:#B26A00}
+.step:nth-child(2) .num{background:var(--sky-soft);color:#1A7FB5}
+.step:nth-child(3) .num{background:var(--leaf-soft);color:#558B2F}
+.step h3{font-size:17px;font-weight:800;margin-bottom:6px}
+.step .en{display:block;font-family:'Outfit',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.16em;color:#C9A85C;text-transform:uppercase;margin-bottom:8px}
+.step p{font-size:14px;color:var(--ink-soft)}
+/* 규칙 4컷 */
+.rules{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.rule{border-radius:18px;padding:24px 20px;text-align:center}
+.rule:nth-child(1){background:var(--sun-soft)}.rule:nth-child(2){background:var(--sky-soft)}
+.rule:nth-child(3){background:var(--leaf-soft)}.rule:nth-child(4){background:#F6EFFB}
+.rule .ico{font-size:34px;display:block;margin-bottom:10px}
+.rule h4{font-size:15.5px;font-weight:800;margin-bottom:6px}
+.rule p{font-size:13px;color:#6B6353}
+/* 폼 */
+.form-card{background:var(--card);border-radius:24px;box-shadow:0 16px 44px rgba(245,158,11,.14);border:1px solid #FBF3E2;padding:40px;max-width:640px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.f-field{display:flex;flex-direction:column;gap:7px}
+.f-field.full{grid-column:1/-1}
+.f-field label{font-size:13.5px;font-weight:800;color:#8A6A1F}
+.f-field input,.f-field select{font-family:inherit;font-size:15px;padding:13px 15px;border:1.5px solid #EFE6D2;border-radius:12px;background:#FFFDF7;color:var(--ink);outline:none;transition:border-color .15s}
+.f-field input:focus,.f-field select:focus{border-color:var(--sun)}
+.radio-row{display:flex;gap:10px;flex-wrap:wrap}
+.radio-row label{flex:1;min-width:100px;display:flex;align-items:center;justify-content:center;gap:6px;border:1.5px solid #EFE6D2;border-radius:12px;padding:11px 8px;font-size:14px;font-weight:600;color:#7A7266;cursor:pointer}
+.radio-row input{display:none}
+.radio-row input:checked+span{color:#B26A00;font-weight:800}
+.radio-row label:has(input:checked){border-color:var(--sun);background:var(--sun-soft)}
+.form-note{font-size:12.5px;color:#B3AB98;margin-top:14px}
+.form-ok{display:none;background:var(--leaf-soft);border:1.5px solid #C6E3A4;color:#3E6B1F;border-radius:14px;padding:18px 20px;font-weight:700;margin-top:18px}
+.form-err{display:none;background:#FDECEC;border:1.5px solid #F3C4C4;color:#B03A3A;border-radius:14px;padding:16px 20px;font-weight:700;margin-top:18px;font-size:14.5px;white-space:pre-line}
+.f-field input.bad,.f-field select.bad{border-color:#E88A8A;background:#FFF7F7}
+footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
+.foot-info{font-size:13.5px;color:#9A927F;line-height:1.9}
+.foot-info b{color:#6B6353}
+.updated{margin-top:20px;font-size:12.5px;color:#B3AB98}
+.kakao-fab{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;align-items:center;gap:9px;background:#FEE500;color:#191919;font-weight:800;font-size:14.5px;padding:14px 22px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.18);transition:transform .15s ease}
+.kakao-fab:hover{transform:translateY(-3px)}
+@media (max-width:720px){
+  section{padding:52px 0}
+  .nav-links{display:none}
+  .logo-txt small{display:none}
+  .steps{grid-template-columns:1fr}
+  .rules{grid-template-columns:repeat(2,1fr)}
+  .form-card{padding:26px 20px}
+  .form-grid{grid-template-columns:1fr}
+  th,td{padding:12px 12px;font-size:14px}
+}
+/* nav-6 */
+.nav{gap:20px}
+.nav-links{gap:19px;font-size:14.5px}
+@media (max-width:900px){.nav-links{display:none}}
+
+/* photo-band */
+.pband{margin:34px 0 0;border-radius:22px;overflow:hidden;position:relative;box-shadow:0 16px 40px rgba(245,158,11,.18);border:5px solid #fff}
+.pband img{width:100%;height:clamp(190px,30vw,320px);object-fit:cover;display:block}
+.pband figcaption{position:absolute;left:18px;bottom:16px;background:rgba(255,255,255,.93);color:#7A5A12;font-size:13px;font-weight:800;padding:8px 16px;border-radius:999px;box-shadow:0 6px 16px rgba(0,0,0,.12)}
+
+/* ══════════ nav v2 — 카테고리 드롭다운 + 모바일 메뉴 ══════════ */
+.nav{gap:16px}
+.nav-links{display:flex;align-items:center;gap:16px;margin-left:auto;font-size:14px;font-weight:600;color:#5C554A}
+.nav-links > a{white-space:nowrap}
+.nav-links > a.active,.nd.nd-on > .nd-btn{color:var(--sun-deep)}
+.nd{position:relative}
+.nd::after{content:"";position:absolute;left:0;right:0;top:100%;height:16px}
+.nd-btn{background:none;border:none;padding:0;font:inherit;color:inherit;cursor:pointer;display:flex;align-items:center;gap:4px;white-space:nowrap}
+.nd-btn i{font-style:normal;font-size:9px;opacity:.5;transition:transform .16s}
+.nd-btn:hover,.nd:hover > .nd-btn{color:var(--sun-deep)}
+.nd:hover > .nd-btn i,.nd.open > .nd-btn i{transform:rotate(180deg)}
+.nd-menu{
+  position:absolute;top:calc(100% + 16px);left:50%;
+  transform:translateX(-50%) translateY(-6px);
+  background:#fff;border:1px solid var(--line);border-radius:16px;
+  box-shadow:0 18px 44px rgba(120,90,20,.16);padding:10px;min-width:210px;
+  display:flex;flex-direction:column;gap:2px;
+  opacity:0;visibility:hidden;transition:opacity .16s,transform .16s,visibility .16s;z-index:70;
+}
+.nd:hover > .nd-menu,.nd:focus-within > .nd-menu,.nd.open > .nd-menu{
+  opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);
+}
+.nd-menu a{padding:10px 14px;border-radius:10px;font-size:14px;color:#5C554A;white-space:nowrap}
+.nd-menu a:hover{background:var(--sun-soft);color:#B26A00}
+.nd-menu a b{font-weight:800}
+.nav-mcta{display:none}
+.navtoggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;
+  margin-left:auto;background:none;border:1.5px solid var(--line);border-radius:12px;cursor:pointer;padding:0 10px}
+.navtoggle span{display:block;height:2px;background:#7A7266;border-radius:2px;transition:.2s}
+.navtoggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.navtoggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.navtoggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media (max-width:1060px){
+  .nav .btn{display:none}
+  .navtoggle{display:flex}
+  /* 전체 화면 시트 — 내부에서만 스크롤 */
+  .nav-links{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:#FFFDF7;border-top:1px solid var(--line);
+    box-shadow:0 22px 40px rgba(120,90,20,.16);
+    padding:6px 18px 30px;
+    max-height:calc(100dvh - 66px);max-height:calc(100vh - 66px);
+    overflow-y:auto;overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;z-index:80;
+  }
+  .nav-links.open{display:flex}
+  .nav-links > a{padding:15px 8px;border-bottom:1px solid #F6EFDF;font-size:16px;font-weight:700}
+  .nd{border-bottom:1px solid #F6EFDF;position:static}
+  .nd::after{display:none}
+  .nd-btn{width:100%;padding:15px 8px;font-size:16px;font-weight:700}
+  .nd-btn i{margin-left:auto;opacity:.45;font-size:11px}
+  /* 아코디언 — 누른 카테고리만 아래로 펼쳐집니다 (옆으로 나가지 않도록 강제) */
+  .nd-menu{
+    position:static !important;
+    transform:none !important;
+    inset:auto !important;
+    width:auto !important;max-width:100% !important;min-width:0 !important;
+    background:transparent;border:none;box-shadow:none;
+    padding:0 0 10px 14px;gap:0;
+    display:none;opacity:1;visibility:visible;transition:none;
+  }
+  .nd.open > .nd-menu,
+  .nd:hover > .nd-menu,
+  .nd:focus-within > .nd-menu{display:none}
+  .nd.open > .nd-menu{display:flex}
+  .nd-menu a{padding:12px 10px;font-size:14.5px;color:#8A8272;white-space:normal}
+  .nav-mcta{margin-top:18px;display:block}
+  .nav-mcta .btn{display:inline-flex;width:100%}
+  .kakao-fab{z-index:40}
+  body.nav-lock{overflow:hidden}
+}
+
+/* ══════════ btn-fix — 줄바꿈 시 가운데 정렬 + 좁은 화면 CTA 스택 ══════════ */
+.btn{text-align:center;line-height:1.35}
+.btn > *{flex:none}
+@media (max-width:560px){
+  .hero-cta{gap:10px}
+  .hero-cta .btn{flex:1 1 100%;min-width:0;width:100%;padding:16px 22px}
+  .cta-band .hero-cta .btn,
+  .cta-band a.btn{flex:1 1 100%;width:100%}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html">
+      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
+        <circle cx="15" cy="15" r="13" fill="#FFC93C"/><circle cx="15" cy="15" r="13" fill="none" stroke="#F57C00" stroke-width="2"/>
+        <circle cx="10.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="19.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="15" cy="17.5" r="1.7" fill="#F57C00"/>
+        <circle cx="9.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="20.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="15" cy="7.5" r="1.7" fill="#F57C00"/>
+      </svg>
+      <span class="logo-txt">정관 피클볼 클럽<small>Jeonggwan Pickleball Club</small></span>
+    </a>
+    <button class="navtoggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">홈</a>
+      <a href="first-visit.html" class="active">처음 오시는 분</a>
+
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false">프로그램<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="social.html">🤝 소셜매치 — 혼자 와도 OK</a>
+          <a href="junior.html">🧒 유소년 아카데미</a>
+          <a href="first-visit.html#trial-form">🌱 무료 체험·입문 클래스</a>
+        </div>
+      </div>
+
+      <a href="pricing.html">이용요금</a>
+
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false">가이드<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="guide.html"><b>📚 가이드 전체 보기</b></a>
+          <a href="what-is-pickleball.html">피클볼이 뭔가요?</a>
+          <a href="pickleball-what-to-prepare.html">뭘 준비해야 하나요?</a>
+          <a href="pickleball-alone.html">혼자 가도 되나요?</a>
+          <a href="kids-pickleball.html">초등학생도 되나요?</a>
+          <a href="pickleball-lesson-cost.html">레슨 비용은 얼마?</a>
+        </div>
+      </div>
+
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false">커뮤니티<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="board.html">💬 게시판</a>
+          <a href="events.html">🏆 대회 · 정관 리그</a>
+        </div>
+      </div>
+
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false">오시는 길<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="index.html#location">📍 위치 · 주차 안내</a>
+          <a href="pickleball-jeonggwan.html">정관에서 오시는 분</a>
+          <a href="pickleball-gijang.html">기장에서 오시는 분</a>
+          <a href="pickleball-busan.html">부산 도심에서 오시는 분</a>
+        </div>
+      </div>
+      <div class="nav-mcta"><a class="btn btn-sun" href="first-visit.html#trial-form">🎾 무료 체험 신청</a></div>
+    </nav>
+    <a class="btn btn-sun" href="#trial-form">무료 체험 신청</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="index.html">HOME</a> / FIRST VISIT</p>
+    <span class="chip">🌱 First Visit<span class="ko">처음이신가요?</span></span>
+    <h1>처음이신가요?<br><em>잘 오셨어요.</em></h1>
+    <p class="sub">여기 오시는 분 열에 아홉은 피클볼이 처음입니다. 방문을 망설이게 하는 걱정들, 하나씩 지워 드릴게요. <span class="en-script">Everyone starts somewhere.</span></p>
+    <a class="btn btn-sun" href="#trial-form">🎾 무료 체험 신청하기</a>
+  </div>
+  <div class="wrap">
+    <figure class="pband">
+      <img src="assets/solo.jpg" data-fallback="https://images.unsplash.com/photo-1779862766057-0929f1b077f4?q=80&w=900&auto=format&fit=crop" alt="실내 코트에서 패들을 들고 공을 받아치는 초보 플레이어" loading="lazy">
+      <figcaption>🌱 첫 방문 20분이면 랠리가 됩니다</figcaption>
+    </figure>
+  </div>
+
+</section>
+
+<!-- 걱정 5가지 — 검색 질의 그대로 제목 (AEO) -->
+<section>
+  <div class="wrap">
+    <span class="chip">💬 No Worries<span class="ko">이런 걱정, 안 하셔도 됩니다</span></span>
+    <h2>이런 걱정, 안 하셔도 됩니다</h2>
+    <p class="sec-sub">가장 많이 듣는 다섯 가지 걱정에 먼저 답해 드립니다.</p>
+
+    <div class="worry">
+      <h3><span class="q">Q1</span>피클볼 라켓이 없는데 가도 되나요?</h3>
+      <p><b>네.</b> 패들과 공은 무료로 대여해 드립니다. 실내화만 신고 오시면 됩니다. 대여 패들은 20개 이상 준비되어 있어 단체로 오셔도 충분합니다.</p>
+    </div>
+    <div class="worry">
+      <h3><span class="q">Q2</span>혼자 가도 되나요?</h3>
+      <p><b>네.</b> 체험과 소셜매치 모두 1인 신청이 기본입니다. 비슷한 실력의 참가자와 4인 복식으로 묶어 드리고, 참가자의 절반 이상이 혼자 오신 분들입니다.</p>
+    </div>
+    <div class="worry">
+      <h3><span class="q">Q3</span>운동을 안 한 지 오래됐는데 괜찮을까요?</h3>
+      <p><b>네.</b> 피클볼은 코트가 배드민턴 코트 크기로 작고 공이 느려, 40~60대가 가장 많이 즐기는 라켓 스포츠입니다. 첫날 20분이면 랠리가 가능합니다.</p>
+    </div>
+    <div class="worry">
+      <h3><span class="q">Q4</span>규칙을 하나도 모르는데요?</h3>
+      <p><b>괜찮습니다.</b> 첫 방문 때 코치가 5분 안에 핵심 규칙 4가지를 알려 드리고 바로 랠리로 넘어갑니다. 아래 '3분 규칙 요약'만 읽고 오셔도 충분합니다.</p>
+    </div>
+    <div class="worry">
+      <h3><span class="q">Q5</span>옷은 뭘 입고 가죠?</h3>
+      <p><b>편한 평상복이면 충분합니다.</b> 바닥이 미끄럽지 않은 실내화(운동화)만 준비해 주세요. 락커와 탈의 공간이 있어 퇴근길에 오셔도 됩니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 준비물 표 -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="chip">🎒 What to Bring<span class="ko">준비물</span></span>
+    <h2>가져오실 건 사실 거의 없어요</h2>
+    <div class="table-card">
+      <table>
+        <thead><tr><th style="width:33%">✅ 직접 준비하실 것</th><th style="width:33%">🎁 저희가 드리는 것</th><th>🙅 안 가져와도 되는 것</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>실내화(미끄럽지 않은 운동화)<br>편한 복장<br>물 또는 음료</td>
+            <td>패들 무료 대여<br>피클볼 공<br>첫 방문 안내·규칙 설명</td>
+            <td>라켓·장비 일체<br>피클볼 경험<br>같이 칠 사람</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 첫 방문 3단계 -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="chip">🚶 3 Steps<span class="ko">첫 방문은 이렇게</span></span>
+    <h2>도착부터 첫 경기까지, 30분</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <span class="en">Arrive</span>
+        <h3>도착 · 주차</h3>
+        <p>예약 시간 10분 전에 오세요. 건물 전용 주차장 30면이 무료입니다. 2층 데스크에서 이름만 말씀하시면 됩니다.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <span class="en">Warm-up</span>
+        <h3>안내 · 장비</h3>
+        <p>패들을 고르고, 코치가 5분 동안 핵심 규칙과 그립을 알려 드립니다. 가벼운 스트레칭 후 코트로 들어갑니다.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <span class="en">Play!</span>
+        <h3>첫 랠리 · 경기</h3>
+        <p>코치와 랠리로 감을 잡고, 원하시면 바로 미니 게임까지. 체험이 끝나면 이번 주 소셜매치 일정을 안내해 드려요.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 규칙 3분 요약 -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="chip">📖 Rules in 3 min<span class="ko">규칙 3분 요약</span></span>
+    <h2>규칙은 이 네 가지가 전부입니다</h2>
+    <div class="rules">
+      <div class="rule">
+        <span class="ico">🎾</span>
+        <h4>서브는 아래에서</h4>
+        <p>허리 아래에서 올려 칩니다. 대각선 방향 상대 코트로 넣으면 성공.</p>
+      </div>
+      <div class="rule">
+        <span class="ico">⏸️</span>
+        <h4>투 바운스 룰</h4>
+        <p>서브 후 양 팀 각각 한 번씩 공을 바닥에 튀긴 뒤부터 발리가 가능합니다.</p>
+      </div>
+      <div class="rule">
+        <span class="ico">🚫</span>
+        <h4>키친(논발리존)</h4>
+        <p>네트 앞 2.13m 구역 안에서는 공중볼(발리)을 칠 수 없습니다.</p>
+      </div>
+      <div class="rule">
+        <span class="ico">🏆</span>
+        <h4>11점 · 2점 차 승리</h4>
+        <p>11점을 먼저 내면 승리. 10:10이면 2점 차가 날 때까지 계속합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 무료 체험 신청 폼 — 이 페이지의 유일한 CTA -->
+<section id="trial-form" style="background:linear-gradient(160deg,#FFF6DE 0%,#FFFDF7 80%);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <span class="chip">☀️ Free Trial<span class="ko">무료 체험 신청</span></span>
+    <h2>이번 주, 코트에서 만나요</h2>
+    <p class="sec-sub">신청하시면 카카오톡으로 확정 안내를 보내 드립니다. 체험은 무료이고, 어떤 결제 정보도 받지 않습니다.</p>
+    <!-- 서버 연결 시 POST /api/trials 로 접수됩니다. -->
+    <form class="form-card" id="trialForm" novalidate>
+      <div class="form-grid">
+        <div class="f-field">
+          <label for="f-name">이름</label>
+          <input id="f-name" type="text" placeholder="홍길동" required>
+        </div>
+        <div class="f-field">
+          <label for="f-phone">연락처</label>
+          <input id="f-phone" type="tel" placeholder="010-0000-0000" required>
+        </div>
+        <div class="f-field">
+          <label for="f-day">희망 요일</label>
+          <select id="f-day">
+            <option>화요일 저녁 (19:30)</option>
+            <option>목요일 저녁 (19:30)</option>
+            <option>토요일 오전 (10:00)</option>
+            <option>토요일 오후 (15:00)</option>
+          </select>
+        </div>
+        <div class="f-field">
+          <label for="f-count">인원</label>
+          <select id="f-count">
+            <option>1명 (혼자 가요)</option>
+            <option>2명</option>
+            <option>3명</option>
+            <option>4명 이상</option>
+          </select>
+        </div>
+        <div class="f-field full">
+          <label>피클볼 경험</label>
+          <div class="radio-row">
+            <label><input type="radio" name="exp" value="first" checked><span>🌱 처음이에요</span></label>
+            <label><input type="radio" name="exp" value="some"><span>🙂 몇 번 쳐봤어요</span></label>
+            <label><input type="radio" name="exp" value="regular"><span>🔥 자주 칩니다</span></label>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:24px">
+        <button class="btn btn-sun" type="submit" id="trialSubmit" style="width:100%">무료 체험 신청하기</button>
+      </div>
+      <div class="form-ok" id="trialOk">✅ 신청이 접수됐습니다! 카카오톡으로 확정 안내를 보내 드릴게요.</div>
+      <div class="form-err" id="trialErr"></div>
+      <p class="form-note">※ 수집한 연락처는 체험 안내 외 용도로 사용하지 않으며, 안내 후 6개월 내 파기합니다.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="foot-info">
+      <b>정관 피클볼 클럽 · Jeonggwan Pickleball Club</b><br>
+      부산광역시 기장군 정관읍 ○○로 00 (2층) · 051-000-0000<br>
+      평일 09:00–23:00 · 주말 08:00–22:00 · 연중무휴
+    </p>
+    <p class="updated">최종 수정일: 2026년 7월 29일 · © 2026 Jeonggwan Pickleball Club, Busan, Korea.</p>
+  </div>
+</footer>
+
+<a class="kakao-fab" href="#" aria-label="카카오 채널 상담">
+  <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#191919" d="M12 3C6.48 3 2 6.58 2 11c0 2.84 1.86 5.33 4.64 6.74l-.95 3.52c-.08.3.25.54.51.37l4.18-2.77c.53.07 1.07.14 1.62.14 5.52 0 10-3.58 10-8S17.52 3 12 3z"/></svg>
+  카카오 상담
+</a>
+
+<script>
+/* 무료 체험 신청 — 서버(/api/trials) 연결, 서버가 없으면 데모 응답 */
+(function(){
+  var form = document.getElementById('trialForm');
+  if (!form) return;
+  var okBox  = document.getElementById('trialOk');
+  var errBox = document.getElementById('trialErr');
+  var btn    = document.getElementById('trialSubmit');
+  var PHONE  = /^01[0-9][-\s]?\d{3,4}[-\s]?\d{4}$/;
+
+  function showErr(msg){
+    errBox.textContent = msg;
+    errBox.style.display = 'block';
+    okBox.style.display = 'none';
+  }
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    errBox.style.display = 'none';
+
+    var name  = document.getElementById('f-name');
+    var phone = document.getElementById('f-phone');
+    [name, phone].forEach(function(el){ el.classList.remove('bad'); });
+
+    if (!name.value.trim()){
+      name.classList.add('bad'); name.focus();
+      return showErr('이름을 입력해 주세요.');
+    }
+    if (!PHONE.test(phone.value.trim())){
+      phone.classList.add('bad'); phone.focus();
+      return showErr('휴대폰 번호 형식을 확인해 주세요. (예: 010-1234-5678)');
+    }
+
+    var payload = {
+      name: name.value.trim(),
+      phone: phone.value.trim(),
+      slot: document.getElementById('f-day').value,
+      headcount: document.getElementById('f-count').value,
+      experience: (document.querySelector('input[name="exp"]:checked') || {}).value || 'first',
+      source: 'first-visit'
+    };
+
+    btn.disabled = true;
+    var prev = btn.textContent;
+    btn.textContent = '접수 중…';
+    try {
+      var res = await fetch('/api/trials', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      var data = null;
+      try { data = await res.json(); } catch(_) {}
+
+      if (res.ok){
+        okBox.textContent = '✅ ' + ((data && data.message) || '신청이 접수됐습니다!');
+        okBox.style.display = 'block';
+        form.querySelectorAll('input[type=text],input[type=tel]').forEach(function(i){ i.value=''; });
+        return;                                   // 버튼은 비활성 유지(중복 제출 방지)
+      }
+      var msg = (data && (data.error || data.detail)) || ('접수에 실패했습니다 (' + res.status + ')');
+      if (Array.isArray(msg)) msg = msg.map(function(d){ return d.msg; }).join('\n');
+      showErr(msg);
+      btn.disabled = false; btn.textContent = prev;
+    } catch(err){
+      // 서버 미가동(정적 파일로 열람) — 데모 안내
+      okBox.textContent = '✅ (데모) 신청 화면이 정상 동작합니다. 서버 연결 시 실제로 접수됩니다.';
+      okBox.style.display = 'block';
+    }
+  });
+})();
+</script>
+
+
+<script>
+/* 사진 시스템 — assets/*.jpg 가 있으면 그것을, 없으면 예시 이미지를 사용합니다.
+   실제 촬영본을 public/assets/ 에 같은 이름으로 넣기만 하면 즉시 반영됩니다. */
+(function(){
+  function fit(img){
+    var r = img.naturalWidth / img.naturalHeight;
+    if (!r) return;
+    if (img.classList.contains('hero-img')){
+      // 세로 사진은 인물 상반신이 살도록 3:4로, 그 외에는 원본 비율 그대로(무크롭).
+      if (r < 0.85){                                   // 세로 사진
+        img.style.aspectRatio = '3 / 4';
+        img.style.objectPosition = '50% 20%';
+      } else if (r > 1.6){                             // 지나치게 넓은 사진
+        img.style.aspectRatio = '3 / 2';
+        img.style.objectPosition = '50% 40%';
+      } else {                                         // 일반 가로 사진 — 원본 비율
+        img.style.aspectRatio = String(r.toFixed(3));
+        img.style.objectPosition = '50% 40%';
+      }
+    }
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('img[data-fallback]'), function(img){
+    img.addEventListener('error', function(){
+      if (img.dataset.fellBack) return;
+      img.dataset.fellBack = '1';
+      img.src = img.dataset.fallback;
+    });
+    if (img.complete && img.naturalWidth) fit(img);
+    img.addEventListener('load', function(){ fit(img); });
+  });
+})();
+</script>
+
+<script>
+/* 모바일 메뉴 토글 + 데스크톱 드롭다운 키보드/터치 지원 */
+(function(){
+  var t = document.getElementById('navToggle');
+  var n = document.getElementById('navLinks');
+  if (!t || !n) return;
+
+  function setOpen(v){
+    n.classList.toggle('open', v);
+    document.body.classList.toggle('nav-lock', v);
+    t.setAttribute('aria-expanded', v ? 'true' : 'false');
+    t.setAttribute('aria-label', v ? '메뉴 닫기' : '메뉴 열기');
+    if (v){
+      // 모바일: 현재 보고 있는 카테고리를 미리 펼쳐 둔다
+      var cur = n.querySelector('.nd.nd-on');
+      if (cur && window.innerWidth <= 1060 && !cur.classList.contains('open')){
+        cur.classList.add('open');
+        cur.querySelector('.nd-btn').setAttribute('aria-expanded','true');
+      }
+    }
+  }
+  t.addEventListener('click', function(){ setOpen(!n.classList.contains('open')); });
+
+  // 링크를 누르면 메뉴 닫기
+  n.addEventListener('click', function(e){
+    if (e.target.closest('a')) setOpen(false);
+  });
+
+  // 바깥 클릭 / ESC 로 닫기
+  function closeDropdowns(){
+    Array.prototype.forEach.call(document.querySelectorAll('.nd.open'), function(d){
+      d.classList.remove('open');
+      d.querySelector('.nd-btn').setAttribute('aria-expanded','false');
+    });
+  }
+  document.addEventListener('click', function(e){
+    if (!n.contains(e.target) && !t.contains(e.target)){
+      setOpen(false);
+      closeDropdowns();
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape'){
+      setOpen(false);
+      Array.prototype.forEach.call(document.querySelectorAll('.nd.open'), function(d){
+        d.classList.remove('open');
+        d.querySelector('.nd-btn').setAttribute('aria-expanded','false');
+      });
+    }
+  });
+
+  // 드롭다운: 데스크톱은 hover, 터치·키보드는 클릭으로도 열리게
+  Array.prototype.forEach.call(document.querySelectorAll('.nd'), function(d){
+    var b = d.querySelector('.nd-btn');
+    b.addEventListener('click', function(e){
+      e.stopPropagation();
+      var willOpen = !d.classList.contains('open');
+      Array.prototype.forEach.call(document.querySelectorAll('.nd'), function(o){
+        if (o !== d){ o.classList.remove('open'); o.querySelector('.nd-btn').setAttribute('aria-expanded','false'); }
+      });
+      d.classList.toggle('open', willOpen);
+      b.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+  });
+
+  // 뷰포트가 데스크톱으로 넓어지면 모바일 메뉴 상태 초기화
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 1060){ setOpen(false); document.body.classList.remove('nav-lock'); }
+  });
+})();
+</script>
+</body>
+</html>

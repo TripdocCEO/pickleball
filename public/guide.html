@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>피클볼 가이드 — 규칙·준비물·시작하기 | 정관 피클볼 클럽</title>
+<meta name="description" content="피클볼이 뭔가요? 규칙, 준비물, 라켓 대여, 혼자 가도 되는지까지 — 처음 시작하는 사람의 질문에 답부터 하는 피클볼 가이드.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- AEO 엔진: 질문형 제목 + 답 먼저 스니펫 (기획서 §03 /guide) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "피클볼 가이드",
+  "description": "피클볼 입문·규칙·장비·실력 향상 가이드 모음",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "피클볼이 뭔가요? 5분이면 이해하는 규칙과 매력" },
+      { "@type": "ListItem", "position": 2, "name": "피클볼 처음인데 뭘 준비해야 하나요" },
+      { "@type": "ListItem", "position": 3, "name": "라켓이 없어도 피클볼을 칠 수 있나요" },
+      { "@type": "ListItem", "position": 4, "name": "혼자 가도 피클볼을 칠 수 있나요" },
+      { "@type": "ListItem", "position": 5, "name": "테니스와 피클볼은 무엇이 다른가요" },
+      { "@type": "ListItem", "position": 6, "name": "부산 정관에서 피클볼 칠 수 있는 곳" },
+      { "@type": "ListItem", "position": 7, "name": "초등학생도 피클볼을 배울 수 있나요" },
+      { "@type": "ListItem", "position": 8, "name": "무릎이 안 좋은데 피클볼 괜찮을까요" },
+      { "@type": "ListItem", "position": 9, "name": "피클볼과 배드민턴, 뭐가 더 쉬운가요" },
+      { "@type": "ListItem", "position": 10, "name": "피클볼 레슨 비용은 얼마인가요" },
+      { "@type": "ListItem", "position": 11, "name": "실내 피클볼과 실외 피클볼의 차이" },
+      { "@type": "ListItem", "position": 12, "name": "피클볼 패들 처음 살 때 보는 것 세 가지" }
+    ]
+  }
+}
+</script>
+
+<style>
+:root{
+  --sun:#FFB300;--sun-deep:#F57C00;--sun-soft:#FFF3D6;
+  --sky:#2FA8E0;--sky-soft:#E3F4FC;--leaf:#7CB342;--leaf-soft:#EEF6E3;
+  --cream:#FFFDF7;--ink:#33302B;--ink-soft:#7A7266;--line:#F0E8D8;--card:#FFFFFF;
+  --radius:20px;--shadow:0 10px 30px rgba(245,158,11,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font-family:'Pretendard','Malgun Gothic',system-ui,sans-serif;font-size:16px;line-height:1.7;letter-spacing:-0.01em;word-break:keep-all}
+img{max-width:100%}a{color:inherit;text-decoration:none}ul,ol{list-style:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+.chip{display:inline-flex;align-items:center;gap:7px;background:var(--sun-soft);color:#B26A00;font-family:'Outfit','Pretendard',sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:16px}
+.chip .ko{font-family:'Pretendard',sans-serif;letter-spacing:0;text-transform:none;font-size:12.5px;color:#C58A2A;font-weight:600;border-left:1px solid #EFD9A8;padding-left:9px}
+h2{font-size:clamp(24px,4.2vw,34px);font-weight:800;line-height:1.35;letter-spacing:-0.03em;margin-bottom:12px}
+.sec-sub{color:var(--ink-soft);font-size:16px;max-width:580px;margin-bottom:36px}
+section{padding:64px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:16px;border-radius:999px;padding:15px 30px;transition:transform .15s ease,box-shadow .15s ease;cursor:pointer;border:none}
+.btn:active{transform:scale(.97)}
+.btn-sun{background:linear-gradient(135deg,#FFC93C,#FFA726);color:#5C3A00;box-shadow:0 8px 22px rgba(255,167,38,.38)}
+.btn-sun:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(255,167,38,.48)}
+.btn-line{background:#fff;color:var(--ink);border:2px solid var(--line)}
+.btn-line:hover{border-color:var(--sun);color:#B26A00}
+.en-script{font-family:'Outfit',sans-serif;font-weight:600;font-style:italic;letter-spacing:.02em;color:#D9A93C}
+header{position:sticky;top:0;z-index:50;background:rgba(255,253,247,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:24px;height:66px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:-0.02em}
+.logo svg{flex:none}
+.logo-txt{display:flex;flex-direction:column;line-height:1.15}
+.logo-txt small{font-family:'Outfit',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:.22em;color:#D9A93C;text-transform:uppercase}
+.nav-links{display:flex;gap:22px;margin-left:auto;font-size:15px;font-weight:600;color:#5C554A}
+.nav-links a:hover{color:var(--sun-deep)}
+.nav-links a.active{color:var(--sun-deep)}
+.nav .btn{padding:10px 20px;font-size:14px;margin-left:8px}
+.page-hero{position:relative;overflow:hidden;background:radial-gradient(800px 420px at 85% -10%,rgba(255,214,79,.5),transparent 65%),radial-gradient(600px 380px at -10% 30%,rgba(179,229,252,.45),transparent 60%),linear-gradient(180deg,#FFFBEF 0%,var(--cream) 100%);padding:72px 0 60px}
+.page-hero h1{font-size:clamp(30px,4.8vw,46px);font-weight:900;line-height:1.28;letter-spacing:-0.04em;margin-bottom:14px}
+.page-hero h1 em{font-style:normal;color:var(--sun-deep)}
+.page-hero .sub{font-size:clamp(15px,2.1vw,18px);color:#5C554A;max-width:620px;margin-bottom:10px}
+.crumb{font-family:'Outfit','Pretendard',sans-serif;font-size:12.5px;color:#B3A886;margin-bottom:22px;font-weight:600}
+.crumb a:hover{color:var(--sun-deep)}
+/* 카테고리 필 */
+.cats{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.cat{font-family:'Outfit','Pretendard',sans-serif;font-size:13.5px;font-weight:700;padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:#7A7266}
+.cat.on{background:var(--sun-soft);border-color:#F3D9A0;color:#B26A00}
+/* 아티클 카드 */
+.arts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.art{background:var(--card);border-radius:var(--radius);border:1px solid #FBF3E2;box-shadow:var(--shadow);padding:26px 26px 22px;display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .18s ease}
+.art:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(245,158,11,.16)}
+.art .tag{align-self:flex-start;font-family:'Outfit','Pretendard',sans-serif;font-size:11px;font-weight:800;letter-spacing:.08em;padding:4px 11px;border-radius:999px;margin-bottom:14px}
+.tag.t1{background:var(--sun-soft);color:#B26A00}
+.tag.t2{background:var(--sky-soft);color:#1A7FB5}
+.tag.t3{background:var(--leaf-soft);color:#558B2F}
+.tag.t4{background:#F6EFFB;color:#8E56B8}
+.art h3{font-size:17px;font-weight:800;line-height:1.45;letter-spacing:-0.02em;margin-bottom:10px}
+.art .ans{font-size:13.5px;color:#6B6353;line-height:1.65;flex:1}
+.art .ans b{color:var(--sun-deep)}
+.art .meta{display:flex;align-items:center;justify-content:space-between;margin-top:16px;padding-top:14px;border-top:1px solid #F6EFDF}
+.art .date{font-family:'Outfit',sans-serif;font-size:11.5px;color:#B3AB98;font-weight:600}
+.art .read{font-size:13.5px;font-weight:800;color:var(--sky)}
+/* 발행 예정 */
+.soon{background:#FFFCF3;border:1.5px dashed #EFD9A8;border-radius:var(--radius);padding:26px 30px}
+.soon h4{font-size:15px;font-weight:800;color:#8A6A1F;margin-bottom:12px}
+.soon li{display:inline-block;font-size:13.5px;color:#9A8A63;background:#fff;border:1px solid #F3E7C8;border-radius:999px;padding:6px 14px;margin:0 8px 8px 0}
+.cta-band{background:radial-gradient(700px 360px at 50% -40%,rgba(255,214,79,.6),transparent 70%),linear-gradient(160deg,#FFF3D6,#FFE9B8);border-radius:28px;text-align:center;padding:56px 28px}
+.cta-band h2{margin-bottom:10px}
+.cta-band p{color:#7A6636;margin-bottom:26px}
+footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
+.foot-info{font-size:13.5px;color:#9A927F;line-height:1.9}
+.foot-info b{color:#6B6353}
+.updated{margin-top:20px;font-size:12.5px;color:#B3AB98}
+.kakao-fab{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;align-items:center;gap:9px;background:#FEE500;color:#191919;font-weight:800;font-size:14.5px;padding:14px 22px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.18);transition:transform .15s ease}
+.kakao-fab:hover{transform:translateY(-3px)}
+@media (max-width:900px){.arts{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:720px){
+  section{padding:52px 0}
+  .nav-links{display:none}
+  .logo-txt small{display:none}
+  .arts{grid-template-columns:1fr}
+}
+/* nav-6 */
+.nav{gap:20px}
+.nav-links{gap:19px;font-size:14.5px}
+@media (max-width:900px){.nav-links{display:none}}
+
+/* ══════════ nav v2 — 카테고리 드롭다운 + 모바일 메뉴 ══════════ */
+.nav{gap:16px}
+.nav-links{display:flex;align-items:center;gap:16px;margin-left:auto;font-size:14px;font-weight:600;color:#5C554A}
+.nav-links > a{white-space:nowrap}
+.nav-links > a.active,.nd.nd-on > .nd-btn{color:var(--sun-deep)}
+.nd{position:relative}
+.nd::after{content:"";position:absolute;left:0;right:0;top:100%;height:16px}
+.nd-btn{background:none;border:none;padding:0;font:inherit;color:inherit;cursor:pointer;display:flex;align-items:center;gap:4px;white-space:nowrap}
+.nd-btn i{font-style:normal;font-size:9px;opacity:.5;transition:transform .16s}
+.nd-btn:hover,.nd:hover > .nd-btn{color:var(--sun-deep)}
+.nd:hover > .nd-btn i,.nd.open > .nd-btn i{transform:rotate(180deg)}
+.nd-menu{
+  position:absolute;top:calc(100% + 16px);left:50%;
+  transform:translateX(-50%) translateY(-6px);
+  background:#fff;border:1px solid var(--line);border-radius:16px;
+  box-shadow:0 18px 44px rgba(120,90,20,.16);padding:10px;min-width:210px;
+  display:flex;flex-direction:column;gap:2px;
+  opacity:0;visibility:hidden;transition:opacity .16s,transform .16s,visibility .16s;z-index:70;
+}
+.nd:hover > .nd-menu,.nd:focus-within > .nd-menu,.nd.open > .nd-menu{
+  opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);
+}
+.nd-menu a{padding:10px 14px;border-radius:10px;font-size:14px;color:#5C554A;white-space:nowrap}
+.nd-menu a:hover{background:var(--sun-soft);color:#B26A00}
+.nd-menu a b{font-weight:800}
+.nav-mcta{display:none}
+.navtoggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;
+  margin-left:auto;background:none;border:1.5px solid var(--line);border-radius:12px;cursor:pointer;padding:0 10px}
+.navtoggle span{display:block;height:2px;background:#7A7266;border-radius:2px;transition:.2s}
+.navtoggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.navtoggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.navtoggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media (max-width:1060px){
+  .nav .btn{display:none}
+  .navtoggle{display:flex}
+  /* 전체 화면 시트 — 내부에서만 스크롤 */
+  .nav-links{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:#FFFDF7;border-top:1px solid var(--line);
+    box-shadow:0 22px 40px rgba(120,90,20,.16);
+    padding:6px 18px 30px;
+    max-height:calc(100dvh - 66px);max-height:calc(100vh - 66px);
+    overflow-y:auto;overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;z-index:80;
+  }
+  .nav-links.open{display:flex}
+  .nav-links > a{padding:15px 8px;border-bottom:1px solid #F6EFDF;font-size:16px;font-weight:700}
+  .nd{border-bottom:1px solid #F6EFDF;position:static}
+  .nd::after{display:none}
+  .nd-btn{width:100%;padding:15px 8px;font-size:16px;font-weight:700}
+  .nd-btn i{margin-left:auto;opacity:.45;font-size:11px}
+  /* 아코디언 — 누른 카테고리만 아래로 펼쳐집니다 (옆으로 나가지 않도록 강제) */
+  .nd-menu{
+    position:static !important;
+    transform:none !important;
+    inset:auto !important;
+    width:auto !important;max-width:100% !important;min-width:0 !important;
+    background:transparent;border:none;box-shadow:none;
+    padding:0 0 10px 14px;gap:0;
+    display:none;opacity:1;visibility:visible;transition:none;
+  }
+  .nd.open > .nd-menu,
+  .nd:hover > .nd-menu,
+  .nd:focus-within > .nd-menu{display:none}
+  .nd.open > .nd-menu{display:flex}
+  .nd-menu a{padding:12px 10px;font-size:14.5px;color:#8A8272;white-space:normal}
+  .nav-mcta{margin-top:18px;display:block}
+  .nav-mcta .btn{display:inline-flex;width:100%}
+  .kakao-fab{z-index:40}
+  body.nav-lock{overflow:hidden}
+}
+
+/* ══════════ btn-fix — 줄바꿈 시 가운데 정렬 + 좁은 화면 CTA 스택 ══════════ */
+.btn{text-align:center;line-height:1.35}
+.btn > *{flex:none}
+@media (max-width:560px){
+  .hero-cta{gap:10px}
+  .hero-cta .btn{flex:1 1 100%;min-width:0;width:100%;padding:16px 22px}
+  .cta-band .hero-cta .btn,
+  .cta-band a.btn{flex:1 1 100%;width:100%}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html">
+      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
+        <circle cx="15" cy="15" r="13" fill="#FFC93C"/><circle cx="15" cy="15" r="13" fill="none" stroke="#F57C00" stroke-width="2"/>
+        <circle cx="10.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="19.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="15" cy="17.5" r="1.7" fill="#F57C00"/>
+        <circle cx="9.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="20.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="15" cy="7.5" r="1.7" fill="#F57C00"/>
+      </svg>
+      <span class="logo-txt">정관 피클볼 클럽<small>Jeonggwan Pickleball Club</small></span>
+    </a>
+    <button class="navtoggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">홈</a>
+      <a href="first-visit.html">처음 오시는 분</a>
+
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false">프로그램<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="social.html">🤝 소셜매치 — 혼자 와도 OK</a>
+          <a href="junior.html">🧒 유소년 아카데미</a>
+          <a href="first-visit.html#trial-form">🌱 무료 체험·입문 클래스</a>
+        </div>
+      </div>
+
+      <a href="pricing.html">이용요금</a>
+
+      <div class="nd nd-on">
+        <button type="button" class="nd-btn" aria-expanded="false">가이드<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="guide.html"><b>📚 가이드 전체 보기</b></a>
+          <a href="what-is-pickleball.html">피클볼이 뭔가요?</a>
+          <a href="pickleball-what-to-prepare.html">뭘 준비해야 하나요?</a>
+          <a href="pickleball-alone.html">혼자 가도 되나요?</a>
+          <a href="kids-pickleball.html">초등학생도 되나요?</a>
+          <a href="pickleball-lesson-cost.html">레슨 비용은 얼마?</a>
+        </div>
+      </div>
+
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false">커뮤니티<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="board.html">💬 게시판</a>
+          <a href="events.html">🏆 대회 · 정관 리그</a>
+        </div>
+      </div>
+
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false">오시는 길<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="index.html#location">📍 위치 · 주차 안내</a>
+          <a href="pickleball-jeonggwan.html">정관에서 오시는 분</a>
+          <a href="pickleball-gijang.html">기장에서 오시는 분</a>
+          <a href="pickleball-busan.html">부산 도심에서 오시는 분</a>
+        </div>
+      </div>
+      <div class="nav-mcta"><a class="btn btn-sun" href="first-visit.html#trial-form">🎾 무료 체험 신청</a></div>
+    </nav>
+    <a class="btn btn-sun" href="first-visit.html#trial-form">무료 체험 신청</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="index.html">HOME</a> / GUIDE</p>
+    <span class="chip">📚 Pickleball Guide<span class="ko">피클볼 가이드</span></span>
+    <h1>피클볼, 궁금한 건<br><em>다 여기에</em> 있습니다</h1>
+    <p class="sub">검색해도 시원한 답이 없어서 저희가 직접 씁니다. 모든 글은 질문에 <b>답부터</b> 하고 시작해요. <span class="en-script">Answers first, always.</span></p>
+    <div class="cats">
+      <span class="cat on">전체</span>
+      <span class="cat">🌱 처음 시작하기</span>
+      <span class="cat">📖 규칙과 용어</span>
+      <span class="cat">🎾 장비 고르기</span>
+      <span class="cat">📈 실력 늘리기</span>
+    </div>
+  </div>
+</section>
+
+<!-- 아티클 6편 (웨이브 1) -->
+<section>
+  <div class="wrap">
+    <span class="chip">✨ Wave 1<span class="ko">지금 읽을 수 있는 글</span></span>
+    <h2>가장 많이 묻는 질문 6가지</h2>
+    <p class="sec-sub">제목이 곧 검색어입니다. 여러분이 AI에게 물어보는 그 문장 그대로요.</p>
+    <div class="arts">
+      <a class="art" href="what-is-pickleball.html">
+        <span class="tag t1">🌱 처음 시작하기</span>
+        <h3>피클볼이 뭔가요? 5분이면 이해하는 규칙과 매력</h3>
+        <p class="ans"><b>테니스 코트의 ¼ 크기에서 구멍 뚫린 공으로 치는 라켓 스포츠입니다.</b> 배우기 쉽고 관절 부담이 적어 전 세대가 함께 칠 수 있어요. 핵심 규칙 4가지와 인기 이유를 정리했습니다.</p>
+        <span class="meta"><span class="date">2026. 07. 21</span><span class="read">읽기 →</span></span>
+      </a>
+      <a class="art" href="pickleball-what-to-prepare.html">
+        <span class="tag t1">🌱 처음 시작하기</span>
+        <h3>피클볼 처음인데 뭘 준비해야 하나요</h3>
+        <p class="ans"><b>실내화 하나면 됩니다.</b> 패들과 공은 코트에서 무료로 빌려주는 곳이 대부분이에요. 복장·신발·챙기면 좋은 것을 체크리스트로 정리했습니다.</p>
+        <span class="meta"><span class="date">2026. 07. 22</span><span class="read">읽기 →</span></span>
+      </a>
+      <a class="art" href="pickleball-racket-rental.html">
+        <span class="tag t3">🎾 장비 고르기</span>
+        <h3>라켓이 없어도 피클볼을 칠 수 있나요</h3>
+        <p class="ans"><b>네, 대부분의 실내 코트가 패들을 무료 대여합니다.</b> 첫 3개월은 대여로 충분한 이유와, 내 패들을 사야 하는 시점의 신호 3가지를 알려 드려요.</p>
+        <span class="meta"><span class="date">2026. 07. 23</span><span class="read">읽기 →</span></span>
+      </a>
+      <a class="art" href="pickleball-alone.html">
+        <span class="tag t1">🌱 처음 시작하기</span>
+        <h3>혼자 가도 피클볼을 칠 수 있나요</h3>
+        <p class="ans"><b>네. 소셜매치·오픈플레이를 운영하는 코트면 혼자가 기본입니다.</b> 신청만 하면 실력 맞는 4인 복식 조를 짜 줘요. 혼자 시작한 사람의 첫 달 후기를 담았습니다.</p>
+        <span class="meta"><span class="date">2026. 07. 24</span><span class="read">읽기 →</span></span>
+      </a>
+      <a class="art" href="tennis-vs-pickleball.html">
+        <span class="tag t2">📖 규칙과 용어</span>
+        <h3>테니스와 피클볼은 무엇이 다른가요</h3>
+        <p class="ans"><b>코트는 ¼ 크기, 공은 절반 속도, 배우는 시간은 1/10.</b> 코트·장비·규칙·체력 부담을 표로 비교했습니다. 테니스 경험자가 피클볼로 넘어올 때 주의할 점도요.</p>
+        <span class="meta"><span class="date">2026. 07. 26</span><span class="read">읽기 →</span></span>
+      </a>
+      <a class="art" href="pickleball-jeonggwan.html">
+        <span class="tag t4">📍 지역</span>
+        <h3>부산 정관에서 피클볼 칠 수 있는 곳</h3>
+        <p class="ans"><b>정관읍에 실내 전용 코트 3면을 갖춘 정관 피클볼 클럽이 있습니다.</b> 위치·요금·운영시간과 정관 주변에서 즐길 수 있는 방법을 정리했습니다.</p>
+        <span class="meta"><span class="date">2026. 07. 28</span><span class="read">읽기 →</span></span>
+      </a>
+    </div>
+    <p style="font-size:12.5px;color:#B3AB98;margin-top:18px">※ 모든 글은 최종 수정일을 표기하며 분기 1회 이상 갱신합니다.</p>
+  </div>
+</section>
+
+<!-- 웨이브 2 -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="chip">🌊 Wave 2<span class="ko">대상별 심화 가이드</span></span>
+    <h2>우리 아이, 우리 부모님, 내 지갑을 위한 글</h2>
+    <p class="sec-sub">유소년·시니어·비용·장비 — 대상이 뚜렷한 질문에 답합니다.</p>
+    <div class="arts">
+      <a class="art" href="kids-pickleball.html">
+        <span class="tag t1">🌱 처음 시작하기</span>
+        <h3>초등학생도 피클볼을 배울 수 있나요</h3>
+        <p class="ans"><b>네, 초등학교 1학년부터 가능합니다.</b> 공이 가볍고 느려 공 공포가 없고, 대부분 한 달이면 경기해요. 연령별 가이드와 수업 고를 때 부모 체크리스트 5가지.</p>
+        <span class="meta"><span class="date">2026. 07. 29</span><span class="read">읽기 →</span></span>
+      </a>
+      <a class="art" href="pickleball-knees.html">
+        <span class="tag t1">🌱 처음 시작하기</span>
+        <h3>무릎이 안 좋은데 피클볼 괜찮을까요</h3>
+        <p class="ans"><b>라켓 스포츠 중 관절 부담이 낮은 편입니다.</b> 코트가 작고 점프·급정지가 적기 때문이에요. 무릎을 지키는 플레이 수칙 5가지와 시니어 주간반 안내.</p>
+        <span class="meta"><span class="date">2026. 07. 29</span><span class="read">읽기 →</span></span>
+      </a>
+      <a class="art" href="pickleball-vs-badminton.html">
+        <span class="tag t2">📖 규칙과 용어</span>
+        <h3>피클볼과 배드민턴, 뭐가 더 쉬운가요</h3>
+        <p class="ans"><b>처음 잡는 사람 기준으로는 피클볼이 더 빨리 경기가 됩니다.</b> 서브·랠리·체력·손목 부담을 항목별 표로 비교하고, 배드민턴 경험자의 이점도 정리했어요.</p>
+        <span class="meta"><span class="date">2026. 07. 29</span><span class="read">읽기 →</span></span>
+      </a>
+      <a class="art" href="pickleball-lesson-cost.html">
+        <span class="tag t1">💛 비용</span>
+        <h3>피클볼 레슨 비용은 얼마인가요</h3>
+        <p class="ans"><b>그룹 클래스 월 8만~12만 원, 1:1은 회당 3만~5만 원대.</b> 유형별 시세표와 레슨비 아끼는 세 가지 방법, 정관 기준 요금까지.</p>
+        <span class="meta"><span class="date">2026. 07. 29</span><span class="read">읽기 →</span></span>
+      </a>
+      <a class="art" href="indoor-vs-outdoor-pickleball.html">
+        <span class="tag t2">📖 규칙과 용어</span>
+        <h3>실내 피클볼과 실외 피클볼의 차이</h3>
+        <p class="ans"><b>가장 큰 차이는 공입니다.</b> 실외공 40홀·단단·빠름, 실내공 26홀·부드러움·긴 랠리. 입문자에게 실내를 권하는 세 가지 이유.</p>
+        <span class="meta"><span class="date">2026. 07. 29</span><span class="read">읽기 →</span></span>
+      </a>
+      <a class="art" href="first-pickleball-paddle.html">
+        <span class="tag t3">🎾 장비 고르기</span>
+        <h3>피클볼 패들 처음 살 때 보는 것 세 가지</h3>
+        <p class="ans"><b>무게, 그립 둘레, 코어 소재만 보면 됩니다.</b> 입문자는 220g 이하 + 폴리머 코어가 무난. 가격대별 가이드와 피해야 할 구매 실수 3가지.</p>
+        <span class="meta"><span class="date">2026. 07. 29</span><span class="read">읽기 →</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 발행 예정 -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="soon">
+      <h4>🗓️ 다음에 나올 글 (웨이브 3 — 심화·커뮤니티)</h4>
+      <ul>
+        <li>피클볼 용어 정리 — 딩크, 키친, 서드샷</li>
+        <li>피클볼 복식 기본 포지션</li>
+        <li>부산·경남 피클볼 대회 일정 정리</li>
+        <li>피클볼 동호회, 어떻게 들어가나요</li>
+        <li>회사 워크숍으로 피클볼이 좋은 이유</li>
+        <li>피클볼 실력 등급은 어떻게 나뉘나요</li>
+        <li>피클볼 부상 예방과 준비운동</li>
+        <li>피클볼 국내 현황과 앞으로</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band">
+      <span class="chip" style="background:rgba(255,255,255,.75)">☀️ Learn by Playing<span class="ko">읽는 것보다 치는 게 빨라요</span></span>
+      <h2>정관에서 직접 배워보기</h2>
+      <p>글 10편보다 코트 20분이 빠릅니다. 무료 체험에서 오늘 읽은 걸 몸으로 확인하세요.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn-sun" href="first-visit.html#trial-form">🎾 무료 체험 신청하기</a>
+        <a class="btn btn-line" href="social.html" style="background:rgba(255,255,255,.85)">소셜매치 알아보기</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="foot-info">
+      <b>정관 피클볼 클럽 · Jeonggwan Pickleball Club</b><br>
+      부산광역시 기장군 정관읍 ○○로 00 (2층) · 051-000-0000<br>
+      평일 09:00–23:00 · 주말 08:00–22:00 · 연중무휴
+    </p>
+    <p class="updated">최종 수정일: 2026년 7월 29일 · © 2026 Jeonggwan Pickleball Club, Busan, Korea.</p>
+  </div>
+</footer>
+
+<a class="kakao-fab" href="#" aria-label="카카오 채널 상담">
+  <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#191919" d="M12 3C6.48 3 2 6.58 2 11c0 2.84 1.86 5.33 4.64 6.74l-.95 3.52c-.08.3.25.54.51.37l4.18-2.77c.53.07 1.07.14 1.62.14 5.52 0 10-3.58 10-8S17.52 3 12 3z"/></svg>
+  카카오 상담
+</a>
+
+
+<script>
+/* 모바일 메뉴 토글 + 데스크톱 드롭다운 키보드/터치 지원 */
+(function(){
+  var t = document.getElementById('navToggle');
+  var n = document.getElementById('navLinks');
+  if (!t || !n) return;
+
+  function setOpen(v){
+    n.classList.toggle('open', v);
+    document.body.classList.toggle('nav-lock', v);
+    t.setAttribute('aria-expanded', v ? 'true' : 'false');
+    t.setAttribute('aria-label', v ? '메뉴 닫기' : '메뉴 열기');
+    if (v){
+      // 모바일: 현재 보고 있는 카테고리를 미리 펼쳐 둔다
+      var cur = n.querySelector('.nd.nd-on');
+      if (cur && window.innerWidth <= 1060 && !cur.classList.contains('open')){
+        cur.classList.add('open');
+        cur.querySelector('.nd-btn').setAttribute('aria-expanded','true');
+      }
+    }
+  }
+  t.addEventListener('click', function(){ setOpen(!n.classList.contains('open')); });
+
+  // 링크를 누르면 메뉴 닫기
+  n.addEventListener('click', function(e){
+    if (e.target.closest('a')) setOpen(false);
+  });
+
+  // 바깥 클릭 / ESC 로 닫기
+  function closeDropdowns(){
+    Array.prototype.forEach.call(document.querySelectorAll('.nd.open'), function(d){
+      d.classList.remove('open');
+      d.querySelector('.nd-btn').setAttribute('aria-expanded','false');
+    });
+  }
+  document.addEventListener('click', function(e){
+    if (!n.contains(e.target) && !t.contains(e.target)){
+      setOpen(false);
+      closeDropdowns();
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape'){
+      setOpen(false);
+      Array.prototype.forEach.call(document.querySelectorAll('.nd.open'), function(d){
+        d.classList.remove('open');
+        d.querySelector('.nd-btn').setAttribute('aria-expanded','false');
+      });
+    }
+  });
+
+  // 드롭다운: 데스크톱은 hover, 터치·키보드는 클릭으로도 열리게
+  Array.prototype.forEach.call(document.querySelectorAll('.nd'), function(d){
+    var b = d.querySelector('.nd-btn');
+    b.addEventListener('click', function(e){
+      e.stopPropagation();
+      var willOpen = !d.classList.contains('open');
+      Array.prototype.forEach.call(document.querySelectorAll('.nd'), function(o){
+        if (o !== d){ o.classList.remove('open'); o.querySelector('.nd-btn').setAttribute('aria-expanded','false'); }
+      });
+      d.classList.toggle('open', willOpen);
+      b.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+  });
+
+  // 뷰포트가 데스크톱으로 넓어지면 모바일 메뉴 상태 초기화
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 1060){ setOpen(false); document.body.classList.remove('nav-lock'); }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>대회 — 정관 오픈 & 정관 리그 | 정관 피클볼 클럽</title>
+<meta name="description" content="부산 피클볼 대회 일정. 정관 오픈 토너먼트 2026 가을 — 일시·부문·경기 방식·참가비·환불 규정·시상까지 참가에 필요한 모든 정보를 한 페이지에.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- 대회 상세 (기획서 §03 /events/[slug]): 필수 항목 8종 + SportsEvent 스키마.
+     "부산 피클볼 대회" 검색 시 일정 직접 노출 목적. 값은 대회 확정 시 갱신. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "정관 오픈 피클볼 토너먼트 2026 가을",
+  "startDate": "2026-10-17T09:00+09:00",
+  "endDate": "2026-10-17T18:00+09:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": { "@type": "Place", "name": "정관 피클볼 클럽", "address": "부산광역시 기장군 정관읍 ○○로 00" },
+  "organizer": { "@type": "Organization", "name": "정관 피클볼 클럽" },
+  "offers": { "@type": "Offer", "price": "30000", "priceCurrency": "KRW", "validThrough": "2026-10-05", "availability": "https://schema.org/InStock" },
+  "sport": "Pickleball"
+}
+</script>
+
+<style>
+:root{
+  --sun:#FFB300;--sun-deep:#F57C00;--sun-soft:#FFF3D6;
+  --sky:#2FA8E0;--sky-soft:#E3F4FC;--leaf:#7CB342;--leaf-soft:#EEF6E3;
+  --cream:#FFFDF7;--ink:#33302B;--ink-soft:#7A7266;--line:#F0E8D8;--card:#FFFFFF;
+  --radius:20px;--shadow:0 10px 30px rgba(245,158,11,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font-family:'Pretendard','Malgun Gothic',system-ui,sans-serif;font-size:16px;line-height:1.7;letter-spacing:-0.01em;word-break:keep-all}
+img{max-width:100%}a{color:inherit;text-decoration:none}ul,ol{list-style:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+.chip{display:inline-flex;align-items:center;gap:7px;background:var(--sun-soft);color:#B26A00;font-family:'Outfit','Pretendard',sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:16px}
+.chip .ko{font-family:'Pretendard',sans-serif;letter-spacing:0;text-transform:none;font-size:12.5px;color:#C58A2A;font-weight:600;border-left:1px solid #EFD9A8;padding-left:9px}
+h2{font-size:clamp(24px,4.2vw,34px);font-weight:800;line-height:1.35;letter-spacing:-0.03em;margin-bottom:12px}
+.sec-sub{color:var(--ink-soft);font-size:16px;max-width:580px;margin-bottom:36px}
+section{padding:64px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:16px;border-radius:999px;padding:15px 30px;transition:transform .15s ease,box-shadow .15s ease;cursor:pointer;border:none}
+.btn-sun{background:linear-gradient(135deg,#FFC93C,#FFA726);color:#5C3A00;box-shadow:0 8px 22px rgba(255,167,38,.38)}
+.btn-sun:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(255,167,38,.48)}
+.btn-line{background:#fff;color:var(--ink);border:2px solid var(--line)}
+.btn-line:hover{border-color:var(--sun);color:#B26A00}
+header{position:sticky;top:0;z-index:50;background:rgba(255,253,247,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:24px;height:66px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:-0.02em}
+.logo svg{flex:none}
+.logo-txt{display:flex;flex-direction:column;line-height:1.15}
+.logo-txt small{font-family:'Outfit',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:.22em;color:#D9A93C;text-transform:uppercase}
+.nav-links{display:flex;gap:22px;margin-left:auto;font-size:15px;font-weight:600;color:#5C554A}
+.nav-links a:hover{color:var(--sun-deep)}
+.nav .btn{padding:10px 20px;font-size:14px;margin-left:8px}
+.page-hero{position:relative;overflow:hidden;background:radial-gradient(800px 420px at 85% -10%,rgba(255,214,79,.5),transparent 65%),radial-gradient(600px 380px at -10% 30%,rgba(179,229,252,.45),transparent 60%),linear-gradient(180deg,#FFFBEF 0%,var(--cream) 100%);padding:72px 0 60px}
+.page-hero h1{font-size:clamp(30px,4.8vw,46px);font-weight:900;line-height:1.28;letter-spacing:-0.04em;margin-bottom:14px}
+.page-hero h1 em{font-style:normal;color:var(--sun-deep)}
+.page-hero .sub{font-size:clamp(15px,2.1vw,18px);color:#5C554A;max-width:620px;margin-bottom:26px}
+.crumb{font-family:'Outfit','Pretendard',sans-serif;font-size:12.5px;color:#B3A886;margin-bottom:22px;font-weight:600}
+.crumb a:hover{color:var(--sun-deep)}
+/* 대회 헤더 카드 */
+.event-head{background:var(--card);border-radius:24px;box-shadow:var(--shadow);border:1px solid #FBF3E2;overflow:hidden;margin-bottom:26px}
+.event-band{background:linear-gradient(135deg,#FFC93C,#FFA726);padding:26px 32px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px}
+.event-band h3{font-size:clamp(19px,3vw,25px);font-weight:900;color:#5C3A00;letter-spacing:-0.03em}
+.event-band .d-day{margin-left:auto;font-family:'Outfit',sans-serif;font-weight:800;font-size:14px;background:rgba(255,255,255,.85);color:#B26A00;padding:8px 18px;border-radius:999px}
+.event-key{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid #FBF3E2}
+.ek{padding:20px 24px;border-right:1px solid #F6EFDF}
+.ek:last-child{border-right:none}
+.ek .en{display:block;font-family:'Outfit',sans-serif;font-size:10px;font-weight:800;letter-spacing:.16em;color:#C9A85C;text-transform:uppercase;margin-bottom:5px}
+.ek b{font-size:15.5px}
+.ek span.sub2{display:block;font-size:12.5px;color:var(--ink-soft)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{padding:13px 18px;text-align:left;border-bottom:1px solid #F6EFDF;vertical-align:top}
+thead th{background:#FFF8E8;color:#8A6A1F;font-size:13px;font-weight:800;letter-spacing:.04em;border-bottom:1px solid #F3E7C8;white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+tbody th{background:#FFFCF3;color:#8A6A1F;font-size:13px;font-weight:800;white-space:nowrap;width:150px;border-bottom:1px solid #F6EFDF;vertical-align:top}
+.table-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #FBF3E2;overflow:hidden;margin-bottom:16px}
+.hint{font-size:13px;color:#B3AB98;margin-bottom:8px}
+.lvl{display:inline-block;font-size:12.5px;font-weight:800;padding:4px 12px;border-radius:999px;margin:0 4px 4px 0}
+.lvl-rookie{background:var(--sun-soft);color:#B26A00}
+.lvl-green{background:var(--leaf-soft);color:#558B2F}
+.lvl-blue{background:var(--sky-soft);color:#1A7FB5}
+.cta-band{background:radial-gradient(700px 360px at 50% -40%,rgba(255,214,79,.6),transparent 70%),linear-gradient(160deg,#FFF3D6,#FFE9B8);border-radius:28px;text-align:center;padding:56px 28px}
+.cta-band h2{margin-bottom:10px}
+.cta-band p{color:#7A6636;margin-bottom:26px}
+footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
+.foot-info{font-size:13.5px;color:#9A927F;line-height:1.9}
+.foot-info b{color:#6B6353}
+.updated{margin-top:20px;font-size:12.5px;color:#B3AB98}
+.kakao-fab{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;align-items:center;gap:9px;background:#FEE500;color:#191919;font-weight:800;font-size:14.5px;padding:14px 22px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.18)}
+@media (max-width:900px){.event-key{grid-template-columns:repeat(2,1fr)}.ek{border-bottom:1px solid #F6EFDF}.ek:nth-child(2n){border-right:none}}
+@media (max-width:720px){
+  section{padding:52px 0}
+  .nav-links{display:none}
+  .logo-txt small{display:none}
+  th,td{padding:11px 12px;font-size:14px}
+  tbody th{width:110px}
+  .table-card{overflow-x:auto}
+  .table-card table{min-width:480px}
+}
+/* nav-6 */
+.nav{gap:20px}
+.nav-links{gap:19px;font-size:14.5px}
+@media (max-width:900px){.nav-links{display:none}}
+
+/* photo-band */
+.pband{margin:34px 0 0;border-radius:22px;overflow:hidden;position:relative;box-shadow:0 16px 40px rgba(245,158,11,.18);border:5px solid #fff}
+.pband img{width:100%;height:clamp(190px,30vw,320px);object-fit:cover;display:block}
+.pband figcaption{position:absolute;left:18px;bottom:16px;background:rgba(255,255,255,.93);color:#7A5A12;font-size:13px;font-weight:800;padding:8px 16px;border-radius:999px;box-shadow:0 6px 16px rgba(0,0,0,.12)}
+
+/* ══════════ nav v2 — 카테고리 드롭다운 + 모바일 메뉴 ══════════ */
+.nav{gap:16px}
+.nav-links{display:flex;align-items:center;gap:16px;margin-left:auto;font-size:14px;font-weight:600;color:#5C554A}
+.nav-links > a{white-space:nowrap}
+.nav-links > a.active,.nd.nd-on > .nd-btn{color:var(--sun-deep)}
+.nd{position:relative}
+.nd::after{content:"";position:absolute;left:0;right:0;top:100%;height:16px}
+.nd-btn{background:none;border:none;padding:0;font:inherit;color:inherit;cursor:pointer;display:flex;align-items:center;gap:4px;white-space:nowrap}
+.nd-btn i{font-style:normal;font-size:9px;opacity:.5;transition:transform .16s}
+.nd-btn:hover,.nd:hover > .nd-btn{color:var(--sun-deep)}
+.nd:hover > .nd-btn i,.nd.open > .nd-btn i{transform:rotate(180deg)}
+.nd-menu{
+  position:absolute;top:calc(100% + 16px);left:50%;
+  transform:translateX(-50%) translateY(-6px);
+  background:#fff;border:1px solid var(--line);border-radius:16px;
+  box-shadow:0 18px 44px rgba(120,90,20,.16);padding:10px;min-width:210px;
+  display:flex;flex-direction:column;gap:2px;
+  opacity:0;visibility:hidden;transition:opacity .16s,transform .16s,visibility .16s;z-index:70;
+}
+.nd:hover > .nd-menu,.nd:focus-within > .nd-menu,.nd.open > .nd-menu{
+  opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);
+}
+.nd-menu a{padding:10px 14px;border-radius:10px;font-size:14px;color:#5C554A;white-space:nowrap}
+.nd-menu a:hover{background:var(--sun-soft);color:#B26A00}
+.nd-menu a b{font-weight:800}
+.nav-mcta{display:none}
+.navtoggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;
+  margin-left:auto;background:none;border:1.5px solid var(--line);border-radius:12px;cursor:pointer;padding:0 10px}
+.navtoggle span{display:block;height:2px;background:#7A7266;border-radius:2px;transition:.2s}
+.navtoggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.navtoggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.navtoggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media (max-width:1060px){
+  .nav .btn{display:none}
+  .navtoggle{display:flex}
+  /* 전체 화면 시트 — 내부에서만 스크롤 */
+  .nav-links{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:#FFFDF7;border-top:1px solid var(--line);
+    box-shadow:0 22px 40px rgba(120,90,20,.16);
+    padding:6px 18px 30px;
+    max-height:calc(100dvh - 66px);max-height:calc(100vh - 66px);
+    overflow-y:auto;overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;z-index:80;
+  }
+  .nav-links.open{display:flex}
+  .nav-links > a{padding:15px 8px;border-bottom:1px solid #F6EFDF;font-size:16px;font-weight:700}
+  .nd{border-bottom:1px solid #F6EFDF;position:static}
+  .nd::after{display:none}
+  .nd-btn{width:100%;padding:15px 8px;font-size:16px;font-weight:700}
+  .nd-btn i{margin-left:auto;opacity:.45;font-size:11px}
+  /* 아코디언 — 누른 카테고리만 아래로 펼쳐집니다 (옆으로 나가지 않도록 강제) */
+  .nd-menu{
+    position:static !important;
+    transform:none !important;
+    inset:auto !important;
+    width:auto !important;max-width:100% !important;min-width:0 !important;
+    background:transparent;border:none;box-shadow:none;
+    padding:0 0 10px 14px;gap:0;
+    display:none;opacity:1;visibility:visible;transition:none;
+  }
+  .nd.open > .nd-menu,
+  .nd:hover > .nd-menu,
+  .nd:focus-within > .nd-menu{display:none}
+  .nd.open > .nd-menu{display:flex}
+  .nd-menu a{padding:12px 10px;font-size:14.5px;color:#8A8272;white-space:normal}
+  .nav-mcta{margin-top:18px;display:block}
+  .nav-mcta .btn{display:inline-flex;width:100%}
+  .kakao-fab{z-index:40}
+  body.nav-lock{overflow:hidden}
+}
+
+/* ══════════ btn-fix — 줄바꿈 시 가운데 정렬 + 좁은 화면 CTA 스택 ══════════ */
+.btn{text-align:center;line-height:1.35}
+.btn > *{flex:none}
+@media (max-width:560px){
+  .hero-cta{gap:10px}
+  .hero-cta .btn{flex:1 1 100%;min-width:0;width:100%;padding:16px 22px}
+  .cta-band .hero-cta .btn,
+  .cta-band a.btn{flex:1 1 100%;width:100%}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html">
+      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
+        <circle cx="15" cy="15" r="13" fill="#FFC93C"/><circle cx="15" cy="15" r="13" fill="none" stroke="#F57C00" stroke-width="2"/>
+        <circle cx="10.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="19.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="15" cy="17.5" r="1.7" fill="#F57C00"/>
+        <circle cx="9.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="20.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="15" cy="7.5" r="1.7" fill="#F57C00"/>
+      </svg>
+      <span class="logo-txt">정관 피클볼 클럽<small>Jeonggwan Pickleball Club</small></span>
+    </a>
+    <button class="navtoggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">홈</a>
+      <a href="first-visit.html">처음 오시는 분</a>
+
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false">프로그램<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="social.html">🤝 소셜매치 — 혼자 와도 OK</a>
+          <a href="junior.html">🧒 유소년 아카데미</a>
+          <a href="first-visit.html#trial-form">🌱 무료 체험·입문 클래스</a>
+        </div>
+      </div>
+
+      <a href="pricing.html">이용요금</a>
+
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false">가이드<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="guide.html"><b>📚 가이드 전체 보기</b></a>
+          <a href="what-is-pickleball.html">피클볼이 뭔가요?</a>
+          <a href="pickleball-what-to-prepare.html">뭘 준비해야 하나요?</a>
+          <a href="pickleball-alone.html">혼자 가도 되나요?</a>
+          <a href="kids-pickleball.html">초등학생도 되나요?</a>
+          <a href="pickleball-lesson-cost.html">레슨 비용은 얼마?</a>
+        </div>
+      </div>
+
+      <div class="nd nd-on">
+        <button type="button" class="nd-btn" aria-expanded="false">커뮤니티<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="board.html">💬 게시판</a>
+          <a href="events.html">🏆 대회 · 정관 리그</a>
+        </div>
+      </div>
+
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false">오시는 길<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="index.html#location">📍 위치 · 주차 안내</a>
+          <a href="pickleball-jeonggwan.html">정관에서 오시는 분</a>
+          <a href="pickleball-gijang.html">기장에서 오시는 분</a>
+          <a href="pickleball-busan.html">부산 도심에서 오시는 분</a>
+        </div>
+      </div>
+      <div class="nav-mcta"><a class="btn btn-sun" href="first-visit.html#trial-form">🎾 무료 체험 신청</a></div>
+    </nav>
+    <a class="btn btn-sun" href="#apply">참가 신청</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="index.html">HOME</a> / EVENTS</p>
+    <span class="chip">🏆 Tournament<span class="ko">대회</span></span>
+    <h1>치기만 해도 즐겁지만,<br><em>이기면 더</em> 즐겁습니다</h1>
+    <p class="sub">분기마다 정관 오픈 토너먼트, 연 2회 정관 리그 시즌을 엽니다. 루키 부문이 따로 있어 입문 3개월 차도 출전할 수 있어요.</p>
+  </div>
+  <div class="wrap">
+    <figure class="pband">
+      <img src="assets/wide.jpg" data-fallback="https://images.unsplash.com/photo-1779862761891-1fff60bda7cb?q=80&w=900&auto=format&fit=crop" alt="대회가 열리는 실내 피클볼 코트 전경" loading="lazy">
+      <figcaption>🏆 코트 3면 전면을 대회장으로</figcaption>
+    </figure>
+  </div>
+
+</section>
+
+<!-- 다가오는 대회 -->
+<section style="padding-top:24px">
+  <div class="wrap">
+    <span class="chip">📅 Upcoming<span class="ko">다가오는 대회</span></span>
+    <h2>정관 오픈 토너먼트 2026 가을</h2>
+    <p class="sec-sub">참가에 필요한 모든 정보를 이 페이지에 담았습니다. 전화 문의 없이 신청까지 끝내세요.</p>
+
+    <div class="event-head">
+      <div class="event-band">
+        <h3>🏆 정관 오픈 2026 가을</h3>
+        <span class="d-day">접수 마감 10. 05 (월)</span>
+      </div>
+      <div class="event-key">
+        <div class="ek"><span class="en">Date</span><b>2026. 10. 17 (토)</b><span class="sub2">09:00 – 18:00</span></div>
+        <div class="ek"><span class="en">Venue</span><b>정관 피클볼 클럽</b><span class="sub2">실내 코트 3면 전면 사용</span></div>
+        <div class="ek"><span class="en">Entry Fee</span><b>팀당 30,000원</b><span class="sub2">간식·기념품 포함</span></div>
+        <div class="ek"><span class="en">Capacity</span><b>부문별 12팀</b><span class="sub2">선착순 마감</span></div>
+      </div>
+    </div>
+
+    <!-- 기획서 필수 항목 8종 -->
+    <div class="table-card">
+      <table>
+        <tbody>
+          <tr><th>참가 부문</th><td>
+            남자 복식 · 여자 복식 · 혼합 복식 × 등급별<br>
+            <span class="lvl lvl-rookie">루키 — 입문 6개월 미만</span>
+            <span class="lvl lvl-green">그린 — 소셜매치 그린 이상</span>
+            <span class="lvl lvl-blue">블루 — 대회 입상 경험자</span><br>
+            <span style="font-size:13px;color:#9A927F">※ 등급을 낮춰 출전할 수 없습니다. 애매하면 운영진이 소셜매치 기록으로 판정해 드립니다.</span>
+          </td></tr>
+          <tr><th>경기 방식</th><td>조별 리그(3~4팀) 후 상위 2팀 토너먼트 · 예선 11점 단판(2점 차) · 4강부터 15점 단판</td></tr>
+          <tr><th>사용 볼</th><td>실내용 26홀 공인구 (대회 당일 주최 측 제공, 연습구 동일 모델 상시 판매)</td></tr>
+          <tr><th>참가비 · 환불</th><td>팀당 30,000원 · 접수 마감일(10/5) 전 취소 시 <b>전액 환불</b>, 이후 취소 50%, 대회 당일 불참은 환불 불가. 최소 팀수 미달로 부문이 취소되면 전액 환불됩니다.</td></tr>
+          <tr><th>시상</th><td>부문별 우승·준우승 트로피 + 상품권 (우승 10만 원 · 준우승 5만 원 상당) · 전 참가자 기념 타월</td></tr>
+          <tr><th>심판</th><td>예선은 셀프 콜(자율 판정) + 순회 심판 1명 · <b>4강부터 주심 배정</b></td></tr>
+          <tr><th>주차 · 식음</th><td>전용 주차 30면 무료 (만차 시 인근 공영주차장 안내) · 라운지에서 간식·음료 제공, 점심은 인근 식당 목록을 접수 확정 문자로 보내 드립니다</td></tr>
+          <tr><th>문의</th><td>카카오 채널 (대회 요강 PDF 제공) · 051-000-0000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="hint">※ 예시 요강입니다. 대회 확정 시 실제 일정·요강으로 갱신하고, 각 대회는 /events/[slug] 개별 페이지로 발행합니다.</p>
+
+    <div id="apply" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
+      <a class="btn btn-sun" href="#">🏆 참가 신청하기 (외부 폼)</a>
+      <a class="btn btn-line" href="social.html">내 등급 확인 — 소셜매치 참가</a>
+    </div>
+  </div>
+</section>
+
+<!-- 정관 리그 -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="chip">🔄 League<span class="ko">정관 리그</span></span>
+    <h2>정관 리그 — 시즌제 주간 리그</h2>
+    <p class="sec-sub">대회가 부담스럽다면 리그부터. 매주 목요일 저녁, 8주 한 시즌으로 순위를 가립니다.</p>
+    <div class="table-card">
+      <table>
+        <thead><tr><th>시즌</th><th>기간</th><th>방식</th><th>상태</th></tr></thead>
+        <tbody>
+          <tr><td><b>2026 시즌 1</b></td><td>9. 3 – 10. 29 (매주 목 19:30)</td><td>복식 페어 고정 · 주 1경기 · 승점제</td><td><span class="lvl lvl-green">9월 초 접수 예정</span></td></tr>
+          <tr><td><b>2026 시즌 2</b></td><td>2027. 3월 예정</td><td>—</td><td><span class="lvl lvl-rookie">준비 중</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="hint">※ 리그 참여 기록은 회원 등급 포인트로 적립되며, 시즌 순위표는 이 페이지에 매주 갱신됩니다.</p>
+  </div>
+</section>
+
+<!-- 지난 대회 결과 -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="chip">📜 Results<span class="ko">지난 대회 결과</span></span>
+    <h2>지난 대회 기록</h2>
+    <div class="table-card">
+      <table>
+        <thead><tr><th>대회</th><th>일자</th><th>부문</th><th>우승</th><th>준우승</th></tr></thead>
+        <tbody>
+          <tr><td colspan="5" style="text-align:center;color:#B3AB98;padding:34px">아직 열린 대회가 없습니다 — 첫 대회의 주인공이 되어 주세요 🏆<br><span style="font-size:12.5px">대회 종료 후 결과·사진이 이곳에 게시됩니다.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band">
+      <span class="chip" style="background:rgba(255,255,255,.75)">☀️ First Step<span class="ko">대회가 처음이라면</span></span>
+      <h2>대회 전에, 소셜매치로 감 잡기</h2>
+      <p>루키 부문 출전자 대부분이 소셜매치 출신입니다. 등급 판정도 소셜매치 기록으로 해 드려요.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn-sun" href="social.html">📅 소셜매치 일정 보기</a>
+        <a class="btn btn-line" href="first-visit.html#trial-form" style="background:rgba(255,255,255,.85)">아예 처음이라면 무료 체험</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="foot-info">
+      <b>정관 피클볼 클럽 · Jeonggwan Pickleball Club</b><br>
+      부산광역시 기장군 정관읍 ○○로 00 (2층) · 051-000-0000<br>
+      평일 09:00–23:00 · 주말 08:00–22:00 · 연중무휴
+    </p>
+    <p class="updated">최종 수정일: 2026년 7월 29일 · © 2026 Jeonggwan Pickleball Club, Busan, Korea.</p>
+  </div>
+</footer>
+
+<a class="kakao-fab" href="#" aria-label="카카오 채널 상담">
+  <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#191919" d="M12 3C6.48 3 2 6.58 2 11c0 2.84 1.86 5.33 4.64 6.74l-.95 3.52c-.08.3.25.54.51.37l4.18-2.77c.53.07 1.07.14 1.62.14 5.52 0 10-3.58 10-8S17.52 3 12 3z"/></svg>
+  카카오 상담
+</a>
+
+
+<script>
+/* 사진 시스템 — assets/*.jpg 가 있으면 그것을, 없으면 예시 이미지를 사용합니다.
+   실제 촬영본을 public/assets/ 에 같은 이름으로 넣기만 하면 즉시 반영됩니다. */
+(function(){
+  function fit(img){
+    var r = img.naturalWidth / img.naturalHeight;
+    if (!r) return;
+    if (img.classList.contains('hero-img')){
+      // 세로 사진은 인물 상반신이 살도록 3:4로, 그 외에는 원본 비율 그대로(무크롭).
+      if (r < 0.85){                                   // 세로 사진
+        img.style.aspectRatio = '3 / 4';
+        img.style.objectPosition = '50% 20%';
+      } else if (r > 1.6){                             // 지나치게 넓은 사진
+        img.style.aspectRatio = '3 / 2';
+        img.style.objectPosition = '50% 40%';
+      } else {                                         // 일반 가로 사진 — 원본 비율
+        img.style.aspectRatio = String(r.toFixed(3));
+        img.style.objectPosition = '50% 40%';
+      }
+    }
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('img[data-fallback]'), function(img){
+    img.addEventListener('error', function(){
+      if (img.dataset.fellBack) return;
+      img.dataset.fellBack = '1';
+      img.src = img.dataset.fallback;
+    });
+    if (img.complete && img.naturalWidth) fit(img);
+    img.addEventListener('load', function(){ fit(img); });
+  });
+})();
+</script>
+
+<script>
+/* 모바일 메뉴 토글 + 데스크톱 드롭다운 키보드/터치 지원 */
+(function(){
+  var t = document.getElementById('navToggle');
+  var n = document.getElementById('navLinks');
+  if (!t || !n) return;
+
+  function setOpen(v){
+    n.classList.toggle('open', v);
+    document.body.classList.toggle('nav-lock', v);
+    t.setAttribute('aria-expanded', v ? 'true' : 'false');
+    t.setAttribute('aria-label', v ? '메뉴 닫기' : '메뉴 열기');
+    if (v){
+      // 모바일: 현재 보고 있는 카테고리를 미리 펼쳐 둔다
+      var cur = n.querySelector('.nd.nd-on');
+      if (cur && window.innerWidth <= 1060 && !cur.classList.contains('open')){
+        cur.classList.add('open');
+        cur.querySelector('.nd-btn').setAttribute('aria-expanded','true');
+      }
+    }
+  }
+  t.addEventListener('click', function(){ setOpen(!n.classList.contains('open')); });
+
+  // 링크를 누르면 메뉴 닫기
+  n.addEventListener('click', function(e){
+    if (e.target.closest('a')) setOpen(false);
+  });
+
+  // 바깥 클릭 / ESC 로 닫기
+  function closeDropdowns(){
+    Array.prototype.forEach.call(document.querySelectorAll('.nd.open'), function(d){
+      d.classList.remove('open');
+      d.querySelector('.nd-btn').setAttribute('aria-expanded','false');
+    });
+  }
+  document.addEventListener('click', function(e){
+    if (!n.contains(e.target) && !t.contains(e.target)){
+      setOpen(false);
+      closeDropdowns();
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape'){
+      setOpen(false);
+      Array.prototype.forEach.call(document.querySelectorAll('.nd.open'), function(d){
+        d.classList.remove('open');
+        d.querySelector('.nd-btn').setAttribute('aria-expanded','false');
+      });
+    }
+  });
+
+  // 드롭다운: 데스크톱은 hover, 터치·키보드는 클릭으로도 열리게
+  Array.prototype.forEach.call(document.querySelectorAll('.nd'), function(d){
+    var b = d.querySelector('.nd-btn');
+    b.addEventListener('click', function(e){
+      e.stopPropagation();
+      var willOpen = !d.classList.contains('open');
+      Array.prototype.forEach.call(document.querySelectorAll('.nd'), function(o){
+        if (o !== d){ o.classList.remove('open'); o.querySelector('.nd-btn').setAttribute('aria-expanded','false'); }
+      });
+      d.classList.toggle('open', willOpen);
+      b.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+  });
+
+  // 뷰포트가 데스크톱으로 넓어지면 모바일 메뉴 상태 초기화
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 1060){ setOpen(false); document.body.classList.remove('nav-lock'); }
+  });
+})();
+</script>
+</body>
+</html>

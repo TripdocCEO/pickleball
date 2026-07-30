@@ -1,0 +1,19 @@
+[project]
+name = "jeonggwan-pickleball-club"
+version = "1.0.0"
+description = "정관 피클볼 클럽 웹사이트 — FastAPI + SQLite 백엔드"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "httpx>=0.27",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

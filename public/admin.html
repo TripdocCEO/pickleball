@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>관리자 — 정관 피클볼 클럽</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sun:#FFB300;--sun-deep:#F57C00;--sun-soft:#FFF3D6;
+  --sky:#2FA8E0;--sky-soft:#E3F4FC;--leaf:#7CB342;--leaf-soft:#EEF6E3;
+  --plum:#8E56B8;--plum-soft:#F6EFFB;--red:#C0504D;--red-soft:#FDEBEB;
+  --cream:#FFFDF7;--ink:#33302B;--ink-soft:#7A7266;--line:#F0E8D8;--card:#FFFFFF;
+  --shadow:0 10px 30px rgba(245,158,11,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);color:var(--ink);font-family:'Pretendard','Malgun Gothic',system-ui,sans-serif;font-size:15px;line-height:1.65;letter-spacing:-0.01em;word-break:keep-all}
+a{color:inherit;text-decoration:none}ul,ol{list-style:none}
+button,input,select,textarea{font-family:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* 헤더 */
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+.hd{display:flex;align-items:center;gap:14px;height:62px}
+.hd .logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:16px}
+.hd .badge{font-family:'Outfit',sans-serif;font-size:10px;font-weight:800;letter-spacing:.14em;
+  background:var(--ink);color:#FFE9B8;padding:4px 10px;border-radius:6px;text-transform:uppercase}
+.hd .sp{margin-left:auto;display:flex;gap:8px;align-items:center}
+.lnk{font-size:13.5px;font-weight:700;color:var(--ink-soft);padding:8px 12px;border-radius:9px}
+.lnk:hover{background:var(--sun-soft);color:#B26A00}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;font-weight:800;
+  font-size:14px;border-radius:10px;padding:10px 18px;cursor:pointer;border:1.5px solid transparent;
+  text-align:center;line-height:1.35;transition:.15s;white-space:nowrap}
+.btn-sun{background:linear-gradient(135deg,#FFC93C,#FFA726);color:#5C3A00}
+.btn-sun:hover{filter:brightness(1.04)}
+.btn-line{background:#fff;color:var(--ink);border-color:var(--line)}
+.btn-line:hover{border-color:var(--sun);color:#B26A00}
+.btn-sm{padding:6px 12px;font-size:12.5px;border-radius:8px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+
+/* 로그인 */
+.login{max-width:400px;margin:14vh auto;background:var(--card);border:1px solid var(--line);
+  border-radius:22px;box-shadow:var(--shadow);padding:38px 34px}
+.login h1{font-size:22px;font-weight:800;margin-bottom:6px;letter-spacing:-0.02em}
+.login p{font-size:13.5px;color:var(--ink-soft);margin-bottom:22px}
+.login input{width:100%;font-size:15px;padding:13px 15px;border:1.5px solid #EFE6D2;
+  border-radius:12px;background:#FFFDF7;outline:none;margin-bottom:12px}
+.login input:focus{border-color:var(--sun)}
+.login .btn{width:100%}
+.err{display:none;background:var(--red-soft);border:1.5px solid #F3C4C4;color:#B03A3A;
+  border-radius:10px;padding:11px 14px;font-size:13.5px;font-weight:700;margin-bottom:12px}
+.err.on{display:block}
+.hint{font-size:12px;color:#B3AB98;margin-top:14px;line-height:1.7}
+
+/* 대시보드 */
+main{padding:28px 0 90px;display:none}
+main.on{display:block}
+h2{font-size:19px;font-weight:800;letter-spacing:-0.02em;margin-bottom:14px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:30px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+.stat .en{display:block;font-family:'Outfit',sans-serif;font-size:10px;font-weight:800;
+  letter-spacing:.16em;color:#C9A85C;text-transform:uppercase;margin-bottom:7px}
+.stat b{display:block;font-family:'Outfit','Pretendard',sans-serif;font-size:30px;font-weight:800;
+  color:var(--sun-deep);line-height:1.1}
+.stat span.ko{display:block;font-size:12.5px;color:var(--ink-soft);margin-top:4px}
+.stat.hi{background:linear-gradient(150deg,#FFF6DE,#FFFDF7);border-color:#F3D9A0}
+
+/* 탭 */
+.tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.tab{font-size:14px;font-weight:700;padding:10px 20px;border-radius:999px;border:1.5px solid var(--line);
+  background:#fff;color:#7A7266;cursor:pointer}
+.tab.on{background:var(--ink);border-color:var(--ink);color:#FFE9B8}
+
+/* 필터 */
+.filters{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.fchip{font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px;border:1.5px solid var(--line);
+  background:#fff;color:#7A7266;cursor:pointer}
+.fchip.on{background:var(--sun-soft);border-color:#F3D9A0;color:#B26A00}
+.fchip .n{font-family:'Outfit',sans-serif;font-size:11.5px;opacity:.6;margin-left:5px}
+.spacer{margin-left:auto;display:flex;gap:8px}
+
+/* 표 */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.tbl-scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:860px}
+thead th{background:#FFF8E8;color:#8A6A1F;font-size:12px;font-weight:800;letter-spacing:.04em;
+  padding:12px 14px;text-align:left;white-space:nowrap;border-bottom:1px solid #F3E7C8}
+td{padding:12px 14px;border-bottom:1px solid #F6EFDF;vertical-align:middle}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#FFFCF3}
+tbody tr.gone{opacity:.45}
+td.num{font-family:'Outfit',sans-serif;color:#B3AB98;font-size:12.5px}
+td.nm{font-weight:800}
+td .ph{font-family:'Outfit',sans-serif;font-weight:700;color:var(--sky)}
+td .ph:hover{text-decoration:underline}
+.pill{display:inline-block;font-size:11.5px;font-weight:800;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.p-first{background:var(--sun-soft);color:#B26A00}
+.p-some{background:var(--sky-soft);color:#1A7FB5}
+.p-regular{background:var(--leaf-soft);color:#558B2F}
+.c-notice{background:var(--sun-soft);color:#B26A00}
+.c-free{background:var(--sky-soft);color:#1A7FB5}
+.c-review{background:var(--leaf-soft);color:#558B2F}
+.c-partner{background:var(--plum-soft);color:var(--plum)}
+.c-market{background:var(--red-soft);color:var(--red)}
+select.st{font-size:12.5px;font-weight:700;padding:6px 10px;border-radius:8px;border:1.5px solid var(--line);
+  background:#fff;cursor:pointer;outline:none}
+select.st[data-v="new"]{background:var(--sun-soft);border-color:#F3D9A0;color:#B26A00}
+select.st[data-v="contacted"]{background:var(--sky-soft);border-color:#BFE3F5;color:#1A7FB5}
+select.st[data-v="booked"]{background:var(--plum-soft);border-color:#E3D0F0;color:var(--plum)}
+select.st[data-v="done"]{background:var(--leaf-soft);border-color:#CFE7B4;color:#558B2F}
+select.st[data-v="canceled"]{background:#F1EEE7;border-color:#E3DED2;color:#8A8272}
+input.memo{width:100%;min-width:130px;font-size:12.5px;padding:6px 10px;border:1.5px solid transparent;
+  border-radius:8px;background:#FBF7EE;outline:none}
+input.memo:focus{border-color:var(--sun);background:#fff}
+.empty{padding:52px 20px;text-align:center;color:#B3AB98;font-size:14px}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,12px);background:#33302B;color:#FFF6DE;
+  font-size:14px;font-weight:700;padding:13px 22px;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,.28);
+  z-index:90;opacity:0;pointer-events:none;transition:.2s;max-width:90vw;text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.note{font-size:12.5px;color:#B3AB98;margin-top:12px}
+
+@media (max-width:820px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .hd .lnk{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════ 로그인 ══════ -->
+<section class="login" id="login">
+  <h1>🔐 관리자 로그인</h1>
+  <p>정관 피클볼 클럽 운영 관리</p>
+  <div class="err" id="loginErr"></div>
+  <input type="password" id="token" placeholder="관리자 토큰" autocomplete="current-password">
+  <button class="btn btn-sun" id="loginBtn">로그인</button>
+  <p class="hint">
+    토큰은 서버 환경변수 <b>JGPC_ADMIN_TOKEN</b> 값입니다.<br>
+    설정하지 않았다면 개발 기본값 <code>changeme-dev-token</code> 이며,
+    운영 배포 전 반드시 변경하세요.
+  </p>
+</section>
+
+<!-- ══════ 대시보드 ══════ -->
+<header id="hdr" style="display:none">
+  <div class="wrap hd">
+    <span class="logo">
+      <svg width="26" height="26" viewBox="0 0 30 30" aria-hidden="true">
+        <circle cx="15" cy="15" r="13" fill="#FFC93C"/><circle cx="15" cy="15" r="13" fill="none" stroke="#F57C00" stroke-width="2"/>
+        <circle cx="10.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="19.5" cy="11" r="1.7" fill="#F57C00"/>
+        <circle cx="15" cy="17.5" r="1.7" fill="#F57C00"/><circle cx="9.5" cy="19" r="1.7" fill="#F57C00"/>
+        <circle cx="20.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="15" cy="7.5" r="1.7" fill="#F57C00"/>
+      </svg>
+      정관 피클볼 클럽
+    </span>
+    <span class="badge">Admin</span>
+    <span class="sp">
+      <a class="lnk" href="index.html" target="_blank">사이트 보기 ↗</a>
+      <a class="lnk" href="/api/docs" target="_blank">API 문서 ↗</a>
+      <button class="btn btn-line btn-sm" id="logout">로그아웃</button>
+    </span>
+  </div>
+</header>
+
+<main id="app">
+  <div class="wrap">
+
+    <div class="stats" id="stats"></div>
+
+    <div class="tabs">
+      <button class="tab on" data-tab="trials">🎾 무료 체험 신청</button>
+      <button class="tab" data-tab="posts">💬 게시판 관리</button>
+    </div>
+
+    <!-- 체험 신청 -->
+    <section id="tabTrials">
+      <div class="filters" id="trialFilters"></div>
+      <div class="panel">
+        <div class="tbl-scroll">
+          <table>
+            <thead><tr>
+              <th style="width:52px">#</th><th style="width:92px">이름</th><th style="width:132px">연락처</th>
+              <th>희망 시간</th><th style="width:110px">인원</th><th style="width:84px">경험</th>
+              <th style="width:160px">메모</th><th style="width:124px">상태</th><th style="width:112px">신청일</th>
+            </tr></thead>
+            <tbody id="trialRows"></tbody>
+          </table>
+        </div>
+      </div>
+      <p class="note">상태를 바꾸면 즉시 저장됩니다. 메모는 입력 후 <b>Enter</b> 또는 칸 밖을 클릭하면 저장돼요.</p>
+    </section>
+
+    <!-- 게시판 -->
+    <section id="tabPosts" style="display:none">
+      <div class="filters">
+        <span style="font-size:13.5px;color:var(--ink-soft);font-weight:700">전체 글 · 삭제된 글 포함</span>
+        <span class="spacer"><button class="btn btn-line btn-sm" id="reloadPosts">새로고침</button></span>
+      </div>
+      <div class="panel">
+        <div class="tbl-scroll">
+          <table>
+            <thead><tr>
+              <th style="width:52px">#</th><th style="width:88px">분류</th><th>제목</th>
+              <th style="width:96px">작성자</th><th style="width:64px">조회</th><th style="width:64px">댓글</th>
+              <th style="width:112px">작성일</th><th style="width:172px">관리</th>
+            </tr></thead>
+            <tbody id="postRows"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ─────────────────────────────────────────────
+   정관 피클볼 클럽 관리자 페이지
+   서버 API(x-admin-token 헤더 인증)만 사용합니다.
+   토큰은 sessionStorage 에만 보관되어 탭을 닫으면 사라집니다.
+   ───────────────────────────────────────────── */
+var KEY = 'jgpc_admin_token';
+var token = '';
+var STATUS = { new:'🆕 신규', contacted:'📞 연락함', booked:'📅 예약확정', done:'✅ 방문완료', canceled:'✖ 취소' };
+var EXP = { first:['처음', 'p-first'], some:['조금', 'p-some'], regular:['자주', 'p-regular'] };
+var CATS = { notice:['공지','c-notice'], free:['자유','c-free'], review:['후기','c-review'],
+             partner:['파트너','c-partner'], market:['장터','c-market'] };
+var trials = [], curStatus = 'all';
+
+function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(m){
+  return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m]; }); }
+
+function toast(msg){
+  var el = document.getElementById('toast');
+  el.textContent = msg; el.classList.add('on');
+  clearTimeout(el._t); el._t = setTimeout(function(){ el.classList.remove('on'); }, 2600);
+}
+
+async function api(path, opt){
+  opt = opt || {};
+  opt.headers = Object.assign({ 'Content-Type':'application/json', 'x-admin-token': token }, opt.headers||{});
+  var res = await fetch(path, opt);
+  var data = null;
+  try { data = await res.json(); } catch(e){}
+  if (res.status === 401){ logout('토큰이 올바르지 않습니다. 다시 로그인해 주세요.'); throw new Error('unauthorized'); }
+  if (!res.ok){
+    var m = (data && (data.error || data.detail)) || ('요청 실패 (' + res.status + ')');
+    if (Array.isArray(m)) m = m.map(function(d){ return d.msg; }).join('\n');
+    throw new Error(m);
+  }
+  return data;
+}
+
+/* ── 로그인 ── */
+function showLogin(msg){
+  document.getElementById('login').style.display = 'block';
+  document.getElementById('hdr').style.display = 'none';
+  document.getElementById('app').classList.remove('on');
+  var e = document.getElementById('loginErr');
+  if (msg){ e.textContent = msg; e.classList.add('on'); } else { e.classList.remove('on'); }
+}
+function showApp(){
+  document.getElementById('login').style.display = 'none';
+  document.getElementById('hdr').style.display = 'block';
+  document.getElementById('app').classList.add('on');
+}
+function logout(msg){
+  token = '';
+  try { sessionStorage.removeItem(KEY); } catch(e){}
+  showLogin(msg || '');
+}
+
+async function tryLogin(t){
+  token = t;
+  try {
+    await api('/api/admin/verify');
+    try { sessionStorage.setItem(KEY, t); } catch(e){}
+    showApp();
+    await refreshAll();
+    return true;
+  } catch(err){
+    if (err.message !== 'unauthorized') showLogin('서버에 연결할 수 없습니다. run.bat 으로 서버를 먼저 실행해 주세요.');
+    return false;
+  }
+}
+
+document.getElementById('loginBtn').addEventListener('click', function(){
+  var v = document.getElementById('token').value.trim();
+  if (!v) return showLogin('토큰을 입력해 주세요.');
+  tryLogin(v);
+});
+document.getElementById('token').addEventListener('keydown', function(e){
+  if (e.key === 'Enter') document.getElementById('loginBtn').click();
+});
+document.getElementById('logout').addEventListener('click', function(){ logout(); });
+
+/* ── 통계 ── */
+async function renderStats(){
+  var s = await api('/api/admin/stats');
+  var t = s.trials, by = t.by_status || {};
+  document.getElementById('stats').innerHTML =
+    card('New Requests', t.by_status && by.new ? by.new : 0, '확인 필요한 신규 신청', true) +
+    card('Last 7 Days', t.last7days, '최근 7일 신청') +
+    card('Total Trials', t.total, '누적 체험 신청') +
+    card('Board', s.posts, '게시글 ' + s.posts + ' · 댓글 ' + s.comments);
+}
+function card(en, num, ko, hi){
+  return '<div class="stat' + (hi?' hi':'') + '"><span class="en">' + en + '</span>' +
+         '<b>' + num + '</b><span class="ko">' + esc(ko) + '</span></div>';
+}
+
+/* ── 체험 신청 ── */
+async function loadTrials(){
+  var d = await api('/api/admin/trials?status=all&limit=500');
+  trials = d.items;
+  renderFilters();
+  renderTrials();
+}
+function renderFilters(){
+  var counts = { all: trials.length };
+  Object.keys(STATUS).forEach(function(k){
+    counts[k] = trials.filter(function(t){ return t.status === k; }).length;
+  });
+  var html = ['all'].concat(Object.keys(STATUS)).map(function(k){
+    var label = k === 'all' ? '전체' : STATUS[k];
+    return '<button class="fchip' + (curStatus===k?' on':'') + '" data-st="' + k + '">' +
+           label + '<span class="n">' + counts[k] + '</span></button>';
+  }).join('');
+  html += '<span class="spacer">' +
+          '<button class="btn btn-line btn-sm" id="csvBtn">⬇ CSV 내려받기</button>' +
+          '<button class="btn btn-line btn-sm" id="reloadTrials">새로고침</button></span>';
+  var f = document.getElementById('trialFilters');
+  f.innerHTML = html;
+  f.querySelectorAll('.fchip').forEach(function(b){
+    b.addEventListener('click', function(){ curStatus = b.dataset.st; renderFilters(); renderTrials(); });
+  });
+  document.getElementById('csvBtn').addEventListener('click', exportCsv);
+  document.getElementById('reloadTrials').addEventListener('click', function(){ loadTrials().then(renderStats); });
+}
+function renderTrials(){
+  var list = curStatus === 'all' ? trials : trials.filter(function(t){ return t.status === curStatus; });
+  var el = document.getElementById('trialRows');
+  if (!list.length){
+    el.innerHTML = '<tr><td colspan="9"><div class="empty">해당 상태의 신청이 없습니다.</div></td></tr>';
+    return;
+  }
+  el.innerHTML = list.map(function(t){
+    var e = EXP[t.experience] || ['-', ''];
+    return '<tr data-id="' + t.id + '">' +
+      '<td class="num">' + t.id + '</td>' +
+      '<td class="nm">' + esc(t.name) + '</td>' +
+      '<td><a class="ph" href="tel:' + esc(t.phone).replace(/[^0-9]/g,'') + '">' + esc(t.phone) + '</a></td>' +
+      '<td>' + esc(t.slot) + '</td>' +
+      '<td>' + esc(t.headcount) + '</td>' +
+      '<td><span class="pill ' + e[1] + '">' + e[0] + '</span></td>' +
+      '<td><input class="memo" value="' + esc(t.memo || '') + '" placeholder="메모 입력"></td>' +
+      '<td>' + statusSelect(t) + '</td>' +
+      '<td class="num">' + esc(String(t.created_at).slice(0,16)) + '</td>' +
+    '</tr>';
+  }).join('');
+
+  el.querySelectorAll('select.st').forEach(function(s){
+    s.addEventListener('change', function(){
+      var id = s.closest('tr').dataset.id;
+      s.dataset.v = s.value;
+      patchTrial(id, { status: s.value }, '상태를 "' + STATUS[s.value].replace(/^\S+\s/,'') + '"(으)로 변경했습니다.');
+    });
+  });
+  el.querySelectorAll('input.memo').forEach(function(i){
+    var orig = i.value;
+    function save(){
+      if (i.value === orig) return;
+      orig = i.value;
+      patchTrial(i.closest('tr').dataset.id, { memo: i.value }, '메모를 저장했습니다.');
+    }
+    i.addEventListener('blur', save);
+    i.addEventListener('keydown', function(e){ if (e.key === 'Enter') i.blur(); });
+  });
+}
+function statusSelect(t){
+  return '<select class="st" data-v="' + t.status + '">' +
+    Object.keys(STATUS).map(function(k){
+      return '<option value="' + k + '"' + (t.status===k?' selected':'') + '>' + STATUS[k] + '</option>';
+    }).join('') + '</select>';
+}
+async function patchTrial(id, body, msg){
+  try {
+    var d = await api('/api/admin/trials/' + id, { method:'PATCH', body: JSON.stringify(body) });
+    var i = trials.findIndex(function(x){ return x.id === Number(id); });
+    if (i > -1) trials[i] = d.trial;
+    renderFilters();
+    await renderStats();
+    toast(msg);
+  } catch(err){ toast('⚠ ' + err.message); }
+}
+
+function exportCsv(){
+  var rows = curStatus === 'all' ? trials : trials.filter(function(t){ return t.status === curStatus; });
+  if (!rows.length) return toast('내려받을 신청이 없습니다.');
+  var head = ['번호','이름','연락처','희망 시간','인원','경험','메모','상태','유입 경로','신청일'];
+  var body = rows.map(function(t){
+    return [t.id, t.name, t.phone, t.slot, t.headcount,
+            (EXP[t.experience]||['-'])[0], t.memo || '',
+            STATUS[t.status].replace(/^\S+\s/,''), t.source || '', t.created_at];
+  });
+  var csv = [head].concat(body).map(function(r){
+    return r.map(function(c){ return '"' + String(c==null?'':c).replace(/"/g,'""') + '"'; }).join(',');
+  }).join('\r\n');
+  var blob = new Blob(['﻿' + csv], { type:'text/csv;charset=utf-8;' });  // BOM — 엑셀 한글 깨짐 방지
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = '체험신청_' + new Date().toISOString().slice(0,10) + '.csv';
+  a.click();
+  URL.revokeObjectURL(a.href);
+  toast('CSV ' + rows.length + '건을 내려받았습니다.');
+}
+
+/* ── 게시판 관리 ── */
+async function loadPosts(){
+  var d = await api('/api/admin/posts?limit=300');
+  var el = document.getElementById('postRows');
+  if (!d.items.length){
+    el.innerHTML = '<tr><td colspan="8"><div class="empty">글이 없습니다.</div></td></tr>';
+    return;
+  }
+  el.innerHTML = d.items.map(function(p){
+    var c = CATS[p.category] || ['?',''];
+    return '<tr data-id="' + p.id + '"' + (p.deleted?' class="gone"':'') + '>' +
+      '<td class="num">' + p.id + '</td>' +
+      '<td><span class="pill ' + c[1] + '">' + c[0] + '</span></td>' +
+      '<td>' + (p.pinned ? '<b style="color:#B26A00">[고정] </b>' : '') + esc(p.title) +
+        (p.deleted ? ' <span class="pill c-market">삭제됨</span>' : '') + '</td>' +
+      '<td>' + esc(p.author) + '</td>' +
+      '<td class="num">' + p.views + '</td>' +
+      '<td class="num">' + p.comment_count + '</td>' +
+      '<td class="num">' + esc(String(p.created_at).slice(0,10)) + '</td>' +
+      '<td>' + (p.deleted
+        ? '<button class="btn btn-line btn-sm act-restore">복구</button>'
+        : '<button class="btn btn-line btn-sm act-pin">' + (p.pinned?'고정 해제':'상단 고정') + '</button> ' +
+          '<button class="btn btn-line btn-sm act-del" style="color:#C0504D">삭제</button>') +
+      '</td></tr>';
+  }).join('');
+
+  el.querySelectorAll('.act-pin').forEach(function(b){
+    b.addEventListener('click', function(){
+      var tr = b.closest('tr');
+      var pin = b.textContent.indexOf('해제') === -1;
+      act('/api/admin/posts/' + tr.dataset.id + '/pin', 'PATCH', { pinned: pin },
+          pin ? '상단에 고정했습니다.' : '고정을 해제했습니다.');
+    });
+  });
+  el.querySelectorAll('.act-del').forEach(function(b){
+    b.addEventListener('click', function(){
+      var tr = b.closest('tr');
+      if (!confirm('이 글을 삭제할까요?\n(완전 삭제가 아니라 숨김 처리되며 언제든 복구할 수 있습니다)')) return;
+      act('/api/posts/' + tr.dataset.id, 'DELETE', null, '글을 삭제했습니다.');
+    });
+  });
+  el.querySelectorAll('.act-restore').forEach(function(b){
+    b.addEventListener('click', function(){
+      act('/api/admin/posts/' + b.closest('tr').dataset.id + '/restore', 'POST', null, '글을 복구했습니다.');
+    });
+  });
+}
+async function act(path, method, body, msg){
+  try {
+    await api(path, { method: method, body: body ? JSON.stringify(body) : undefined });
+    await loadPosts();
+    await renderStats();
+    toast(msg);
+  } catch(err){ toast('⚠ ' + err.message); }
+}
+document.getElementById('reloadPosts').addEventListener('click', function(){ loadPosts(); });
+
+/* ── 탭 ── */
+document.querySelectorAll('.tab').forEach(function(t){
+  t.addEventListener('click', function(){
+    document.querySelectorAll('.tab').forEach(function(x){ x.classList.remove('on'); });
+    t.classList.add('on');
+    var isTrials = t.dataset.tab === 'trials';
+    document.getElementById('tabTrials').style.display = isTrials ? 'block' : 'none';
+    document.getElementById('tabPosts').style.display  = isTrials ? 'none' : 'block';
+    if (!isTrials) loadPosts();
+  });
+});
+
+async function refreshAll(){
+  try { await renderStats(); await loadTrials(); }
+  catch(err){ if (err.message !== 'unauthorized') toast('⚠ ' + err.message); }
+}
+
+/* ── 부팅 ── */
+(function(){
+  var saved = '';
+  try { saved = sessionStorage.getItem(KEY) || ''; } catch(e){}
+  if (saved) tryLogin(saved); else showLogin('');
+})();
+</script>
+
+</body>
+</html>

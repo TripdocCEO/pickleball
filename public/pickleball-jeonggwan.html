@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>정관 실내 피클볼 — 전용 코트 3면, 연중 이용 | 정관 피클볼 클럽</title>
+<meta name="description" content="정관에 피클볼장 있나요? 네. 부산 기장군 정관읍에 실내 전용 코트 3면이 있습니다. 시간당 20,000원부터, 패들 무료 대여, 무료 주차 30면, 연중무휴.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- 지역 랜딩 (기획서 §03 /pickleball-jeonggwan): SportsActivityLocation + FAQPage.
+     상호·주소·전화는 네이버 플레이스와 글자 단위 일치 필수. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SportsActivityLocation",
+      "name": "정관 피클볼 클럽",
+      "description": "부산 기장군 정관 실내 피클볼 전용 코트 3면. 코트 대관·입문 클래스·소셜매치·유소년 아카데미 운영. 패들·볼 무료 대여, 무료 주차.",
+      "url": "https://example.com/pickleball-jeonggwan",
+      "telephone": "+82-51-000-0000",
+      "address": { "@type": "PostalAddress", "addressCountry": "KR", "addressRegion": "부산광역시", "addressLocality": "기장군 정관읍", "streetAddress": "○○로 00" },
+      "geo": { "@type": "GeoCoordinates", "latitude": 35.322, "longitude": 129.183 },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "23:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "08:00", "closes": "22:00" }
+      ],
+      "sport": "Pickleball"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "정관에 피클볼장이 있나요?",
+          "acceptedAnswer": { "@type": "Answer", "text": "네. 부산 기장군 정관읍에 실내 피클볼 전용 코트 3면을 갖춘 정관 피클볼 클럽이 있습니다. 연중무휴로 운영하며 패들과 볼은 무료 대여입니다." } },
+        { "@type": "Question", "name": "정관 피클볼 이용 요금은 얼마인가요?",
+          "acceptedAnswer": { "@type": "Answer", "text": "코트 대관은 평일 주간 시간당 20,000원, 평일 저녁·주말 30,000원입니다. 소셜매치는 회당 10,000원, 입문 클래스는 4주 80,000원입니다." } },
+        { "@type": "Question", "name": "기장군에서 피클볼을 배울 수 있는 곳이 있나요?",
+          "acceptedAnswer": { "@type": "Answer", "text": "네. 정관 피클볼 클럽에서 성인 입문 클래스, 유소년 아카데미, 시니어 주간반을 운영합니다. 무료 체험 수업부터 시작할 수 있습니다." } },
+        { "@type": "Question", "name": "정관 피클볼 클럽에 주차할 수 있나요?",
+          "acceptedAnswer": { "@type": "Answer", "text": "네. 건물 전용 주차장 30면을 무료로 이용할 수 있습니다." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --sun:#FFB300;--sun-deep:#F57C00;--sun-soft:#FFF3D6;
+  --sky:#2FA8E0;--sky-soft:#E3F4FC;--leaf:#7CB342;--leaf-soft:#EEF6E3;
+  --cream:#FFFDF7;--ink:#33302B;--ink-soft:#7A7266;--line:#F0E8D8;--card:#FFFFFF;
+  --radius:20px;--shadow:0 10px 30px rgba(245,158,11,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font-family:'Pretendard','Malgun Gothic',system-ui,sans-serif;font-size:16px;line-height:1.7;letter-spacing:-0.01em;word-break:keep-all}
+img{max-width:100%}a{color:inherit;text-decoration:none}ul,ol{list-style:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+.chip{display:inline-flex;align-items:center;gap:7px;background:var(--sun-soft);color:#B26A00;font-family:'Outfit','Pretendard',sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:16px}
+.chip .ko{font-family:'Pretendard',sans-serif;letter-spacing:0;text-transform:none;font-size:12.5px;color:#C58A2A;font-weight:600;border-left:1px solid #EFD9A8;padding-left:9px}
+h2{font-size:clamp(24px,4.2vw,34px);font-weight:800;line-height:1.35;letter-spacing:-0.03em;margin-bottom:12px}
+.sec-sub{color:var(--ink-soft);font-size:16px;max-width:580px;margin-bottom:36px}
+section{padding:64px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:16px;border-radius:999px;padding:15px 30px;transition:transform .15s ease,box-shadow .15s ease;cursor:pointer;border:none}
+.btn:active{transform:scale(.97)}
+.btn-sun{background:linear-gradient(135deg,#FFC93C,#FFA726);color:#5C3A00;box-shadow:0 8px 22px rgba(255,167,38,.38)}
+.btn-sun:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(255,167,38,.48)}
+.btn-line{background:#fff;color:var(--ink);border:2px solid var(--line)}
+.btn-line:hover{border-color:var(--sun);color:#B26A00}
+.en-script{font-family:'Outfit',sans-serif;font-weight:600;font-style:italic;letter-spacing:.02em;color:#D9A93C}
+header{position:sticky;top:0;z-index:50;background:rgba(255,253,247,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:24px;height:66px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:-0.02em}
+.logo svg{flex:none}
+.logo-txt{display:flex;flex-direction:column;line-height:1.15}
+.logo-txt small{font-family:'Outfit',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:.22em;color:#D9A93C;text-transform:uppercase}
+.nav-links{display:flex;gap:22px;margin-left:auto;font-size:15px;font-weight:600;color:#5C554A}
+.nav-links a:hover{color:var(--sun-deep)}
+.nav-links a.active{color:var(--sun-deep)}
+.nav .btn{padding:10px 20px;font-size:14px;margin-left:8px}
+.page-hero{position:relative;overflow:hidden;background:radial-gradient(800px 420px at 85% -10%,rgba(255,214,79,.5),transparent 65%),radial-gradient(600px 380px at -10% 30%,rgba(179,229,252,.45),transparent 60%),linear-gradient(180deg,#FFFBEF 0%,var(--cream) 100%);padding:72px 0 60px}
+.page-hero h1{font-size:clamp(30px,4.8vw,46px);font-weight:900;line-height:1.28;letter-spacing:-0.04em;margin-bottom:16px}
+.page-hero h1 em{font-style:normal;color:var(--sun-deep)}
+.crumb{font-family:'Outfit','Pretendard',sans-serif;font-size:12.5px;color:#B3A886;margin-bottom:22px;font-weight:600}
+.crumb a:hover{color:var(--sun-deep)}
+/* 답 먼저 박스 */
+.answer-first{background:var(--card);border-left:5px solid var(--sun);border-radius:0 18px 18px 0;box-shadow:var(--shadow);padding:24px 28px;max-width:720px;margin-bottom:26px}
+.answer-first p{font-size:16.5px;line-height:1.8;color:#44403A}
+.answer-first b{color:var(--sun-deep)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{padding:14px 18px;text-align:left;border-bottom:1px solid #F6EFDF;vertical-align:middle}
+thead th{background:#FFF8E8;color:#8A6A1F;font-size:13px;font-weight:800;letter-spacing:.04em;border-bottom:1px solid #F3E7C8;white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td.price{font-family:'Outfit','Pretendard',sans-serif;font-weight:800;white-space:nowrap}
+.table-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #FBF3E2;overflow:hidden;margin-bottom:16px}
+.hint{font-size:13px;color:#B3AB98;margin-bottom:8px}
+/* 이용 가능한 것 카드 */
+.use{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.use-card{border-radius:18px;padding:24px 22px;display:flex;flex-direction:column;transition:transform .18s ease}
+.use-card:hover{transform:translateY(-4px)}
+.use-card:nth-child(1){background:var(--sun-soft)}
+.use-card:nth-child(2){background:var(--sky-soft)}
+.use-card:nth-child(3){background:var(--leaf-soft)}
+.use-card:nth-child(4){background:#F6EFFB}
+.use-card .ico{font-size:28px;margin-bottom:10px}
+.use-card h4{font-size:15.5px;font-weight:800;margin-bottom:6px}
+.use-card p{font-size:13px;color:#6B6353;flex:1}
+.use-card .go{font-size:13.5px;font-weight:800;margin-top:12px}
+.use-card:nth-child(1) .go{color:#B26A00}.use-card:nth-child(2) .go{color:#1A7FB5}
+.use-card:nth-child(3) .go{color:#558B2F}.use-card:nth-child(4) .go{color:#8E56B8}
+/* FAQ */
+details{background:var(--card);border-radius:16px;border:1px solid #FBF3E2;box-shadow:0 4px 14px rgba(245,158,11,.07);overflow:hidden;margin-bottom:12px;max-width:820px}
+summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:14px;padding:19px 24px;font-weight:800;font-size:16.5px;letter-spacing:-0.02em}
+summary::-webkit-details-marker{display:none}
+summary .q{flex:none;width:30px;height:30px;border-radius:10px;background:var(--sun-soft);color:#B26A00;font-size:15px;display:flex;align-items:center;justify-content:center;font-weight:900}
+summary .arrow{margin-left:auto;color:#C9BFA9;transition:transform .2s ease;font-size:13px}
+details[open] summary .arrow{transform:rotate(180deg)}
+details .a{padding:0 24px 20px 68px;color:#55503F;font-size:15px}
+details .a b{color:var(--sun-deep)}
+.cta-band{background:radial-gradient(700px 360px at 50% -40%,rgba(255,214,79,.6),transparent 70%),linear-gradient(160deg,#FFF3D6,#FFE9B8);border-radius:28px;text-align:center;padding:56px 28px}
+.cta-band h2{margin-bottom:10px}
+.cta-band p{color:#7A6636;margin-bottom:26px}
+footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
+.foot-info{font-size:13.5px;color:#9A927F;line-height:1.9}
+.foot-info b{color:#6B6353}
+.updated{margin-top:20px;font-size:12.5px;color:#B3AB98}
+.kakao-fab{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;align-items:center;gap:9px;background:#FEE500;color:#191919;font-weight:800;font-size:14.5px;padding:14px 22px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.18);transition:transform .15s ease}
+.kakao-fab:hover{transform:translateY(-3px)}
+@media (max-width:900px){.use{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:720px){
+  section{padding:52px 0}
+  .nav-links{display:none}
+  .logo-txt small{display:none}
+  .use{grid-template-columns:1fr 1fr}
+  th,td{padding:12px 12px;font-size:14px}
+  .table-card{overflow-x:auto}
+  .table-card table{min-width:480px}
+  details .a{padding-left:24px}
+}
+@media (max-width:480px){.use{grid-template-columns:1fr}}
+/* nav-6 */
+.nav{gap:20px}
+.nav-links{gap:19px;font-size:14.5px}
+@media (max-width:900px){.nav-links{display:none}}
+
+/* ══════════ nav v2 — 카테고리 드롭다운 + 모바일 메뉴 ══════════ */
+.nav{gap:16px}
+.nav-links{display:flex;align-items:center;gap:16px;margin-left:auto;font-size:14px;font-weight:600;color:#5C554A}
+.nav-links > a{white-space:nowrap}
+.nav-links > a.active,.nd.nd-on > .nd-btn{color:var(--sun-deep)}
+.nd{position:relative}
+.nd::after{content:"";position:absolute;left:0;right:0;top:100%;height:16px}
+.nd-btn{background:none;border:none;padding:0;font:inherit;color:inherit;cursor:pointer;display:flex;align-items:center;gap:4px;white-space:nowrap}
+.nd-btn i{font-style:normal;font-size:9px;opacity:.5;transition:transform .16s}
+.nd-btn:hover,.nd:hover > .nd-btn{color:var(--sun-deep)}
+.nd:hover > .nd-btn i,.nd.open > .nd-btn i{transform:rotate(180deg)}
+.nd-menu{
+  position:absolute;top:calc(100% + 16px);left:50%;
+  transform:translateX(-50%) translateY(-6px);
+  background:#fff;border:1px solid var(--line);border-radius:16px;
+  box-shadow:0 18px 44px rgba(120,90,20,.16);padding:10px;min-width:210px;
+  display:flex;flex-direction:column;gap:2px;
+  opacity:0;visibility:hidden;transition:opacity .16s,transform .16s,visibility .16s;z-index:70;
+}
+.nd:hover > .nd-menu,.nd:focus-within > .nd-menu,.nd.open > .nd-menu{
+  opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);
+}
+.nd-menu a{padding:10px 14px;border-radius:10px;font-size:14px;color:#5C554A;white-space:nowrap}
+.nd-menu a:hover{background:var(--sun-soft);color:#B26A00}
+.nd-menu a b{font-weight:800}
+.nav-mcta{display:none}
+.navtoggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;
+  margin-left:auto;background:none;border:1.5px solid var(--line);border-radius:12px;cursor:pointer;padding:0 10px}
+.navtoggle span{display:block;height:2px;background:#7A7266;border-radius:2px;transition:.2s}
+.navtoggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.navtoggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.navtoggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media (max-width:1060px){
+  .nav .btn{display:none}
+  .navtoggle{display:flex}
+  /* 전체 화면 시트 — 내부에서만 스크롤 */
+  .nav-links{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:#FFFDF7;border-top:1px solid var(--line);
+    box-shadow:0 22px 40px rgba(120,90,20,.16);
+    padding:6px 18px 30px;
+    max-height:calc(100dvh - 66px);max-height:calc(100vh - 66px);
+    overflow-y:auto;overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;z-index:80;
+  }
+  .nav-links.open{display:flex}
+  .nav-links > a{padding:15px 8px;border-bottom:1px solid #F6EFDF;font-size:16px;font-weight:700}
+  .nd{border-bottom:1px solid #F6EFDF;position:static}
+  .nd::after{display:none}
+  .nd-btn{width:100%;padding:15px 8px;font-size:16px;font-weight:700}
+  .nd-btn i{margin-left:auto;opacity:.45;font-size:11px}
+  /* 아코디언 — 누른 카테고리만 아래로 펼쳐집니다 (옆으로 나가지 않도록 강제) */
+  .nd-menu{
+    position:static !important;
+    transform:none !important;
+    inset:auto !important;
+    width:auto !important;max-width:100% !important;min-width:0 !important;
+    background:transparent;border:none;box-shadow:none;
+    padding:0 0 10px 14px;gap:0;
+    display:none;opacity:1;visibility:visible;transition:none;
+  }
+  .nd.open > .nd-menu,
+  .nd:hover > .nd-menu,
+  .nd:focus-within > .nd-menu{display:none}
+  .nd.open > .nd-menu{display:flex}
+  .nd-menu a{padding:12px 10px;font-size:14.5px;color:#8A8272;white-space:normal}
+  .nav-mcta{margin-top:18px;display:block}
+  .nav-mcta .btn{display:inline-flex;width:100%}
+  .kakao-fab{z-index:40}
+  body.nav-lock{overflow:hidden}
+}
+
+/* ══════════ btn-fix — 줄바꿈 시 가운데 정렬 + 좁은 화면 CTA 스택 ══════════ */
+.btn{text-align:center;line-height:1.35}
+.btn > *{flex:none}
+@media (max-width:560px){
+  .hero-cta{gap:10px}
+  .hero-cta .btn{flex:1 1 100%;min-width:0;width:100%;padding:16px 22px}
+  .cta-band .hero-cta .btn,
+  .cta-band a.btn{flex:1 1 100%;width:100%}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html">
+      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
+        <circle cx="15" cy="15" r="13" fill="#FFC93C"/><circle cx="15" cy="15" r="13" fill="none" stroke="#F57C00" stroke-width="2"/>
+        <circle cx="10.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="19.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="15" cy="17.5" r="1.7" fill="#F57C00"/>
+        <circle cx="9.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="20.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="15" cy="7.5" r="1.7" fill="#F57C00"/>
+      </svg>
+      <span class="logo-txt">정관 피클볼 클럽<small>Jeonggwan Pickleball Club</small></span>
+    </a>
+    <button class="navtoggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">홈</a>
+      <a href="first-visit.html">처음 오시는 분</a>
+
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false">프로그램<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="social.html">🤝 소셜매치 — 혼자 와도 OK</a>
+          <a href="junior.html">🧒 유소년 아카데미</a>
+          <a href="first-visit.html#trial-form">🌱 무료 체험·입문 클래스</a>
+        </div>
+      </div>
+
+      <a href="pricing.html">이용요금</a>
+
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false">가이드<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="guide.html"><b>📚 가이드 전체 보기</b></a>
+          <a href="what-is-pickleball.html">피클볼이 뭔가요?</a>
+          <a href="pickleball-what-to-prepare.html">뭘 준비해야 하나요?</a>
+          <a href="pickleball-alone.html">혼자 가도 되나요?</a>
+          <a href="kids-pickleball.html">초등학생도 되나요?</a>
+          <a href="pickleball-lesson-cost.html">레슨 비용은 얼마?</a>
+        </div>
+      </div>
+
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false">커뮤니티<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="board.html">💬 게시판</a>
+          <a href="events.html">🏆 대회 · 정관 리그</a>
+        </div>
+      </div>
+
+      <div class="nd nd-on">
+        <button type="button" class="nd-btn" aria-expanded="false">오시는 길<i>▾</i></button>
+        <div class="nd-menu">
+          <a href="index.html#location">📍 위치 · 주차 안내</a>
+          <a href="pickleball-jeonggwan.html">정관에서 오시는 분</a>
+          <a href="pickleball-gijang.html">기장에서 오시는 분</a>
+          <a href="pickleball-busan.html">부산 도심에서 오시는 분</a>
+        </div>
+      </div>
+      <div class="nav-mcta"><a class="btn btn-sun" href="first-visit.html#trial-form">🎾 무료 체험 신청</a></div>
+    </nav>
+    <a class="btn btn-sun" href="first-visit.html#trial-form">무료 체험 신청</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="index.html">HOME</a> / JEONGGWAN</p>
+    <span class="chip">📍 Jeonggwan, Busan<span class="ko">정관 지역 안내</span></span>
+    <h1>정관 실내 피클볼 —<br><em>전용 코트 3면</em>, 연중 이용</h1>
+    <!-- AEO: 첫 문단에 답 — 위치·코트 수·운영시간·요금·대여 여부를 한 단락에 -->
+    <div class="answer-first">
+      <p><b>정관에서 피클볼을 치려면 정관읍 ○○로 00, 정관 피클볼 클럽으로 오시면 됩니다.</b> 실내 전용 코트 3면을 갖춰 날씨와 무관하게 연중 이용할 수 있고, 코트 대관은 시간당 20,000원부터입니다. 패들과 볼은 무료로 대여하며, 평일 09:00–23:00 · 주말 08:00–22:00 운영, 건물 전용 주차 30면이 무료입니다.</p>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn btn-sun" href="first-visit.html#trial-form">🎾 무료 체험 신청</a>
+      <a class="btn btn-line" href="pricing.html">요금 전체 보기</a>
+    </div>
+  </div>
+</section>
+
+<!-- 오는 방법 -->
+<section>
+  <div class="wrap">
+    <span class="chip">🚗 Getting Here<span class="ko">정관에서 오는 방법</span></span>
+    <h2>정관 어디서든 10분 안에 닿습니다</h2>
+    <p class="sec-sub">신도시 안이라 걸어오시는 분이 절반입니다. 차로 오시면 전용 주차장에 바로 대세요.</p>
+    <div class="table-card">
+      <table>
+        <thead><tr><th>출발 위치</th><th>도보</th><th>차량</th><th>비고</th></tr></thead>
+        <tbody>
+          <tr><td><b>정관 중심상가</b></td><td>5분</td><td>2분</td><td>○○사거리 방면</td></tr>
+          <tr><td><b>정관읍사무소</b></td><td>12분</td><td>3분</td><td>—</td></tr>
+          <tr><td><b>모전리·매학리 방면</b></td><td>20분</td><td>5분</td><td>마을버스 ○번 정류장 하차 도보 3분</td></tr>
+          <tr><td><b>기장읍내</b></td><td>—</td><td>20분</td><td>정관산업로 경유</td></tr>
+          <tr><td><b>부산 도심 (해운대)</b></td><td>—</td><td>30분</td><td>번영로·정관산업로</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="hint">※ 단지별 소요 시간은 오픈 전 실측으로 교체합니다. 주차 입구 사진도 함께 게재 예정입니다.</p>
+  </div>
+</section>
+
+<!-- 이용 가능한 것 -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="chip">🎾 What You Can Do<span class="ko">여기서 할 수 있는 것</span></span>
+    <h2>대관부터 아이 수업까지, 전부 됩니다</h2>
+    <div class="use">
+      <a class="use-card" href="pricing.html">
+        <span class="ico">🏟️</span>
+        <h4>코트 대관</h4>
+        <p>1면 1시간, 최대 4인. 평일 주간 20,000원부터.</p>
+        <span class="go">요금 보기 →</span>
+      </a>
+      <a class="use-card" href="social.html">
+        <span class="ico">🤝</span>
+        <h4>소셜매치</h4>
+        <p>혼자 와도 4인 복식. 화·목·토 운영, 회당 10,000원.</p>
+        <span class="go">일정 보기 →</span>
+      </a>
+      <a class="use-card" href="first-visit.html">
+        <span class="ico">🌱</span>
+        <h4>입문 클래스</h4>
+        <p>4주 만에 경기. 무료 체험부터 시작하세요.</p>
+        <span class="go">체험 신청 →</span>
+      </a>
+      <a class="use-card" href="junior.html">
+        <span class="ico">🧒</span>
+        <h4>유소년 아카데미</h4>
+        <p>초·중등 정규반. 관람석에서 지켜보세요.</p>
+        <span class="go">반 편성 보기 →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 요금 요약 -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="chip">💛 Pricing<span class="ko">요금 요약</span></span>
+    <h2>정관 피클볼 요금, 한 표로</h2>
+    <div class="table-card">
+      <table>
+        <tbody>
+          <tr><td><b>코트 대관 (평일 주간)</b></td><td>1면 1시간</td><td class="price" style="text-align:right">20,000원</td></tr>
+          <tr><td><b>코트 대관 (저녁·주말)</b></td><td>1면 1시간</td><td class="price" style="text-align:right">30,000원</td></tr>
+          <tr><td><b>소셜매치</b></td><td>2시간 · 진행 포함</td><td class="price" style="text-align:right">10,000원</td></tr>
+          <tr><td><b>입문 클래스</b></td><td>주 1회 × 4주</td><td class="price" style="text-align:right">80,000원</td></tr>
+          <tr><td><b>패들·볼 대여</b></td><td>이용 시간 내</td><td class="price" style="text-align:right;color:var(--leaf)">무료</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="hint">정기권·유소년·시니어 요금은 <a href="pricing.html" style="color:var(--sky);font-weight:700">이용요금 전체 보기</a>에서 확인하세요.</p>
+  </div>
+</section>
+
+<!-- 지역 FAQ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="chip">💬 Local FAQ<span class="ko">정관 주민이 자주 묻는 질문</span></span>
+    <h2>정관에 피클볼장이 있나요? — 네, 있습니다</h2>
+    <div style="margin-top:28px">
+      <details open>
+        <summary><span class="q">Q</span>정관에 피클볼장이 있나요?<span class="arrow">▼</span></summary>
+        <div class="a"><b>네.</b> 정관읍 ○○로 00에 실내 전용 코트 3면을 갖춘 정관 피클볼 클럽이 있습니다. 연중무휴이며 패들·볼은 무료 대여입니다.</div>
+      </details>
+      <details>
+        <summary><span class="q">Q</span>기장군에서 피클볼을 배울 수 있는 곳이 있나요?<span class="arrow">▼</span></summary>
+        <div class="a"><b>네.</b> 성인 입문 클래스(4주 80,000원), 유소년 아카데미, 시니어 주간반을 운영합니다. 등록 전에 무료 체험 수업부터 받아 보실 수 있어요.</div>
+      </details>
+      <details>
+        <summary><span class="q">Q</span>정관 실내운동으로 피클볼이 괜찮을까요?<span class="arrow">▼</span></summary>
+        <div class="a"><b>네.</b> 실내 코트라 미세먼지·장마철에도 이용할 수 있고, 관절 부담이 적어 3040 직장인부터 시니어까지 함께 칩니다. 저녁 시간대 소셜매치가 가장 인기예요.</div>
+      </details>
+      <details>
+        <summary><span class="q">Q</span>주차나 대중교통은 어떤가요?<span class="arrow">▼</span></summary>
+        <div class="a">건물 전용 주차장 <b>30면이 무료</b>입니다. 마을버스 ○번 정류장에서 도보 3분이라 차 없이도 편하게 오실 수 있습니다.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band">
+      <span class="chip" style="background:rgba(255,255,255,.75)">☀️ See You on Court<span class="ko">코트에서 만나요</span></span>
+      <h2>정관 이웃이라면, 첫 방문은 무료</h2>
+      <p>실내화 하나 들고 오세요. 나머지는 전부 준비되어 있습니다.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn-sun" href="first-visit.html#trial-form">🎾 무료 체험 신청하기</a>
+        <a class="btn btn-line" href="index.html#location" style="background:rgba(255,255,255,.85)">지도로 위치 보기</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="foot-info">
+      <b>정관 피클볼 클럽 · Jeonggwan Pickleball Club</b><br>
+      부산광역시 기장군 정관읍 ○○로 00 (2층) · 051-000-0000<br>
+      평일 09:00–23:00 · 주말 08:00–22:00 · 연중무휴
+    </p>
+    <p class="updated">최종 수정일: 2026년 7월 29일 · © 2026 Jeonggwan Pickleball Club, Busan, Korea.</p>
+  </div>
+</footer>
+
+<a class="kakao-fab" href="#" aria-label="카카오 채널 상담">
+  <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#191919" d="M12 3C6.48 3 2 6.58 2 11c0 2.84 1.86 5.33 4.64 6.74l-.95 3.52c-.08.3.25.54.51.37l4.18-2.77c.53.07 1.07.14 1.62.14 5.52 0 10-3.58 10-8S17.52 3 12 3z"/></svg>
+  카카오 상담
+</a>
+
+
+<script>
+/* 모바일 메뉴 토글 + 데스크톱 드롭다운 키보드/터치 지원 */
+(function(){
+  var t = document.getElementById('navToggle');
+  var n = document.getElementById('navLinks');
+  if (!t || !n) return;
+
+  function setOpen(v){
+    n.classList.toggle('open', v);
+    document.body.classList.toggle('nav-lock', v);
+    t.setAttribute('aria-expanded', v ? 'true' : 'false');
+    t.setAttribute('aria-label', v ? '메뉴 닫기' : '메뉴 열기');
+    if (v){
+      // 모바일: 현재 보고 있는 카테고리를 미리 펼쳐 둔다
+      var cur = n.querySelector('.nd.nd-on');
+      if (cur && window.innerWidth <= 1060 && !cur.classList.contains('open')){
+        cur.classList.add('open');
+        cur.querySelector('.nd-btn').setAttribute('aria-expanded','true');
+      }
+    }
+  }
+  t.addEventListener('click', function(){ setOpen(!n.classList.contains('open')); });
+
+  // 링크를 누르면 메뉴 닫기
+  n.addEventListener('click', function(e){
+    if (e.target.closest('a')) setOpen(false);
+  });
+
+  // 바깥 클릭 / ESC 로 닫기
+  function closeDropdowns(){
+    Array.prototype.forEach.call(document.querySelectorAll('.nd.open'), function(d){
+      d.classList.remove('open');
+      d.querySelector('.nd-btn').setAttribute('aria-expanded','false');
+    });
+  }
+  document.addEventListener('click', function(e){
+    if (!n.contains(e.target) && !t.contains(e.target)){
+      setOpen(false);
+      closeDropdowns();
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape'){
+      setOpen(false);
+      Array.prototype.forEach.call(document.querySelectorAll('.nd.open'), function(d){
+        d.classList.remove('open');
+        d.querySelector('.nd-btn').setAttribute('aria-expanded','false');
+      });
+    }
+  });
+
+  // 드롭다운: 데스크톱은 hover, 터치·키보드는 클릭으로도 열리게
+  Array.prototype.forEach.call(document.querySelectorAll('.nd'), function(d){
+    var b = d.querySelector('.nd-btn');
+    b.addEventListener('click', function(e){
+      e.stopPropagation();
+      var willOpen = !d.classList.contains('open');
+      Array.prototype.forEach.call(document.querySelectorAll('.nd'), function(o){
+        if (o !== d){ o.classList.remove('open'); o.querySelector('.nd-btn').setAttribute('aria-expanded','false'); }
+      });
+      d.classList.toggle('open', willOpen);
+      b.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+  });
+
+  // 뷰포트가 데스크톱으로 넓어지면 모바일 메뉴 상태 초기화
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 1060){ setOpen(false); document.body.classList.remove('nav-lock'); }
+  });
+})();
+</script>
+</body>
+</html>
