@@ -406,7 +406,7 @@ def test_sql_injection_in_search_is_safe(client):
 def test_static_site_is_served(client):
     r = client.get("/index.html")
     assert r.status_code == 200
-    assert "딩크라운지 피클볼 클럽" in r.text
+    assert "딩크라운지 피클볼클럽" in r.text
 
 
 def test_api_routes_not_shadowed_by_static_mount(client):
