@@ -1,6 +1,17 @@
-# 배포 가이드 — Git 연동 + 도메인 연결
+# 배포 가이드 — GitHub Pages + 도메인 연결
 
-현재 선택: **정적 배포** (백엔드는 올리지 않고 화면만 공개, 관리자 페이지는 데모 모드로 동작)
+**선택한 방식: GitHub Pages** (정적 배포 / 관리자 페이지는 데모 모드로 동작)
+
+> ⚠️ **저장소를 Public 으로 전환해야 합니다.** 무료 플랜에서 Private 저장소는 Pages 배포가 되지 않습니다.
+> 전환 전에 아래 **"공개 전 점검"** 을 먼저 읽어 주세요.
+
+## 순서 요약
+
+```
+1. 공개 전 점검 (아래)         →  2. 저장소 Public 전환
+3. Settings → Pages 설정        →  4. 도메인 구입 + DNS 연결
+5. python set-domain.py 도메인  →  6. commit & push  →  끝
+```
 
 ---
 
@@ -19,7 +30,77 @@
 
 ---
 
-## 방법 A. Cloudflare Pages ← **Private 저장소 유지 가능, 추천**
+---
+
+## 공개 전 점검 (Public 전환 전에 반드시)
+
+저장소를 공개하면 **코드와 커밋 히스토리 전체가 전 세계에 공개**됩니다. 아래는 점검 완료 항목입니다.
+
+| 항목 | 상태 |
+|---|---|
+| 실제 비밀값(토큰·API 키·인증서) | ✅ 없음 — 전체 히스토리 스캔 완료 |
+| `data/*.db` (신청자 개인정보) | ✅ 한 번도 커밋된 적 없음 (`.gitignore`) |
+| `.env` 실제 파일 | ✅ 없음 (`.env.example` 만 존재) |
+| `changeme-dev-token` | ⚠️ 개발 기본값이며 공개돼도 무해. **단 실서버에서는 반드시 변경** |
+| 관리자 데모 비밀번호 `demo` | ⚠️ 공개 전제 — 데모 데이터만 보이므로 보안 목적 아님 |
+
+**직접 판단하셔야 할 두 가지**
+
+1. **커밋 작성자 이메일이 공개됩니다** — 현재 `leechangkoo2128@gmail.com` 으로 기록돼 있습니다.
+   숨기시려면 Public 전환 **전에** 아래를 실행하세요. (GitHub 이 제공하는 noreply 주소로 교체)
+
+   ```bash
+   git config user.email "TripdocCEO@users.noreply.github.com"
+   git rebase -r --root --exec "git commit --amend --no-edit --reset-author"
+   git push --force-with-lease
+   ```
+   GitHub → Settings → Emails → *Keep my email addresses private* 도 함께 켜 두시면 좋습니다.
+
+2. **플레이스홀더 정보가 공개됩니다** — `○○로 00`, `051-000-0000`, 예시 요금, AI 생성 히어로 이미지.
+   실제 정보가 아니어서 위험하진 않지만, 검색에 잡히기 전에 교체하시는 편이 낫습니다.
+
+---
+
+## 방법 A. GitHub Pages ← **선택하신 방식**
+
+`.github/workflows/pages.yml` 은 이미 커밋돼 있습니다. 저장소만 공개로 바꾸면 됩니다.
+
+### 1) 저장소 Public 전환
+**Settings → General → 맨 아래 Danger Zone → Change repository visibility → Make public**
+
+### 2) Pages 활성화
+**Settings → Pages → Build and deployment → Source** 를 **`GitHub Actions`** 로 선택
+
+전환 직후 워크플로가 자동으로 돌고, **Actions** 탭에서 진행 상황을 볼 수 있습니다.
+1~2분 뒤 `https://tripdocceo.github.io/pickleball/` 에서 사이트가 열립니다.
+
+### 3) 도메인 연결
+1. 도메인 구입 (가비아·후이즈·Cloudflare Registrar 등)
+2. DNS 설정
+   - **서브도메인**(`www.도메인.com`) → `CNAME` 레코드를 `tripdocceo.github.io` 로
+   - **최상위**(`도메인.com`) → `A` 레코드 4개
+     `185.199.108.153` / `185.199.109.153` / `185.199.110.153` / `185.199.111.153`
+3. **Settings → Pages → Custom domain** 에 도메인 입력 후 Save
+4. DNS 전파(수분~수시간) 후 **Enforce HTTPS** 체크
+
+### 4) 사이트에 도메인 반영
+JSON-LD·robots·sitemap 안의 `example.com` 을 한 번에 바꿉니다.
+
+```bash
+python set-domain.py 도메인.com
+git add -A && git commit -m "chore: 도메인 설정" && git push
+```
+
+`public/CNAME` 파일도 자동 생성되어 Pages 커스텀 도메인 설정이 유지됩니다.
+
+> 💡 **커스텀 도메인 없이 `github.io/pickleball/` 만 쓰실 경우**
+> `robots.txt` 는 도메인 최상위에 있어야 크롤러가 읽습니다. 서브경로에서는 무시되니
+> 검색 노출까지 챙기시려면 커스텀 도메인을 붙이시는 걸 권합니다.
+> 이 경우엔 `python set-domain.py tripdocceo.github.io/pickleball --no-cname` 로 실행하세요.
+
+---
+
+## 방법 B. Cloudflare Pages ← Private 저장소를 유지하고 싶다면
 
 저장소를 공개하지 않아도 되고, 도메인·HTTPS·트래픽 모두 무료입니다.
 
@@ -43,20 +124,6 @@
 
 ---
 
-## 방법 B. GitHub Pages ← 저장소를 **Public** 으로 바꿔야 함
-
-`.github/workflows/pages.yml` 을 이미 넣어 두었습니다.
-
-1. 저장소 **Settings → General → Danger Zone → Change visibility → Public**
-   (무료 플랜에서 Private 저장소는 Pages 배포가 되지 않습니다. GitHub Pro면 Private도 가능)
-2. **Settings → Pages → Build and deployment → Source: GitHub Actions**
-3. `main` 에 push하면 워크플로가 돌며 `public/` 폴더가 배포됩니다
-4. 도메인 연결: **Settings → Pages → Custom domain** 에 도메인 입력 후 저장
-   - DNS에 `CNAME` → `tripdocceo.github.io` 추가 (apex 도메인이면 A 레코드 4개)
-   - 저장하면 저장소에 `CNAME` 파일이 자동 생성됩니다
-
-> ⚠️ Public 전환 전에 아래 "공개 전 정리" 항목을 먼저 처리하세요.
-
 ---
 
 ## 도메인 구입
@@ -72,33 +139,16 @@
 
 ## 배포 후 반드시 할 일
 
-1. **도메인 치환** — `public/robots.txt`, `public/sitemap.xml` 의 `example.com` 을 실제 도메인으로
+1. **도메인 반영** — `python set-domain.py 도메인.com` (JSON-LD·robots·sitemap·CNAME 일괄 처리)
 
-   ```bash
-   cd public && sed -i 's|https://example.com|https://실제도메인|g' robots.txt sitemap.xml
-   ```
-
-2. **JSON-LD 안의 `https://example.com`** 도 동일하게 교체 (각 페이지 `<script type="application/ld+json">`)
-
-3. **실제 정보 입력** — 전 페이지의 `○○로 00`, `051-000-0000`, 좌표(35.322/129.183), 요금
+2. **실제 정보 입력** — 전 페이지의 `○○로 00`, `051-000-0000`, 좌표(35.322/129.183), 요금
    기획서 §09대로 **네이버 플레이스·카카오맵과 글자 단위로 일치**시킬 것
 
-4. **검색엔진 등록**
+3. **검색엔진 등록**
    - 네이버 서치어드바이저 → 사이트 등록 → `sitemap.xml` 제출
    - 구글 서치콘솔 → 속성 추가 → `sitemap.xml` 제출
 
-5. **히어로 이미지 교체** — 현재 AI 생성본. `public/assets/hero.jpg` 를 실제 촬영본으로
-
----
-
-## 공개 전 정리 (저장소를 Public 으로 바꿀 경우)
-
-저장소에 실제 비밀값은 없지만, 공개 전 아래를 확인하세요.
-
-- [ ] `.env.example` — 예시값만 있는지 (실제 토큰 넣지 말 것)
-- [ ] `data/*.db` 가 `.gitignore` 로 빠져 있는지 → **실제 신청자 개인정보가 저장소에 올라가면 안 됩니다**
-- [ ] 관리자 데모 비밀번호(`admin.html` 의 `DEMO_PASS`)는 공개돼도 무방한 값인지
-      (데모 데이터만 보이므로 보안 목적이 아닙니다)
+4. **히어로 이미지 교체** — 현재 AI 생성본. `public/assets/hero.jpg` 를 실제 촬영본으로
 
 ---
 
