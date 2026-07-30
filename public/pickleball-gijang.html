@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>기장 피클볼장 — 기장군 실내 전용 코트 안내 | 정관 피클볼 클럽</title>
+<title>기장 피클볼장 — 기장군 실내 전용 코트 안내 | 딩크라운지 피클볼 클럽</title>
 <meta name="description" content="기장에 피클볼장 있나요? 네. 기장군 정관읍에 실내 전용 코트 3면이 있습니다. 기장읍·일광·좌천·철마에서 오는 법과 요금, 프로그램을 정리했습니다.">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +21,7 @@
   "@graph": [
     {
       "@type": "SportsActivityLocation",
-      "name": "정관 피클볼 클럽",
+      "name": "딩크라운지 피클볼 클럽",
       "description": "부산 기장군 정관읍의 실내 피클볼 전용 코트 3면. 기장군 전역에서 차량 20분 내 접근. 대관·레슨·소셜매치·유소년 아카데미 운영.",
       "url": "https://example.com/pickleball-gijang",
       "telephone": "+82-51-000-0000",
@@ -29,11 +32,11 @@
       "@type": "FAQPage",
       "mainEntity": [
         { "@type": "Question", "name": "기장에 피클볼장이 있나요?",
-          "acceptedAnswer": { "@type": "Answer", "text": "네. 기장군 정관읍에 실내 피클볼 전용 코트 3면을 갖춘 정관 피클볼 클럽이 있습니다. 기장읍에서 차량 약 20분 거리입니다." } },
+          "acceptedAnswer": { "@type": "Answer", "text": "네. 기장군 정관읍에 실내 피클볼 전용 코트 3면을 갖춘 딩크라운지 피클볼 클럽이 있습니다. 기장읍에서 차량 약 20분 거리입니다." } },
         { "@type": "Question", "name": "기장군에서 아이가 피클볼을 배울 수 있는 곳이 있나요?",
-          "acceptedAnswer": { "@type": "Answer", "text": "네. 정관 피클볼 클럽 유소년 아카데미가 초·중등 정규반을 운영합니다. 관람석과 스포츠 안전보험이 갖춰져 있고 무료 체험 수업부터 시작할 수 있습니다." } },
+          "acceptedAnswer": { "@type": "Answer", "text": "네. 딩크라운지 피클볼 클럽 유소년 아카데미가 초·중등 정규반을 운영합니다. 관람석과 스포츠 안전보험이 갖춰져 있고 무료 체험 수업부터 시작할 수 있습니다." } },
         { "@type": "Question", "name": "기장 실내 스포츠 시설 중 비 오는 날 이용할 수 있는 곳이 있나요?",
-          "acceptedAnswer": { "@type": "Answer", "text": "정관 피클볼 클럽은 실내 전용 코트라 우천·폭염·미세먼지와 무관하게 연중 이용할 수 있습니다. 평일 09:00–23:00, 주말 08:00–22:00 운영합니다." } }
+          "acceptedAnswer": { "@type": "Answer", "text": "딩크라운지 피클볼 클럽은 실내 전용 코트라 우천·폭염·미세먼지와 무관하게 연중 이용할 수 있습니다. 평일 09:00–23:00, 주말 08:00–22:00 운영합니다." } }
       ]
     }
   ]
@@ -219,6 +222,23 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
   .cta-band .hero-cta .btn,
   .cta-band a.btn{flex:1 1 100%;width:100%}
 }
+
+/* ══════════ 로고 ══════════ */
+.logo-mark{flex:none;display:block;border-radius:50%}
+.logo-txt small{letter-spacing:.16em}
+
+/* ══════════ 로고 타이포 — 상호가 길어져 폭 조정 ══════════ */
+.logo{font-size:15px;gap:9px}
+.logo-txt small{font-size:7.6px;letter-spacing:.08em;white-space:nowrap}
+.nav{gap:14px}
+.nav-links{gap:14px;font-size:13.5px}
+.nav .btn{padding:10px 15px;font-size:13.5px;margin-left:4px}
+@media (max-width:1180px){
+  .nav .btn{display:none}
+  .navtoggle{display:flex}
+  .nav-links{display:none}
+  .nav-links.open{display:flex}
+}
 </style>
 </head>
 <body>
@@ -226,12 +246,8 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
 <header>
   <div class="wrap nav">
     <a class="logo" href="index.html">
-      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
-        <circle cx="15" cy="15" r="13" fill="#FFC93C"/><circle cx="15" cy="15" r="13" fill="none" stroke="#F57C00" stroke-width="2"/>
-        <circle cx="10.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="19.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="15" cy="17.5" r="1.7" fill="#F57C00"/>
-        <circle cx="9.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="20.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="15" cy="7.5" r="1.7" fill="#F57C00"/>
-      </svg>
-      <span class="logo-txt">정관 피클볼 클럽<small>Jeonggwan Pickleball Club</small></span>
+      <img class="logo-mark" src="assets/logo.png" alt="" width="30" height="30" loading="eager">
+      <span class="logo-txt">딩크라운지 피클볼 클럽<small>DINK LOUNGE PICKLEBALL CLUB</small></span>
     </a>
     <button class="navtoggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
@@ -292,7 +308,7 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
     <span class="chip">📍 Gijang, Busan<span class="ko">기장 지역 안내</span></span>
     <h1>기장에서 피클볼 치려면,<br><em>정관으로</em> 오시면 됩니다</h1>
     <div class="answer-first">
-      <p><b>기장군의 실내 피클볼 전용 코트는 정관읍에 있습니다.</b> 정관 피클볼 클럽은 실내 코트 3면을 연중무휴로 운영하며, 기장읍에서 차량 약 20분, 좌천·일광에서 15~25분 거리입니다. 패들·볼 무료 대여, 전용 주차 30면 무료입니다.</p>
+      <p><b>기장군의 실내 피클볼 전용 코트는 정관읍에 있습니다.</b> 딩크라운지 피클볼 클럽은 실내 코트 3면을 연중무휴로 운영하며, 기장읍에서 차량 약 20분, 좌천·일광에서 15~25분 거리입니다. 패들·볼 무료 대여, 전용 주차 30면 무료입니다.</p>
     </div>
     <div style="display:flex;gap:12px;flex-wrap:wrap">
       <a class="btn btn-sun" href="first-visit.html#trial-form">🎾 무료 체험 신청</a>
@@ -372,7 +388,7 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
     <div style="margin-top:28px">
       <details open>
         <summary><span class="q">Q</span>기장에 피클볼장이 있나요?<span class="arrow">▼</span></summary>
-        <div class="a"><b>네.</b> 기장군 정관읍에 실내 전용 코트 3면을 갖춘 정관 피클볼 클럽이 있습니다. 기장읍에서 차량 약 20분입니다.</div>
+        <div class="a"><b>네.</b> 기장군 정관읍에 실내 전용 코트 3면을 갖춘 딩크라운지 피클볼 클럽이 있습니다. 기장읍에서 차량 약 20분입니다.</div>
       </details>
       <details>
         <summary><span class="q">Q</span>기장군에서 아이가 배울 수 있는 곳이 있나요?<span class="arrow">▼</span></summary>
@@ -407,11 +423,11 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
 <footer>
   <div class="wrap">
     <p class="foot-info">
-      <b>정관 피클볼 클럽 · Jeonggwan Pickleball Club</b><br>
+      <b>딩크라운지 피클볼 클럽 · DINK LOUNGE PICKLEBALL CLUB</b><br>
       부산광역시 기장군 정관읍 ○○로 00 (2층) · 051-000-0000<br>
       평일 09:00–23:00 · 주말 08:00–22:00 · 연중무휴
     </p>
-    <p class="updated">최종 수정일: 2026년 7월 29일 · © 2026 Jeonggwan Pickleball Club, Busan, Korea.</p>
+    <p class="updated">최종 수정일: 2026년 7월 29일 · © 2026 DINK LOUNGE PICKLEBALL CLUB, Busan, Korea.</p>
   </div>
 </footer>
 
@@ -521,7 +537,7 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
 
   // 뷰포트가 데스크톱으로 넓어지면 모바일 메뉴 상태 초기화
   window.addEventListener('resize', function(){
-    if (window.innerWidth > 1060){ setOpen(false); document.body.classList.remove('nav-lock'); }
+    if (window.innerWidth > 1180){ setOpen(false); document.body.classList.remove('nav-lock'); }
   });
 })();
 </script>

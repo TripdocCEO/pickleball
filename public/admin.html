@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>관리자 — 정관 피클볼 클럽</title>
+<title>관리자 — 딩크라운지 피클볼 클럽</title>
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -134,6 +137,10 @@ input.memo:focus{border-color:var(--sun);background:#fff}
   .stats{grid-template-columns:repeat(2,1fr)}
   .hd .lnk{display:none}
 }
+
+/* ══════════ 로고 ══════════ */
+.logo-mark{flex:none;display:block;border-radius:50%}
+.logo-txt small{letter-spacing:.16em}
 </style>
 </head>
 <body>
@@ -141,7 +148,7 @@ input.memo:focus{border-color:var(--sun);background:#fff}
 <!-- ══════ 로그인 ══════ -->
 <section class="login" id="login">
   <h1>🔐 관리자 로그인</h1>
-  <p>정관 피클볼 클럽 운영 관리</p>
+  <p>딩크라운지 피클볼 클럽 운영 관리</p>
   <div class="err" id="loginErr"></div>
   <input type="password" id="token" placeholder="관리자 토큰" autocomplete="current-password">
   <button class="btn btn-sun" id="loginBtn">로그인</button>
@@ -152,13 +159,8 @@ input.memo:focus{border-color:var(--sun);background:#fff}
 <header id="hdr" style="display:none">
   <div class="wrap hd">
     <span class="logo">
-      <svg width="26" height="26" viewBox="0 0 30 30" aria-hidden="true">
-        <circle cx="15" cy="15" r="13" fill="#FFC93C"/><circle cx="15" cy="15" r="13" fill="none" stroke="#F57C00" stroke-width="2"/>
-        <circle cx="10.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="19.5" cy="11" r="1.7" fill="#F57C00"/>
-        <circle cx="15" cy="17.5" r="1.7" fill="#F57C00"/><circle cx="9.5" cy="19" r="1.7" fill="#F57C00"/>
-        <circle cx="20.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="15" cy="7.5" r="1.7" fill="#F57C00"/>
-      </svg>
-      정관 피클볼 클럽
+      <img class="logo-mark" src="assets/logo.png" alt="" width="26" height="26" loading="eager">
+      딩크라운지 피클볼 클럽
     </span>
     <span class="badge" id="modeBadge">Admin</span>
     <span class="sp">
@@ -228,7 +230,7 @@ input.memo:focus{border-color:var(--sun);background:#fff}
 
 <script>
 /* ─────────────────────────────────────────────
-   정관 피클볼 클럽 관리자 페이지
+   딩크라운지 피클볼 클럽 관리자 페이지
    서버 API(x-admin-token 헤더 인증)만 사용합니다.
    토큰은 sessionStorage 에만 보관되어 탭을 닫으면 사라집니다.
    ───────────────────────────────────────────── */

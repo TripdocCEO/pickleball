@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>대회 — 정관 오픈 & 정관 리그 | 정관 피클볼 클럽</title>
+<title>대회 — 정관 오픈 & 정관 리그 | 딩크라운지 피클볼 클럽</title>
 <meta name="description" content="부산 피클볼 대회 일정. 정관 오픈 토너먼트 2026 가을 — 일시·부문·경기 방식·참가비·환불 규정·시상까지 참가에 필요한 모든 정보를 한 페이지에.">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,8 +25,8 @@
   "endDate": "2026-10-17T18:00+09:00",
   "eventStatus": "https://schema.org/EventScheduled",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "location": { "@type": "Place", "name": "정관 피클볼 클럽", "address": "부산광역시 기장군 정관읍 ○○로 00" },
-  "organizer": { "@type": "Organization", "name": "정관 피클볼 클럽" },
+  "location": { "@type": "Place", "name": "딩크라운지 피클볼 클럽", "address": "부산광역시 기장군 정관읍 ○○로 00" },
+  "organizer": { "@type": "Organization", "name": "딩크라운지 피클볼 클럽" },
   "offers": { "@type": "Offer", "price": "30000", "priceCurrency": "KRW", "validThrough": "2026-10-05", "availability": "https://schema.org/InStock" },
   "sport": "Pickleball"
 }
@@ -199,6 +202,23 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
   .cta-band .hero-cta .btn,
   .cta-band a.btn{flex:1 1 100%;width:100%}
 }
+
+/* ══════════ 로고 ══════════ */
+.logo-mark{flex:none;display:block;border-radius:50%}
+.logo-txt small{letter-spacing:.16em}
+
+/* ══════════ 로고 타이포 — 상호가 길어져 폭 조정 ══════════ */
+.logo{font-size:15px;gap:9px}
+.logo-txt small{font-size:7.6px;letter-spacing:.08em;white-space:nowrap}
+.nav{gap:14px}
+.nav-links{gap:14px;font-size:13.5px}
+.nav .btn{padding:10px 15px;font-size:13.5px;margin-left:4px}
+@media (max-width:1180px){
+  .nav .btn{display:none}
+  .navtoggle{display:flex}
+  .nav-links{display:none}
+  .nav-links.open{display:flex}
+}
 </style>
 </head>
 <body>
@@ -206,12 +226,8 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
 <header>
   <div class="wrap nav">
     <a class="logo" href="index.html">
-      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
-        <circle cx="15" cy="15" r="13" fill="#FFC93C"/><circle cx="15" cy="15" r="13" fill="none" stroke="#F57C00" stroke-width="2"/>
-        <circle cx="10.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="19.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="15" cy="17.5" r="1.7" fill="#F57C00"/>
-        <circle cx="9.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="20.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="15" cy="7.5" r="1.7" fill="#F57C00"/>
-      </svg>
-      <span class="logo-txt">정관 피클볼 클럽<small>Jeonggwan Pickleball Club</small></span>
+      <img class="logo-mark" src="assets/logo.png" alt="" width="30" height="30" loading="eager">
+      <span class="logo-txt">딩크라운지 피클볼 클럽<small>DINK LOUNGE PICKLEBALL CLUB</small></span>
     </a>
     <button class="navtoggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
@@ -296,7 +312,7 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
       </div>
       <div class="event-key">
         <div class="ek"><span class="en">Date</span><b>2026. 10. 17 (토)</b><span class="sub2">09:00 – 18:00</span></div>
-        <div class="ek"><span class="en">Venue</span><b>정관 피클볼 클럽</b><span class="sub2">실내 코트 3면 전면 사용</span></div>
+        <div class="ek"><span class="en">Venue</span><b>딩크라운지 피클볼 클럽</b><span class="sub2">실내 코트 3면 전면 사용</span></div>
         <div class="ek"><span class="en">Entry Fee</span><b>팀당 30,000원</b><span class="sub2">간식·기념품 포함</span></div>
         <div class="ek"><span class="en">Capacity</span><b>부문별 12팀</b><span class="sub2">선착순 마감</span></div>
       </div>
@@ -384,11 +400,11 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
 <footer>
   <div class="wrap">
     <p class="foot-info">
-      <b>정관 피클볼 클럽 · Jeonggwan Pickleball Club</b><br>
+      <b>딩크라운지 피클볼 클럽 · DINK LOUNGE PICKLEBALL CLUB</b><br>
       부산광역시 기장군 정관읍 ○○로 00 (2층) · 051-000-0000<br>
       평일 09:00–23:00 · 주말 08:00–22:00 · 연중무휴
     </p>
-    <p class="updated">최종 수정일: 2026년 7월 29일 · © 2026 Jeonggwan Pickleball Club, Busan, Korea.</p>
+    <p class="updated">최종 수정일: 2026년 7월 29일 · © 2026 DINK LOUNGE PICKLEBALL CLUB, Busan, Korea.</p>
   </div>
 </footer>
 
@@ -498,7 +514,7 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
 
   // 뷰포트가 데스크톱으로 넓어지면 모바일 메뉴 상태 초기화
   window.addEventListener('resize', function(){
-    if (window.innerWidth > 1060){ setOpen(false); document.body.classList.remove('nav-lock'); }
+    if (window.innerWidth > 1180){ setOpen(false); document.body.classList.remove('nav-lock'); }
   });
 })();
 </script>

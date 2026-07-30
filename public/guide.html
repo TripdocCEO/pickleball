@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>피클볼 가이드 — 규칙·준비물·시작하기 | 정관 피클볼 클럽</title>
+<title>피클볼 가이드 — 규칙·준비물·시작하기 | 딩크라운지 피클볼 클럽</title>
 <meta name="description" content="피클볼이 뭔가요? 규칙, 준비물, 라켓 대여, 혼자 가도 되는지까지 — 처음 시작하는 사람의 질문에 답부터 하는 피클볼 가이드.">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -205,6 +208,23 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
   .cta-band .hero-cta .btn,
   .cta-band a.btn{flex:1 1 100%;width:100%}
 }
+
+/* ══════════ 로고 ══════════ */
+.logo-mark{flex:none;display:block;border-radius:50%}
+.logo-txt small{letter-spacing:.16em}
+
+/* ══════════ 로고 타이포 — 상호가 길어져 폭 조정 ══════════ */
+.logo{font-size:15px;gap:9px}
+.logo-txt small{font-size:7.6px;letter-spacing:.08em;white-space:nowrap}
+.nav{gap:14px}
+.nav-links{gap:14px;font-size:13.5px}
+.nav .btn{padding:10px 15px;font-size:13.5px;margin-left:4px}
+@media (max-width:1180px){
+  .nav .btn{display:none}
+  .navtoggle{display:flex}
+  .nav-links{display:none}
+  .nav-links.open{display:flex}
+}
 </style>
 </head>
 <body>
@@ -212,12 +232,8 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
 <header>
   <div class="wrap nav">
     <a class="logo" href="index.html">
-      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
-        <circle cx="15" cy="15" r="13" fill="#FFC93C"/><circle cx="15" cy="15" r="13" fill="none" stroke="#F57C00" stroke-width="2"/>
-        <circle cx="10.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="19.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="15" cy="17.5" r="1.7" fill="#F57C00"/>
-        <circle cx="9.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="20.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="15" cy="7.5" r="1.7" fill="#F57C00"/>
-      </svg>
-      <span class="logo-txt">정관 피클볼 클럽<small>Jeonggwan Pickleball Club</small></span>
+      <img class="logo-mark" src="assets/logo.png" alt="" width="30" height="30" loading="eager">
+      <span class="logo-txt">딩크라운지 피클볼 클럽<small>DINK LOUNGE PICKLEBALL CLUB</small></span>
     </a>
     <button class="navtoggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
@@ -328,7 +344,7 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
       <a class="art" href="pickleball-jeonggwan.html">
         <span class="tag t4">📍 지역</span>
         <h3>부산 정관에서 피클볼 칠 수 있는 곳</h3>
-        <p class="ans"><b>정관읍에 실내 전용 코트 3면을 갖춘 정관 피클볼 클럽이 있습니다.</b> 위치·요금·운영시간과 정관 주변에서 즐길 수 있는 방법을 정리했습니다.</p>
+        <p class="ans"><b>정관읍에 실내 전용 코트 3면을 갖춘 딩크라운지 피클볼 클럽이 있습니다.</b> 위치·요금·운영시간과 정관 주변에서 즐길 수 있는 방법을 정리했습니다.</p>
         <span class="meta"><span class="date">2026. 07. 28</span><span class="read">읽기 →</span></span>
       </a>
     </div>
@@ -420,11 +436,11 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
 <footer>
   <div class="wrap">
     <p class="foot-info">
-      <b>정관 피클볼 클럽 · Jeonggwan Pickleball Club</b><br>
+      <b>딩크라운지 피클볼 클럽 · DINK LOUNGE PICKLEBALL CLUB</b><br>
       부산광역시 기장군 정관읍 ○○로 00 (2층) · 051-000-0000<br>
       평일 09:00–23:00 · 주말 08:00–22:00 · 연중무휴
     </p>
-    <p class="updated">최종 수정일: 2026년 7월 29일 · © 2026 Jeonggwan Pickleball Club, Busan, Korea.</p>
+    <p class="updated">최종 수정일: 2026년 7월 29일 · © 2026 DINK LOUNGE PICKLEBALL CLUB, Busan, Korea.</p>
   </div>
 </footer>
 
@@ -501,7 +517,7 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
 
   // 뷰포트가 데스크톱으로 넓어지면 모바일 메뉴 상태 초기화
   window.addEventListener('resize', function(){
-    if (window.innerWidth > 1060){ setOpen(false); document.body.classList.remove('nav-lock'); }
+    if (window.innerWidth > 1180){ setOpen(false); document.body.classList.remove('nav-lock'); }
   });
 })();
 </script>

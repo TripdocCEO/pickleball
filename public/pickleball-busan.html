@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>부산 실내 피클볼 — 전용 코트에서 연중 즐기기 | 정관 피클볼 클럽</title>
-<meta name="description" content="부산에서 실내 피클볼 전용 코트를 찾는다면 기장군 정관의 정관 피클볼 클럽. 실내 3면, 패들 무료 대여, 소셜매치 운영. 해운대에서 차량 30분.">
+<title>부산 실내 피클볼 — 전용 코트에서 연중 즐기기 | 딩크라운지 피클볼 클럽</title>
+<meta name="description" content="부산에서 실내 피클볼 전용 코트를 찾는다면 기장군 정관의 딩크라운지 피클볼 클럽. 실내 3면, 패들 무료 대여, 소셜매치 운영. 해운대에서 차량 30분.">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +21,7 @@
   "@graph": [
     {
       "@type": "SportsActivityLocation",
-      "name": "정관 피클볼 클럽",
+      "name": "딩크라운지 피클볼 클럽",
       "description": "부산 동북부(기장군 정관읍)의 실내 피클볼 전용 코트 3면. 부산 도심에서 차량 30~40분. 대관·레슨·소셜매치·유소년 아카데미 운영.",
       "url": "https://example.com/pickleball-busan",
       "telephone": "+82-51-000-0000",
@@ -29,7 +32,7 @@
       "@type": "FAQPage",
       "mainEntity": [
         { "@type": "Question", "name": "부산에 실내 피클볼 전용 코트가 있나요?",
-          "acceptedAnswer": { "@type": "Answer", "text": "네. 부산 기장군 정관읍의 정관 피클볼 클럽이 실내 전용 코트 3면을 운영합니다. 배드민턴장 겸용이 아닌 피클볼 전용 규격 코트입니다." } },
+          "acceptedAnswer": { "@type": "Answer", "text": "네. 부산 기장군 정관읍의 딩크라운지 피클볼 클럽이 실내 전용 코트 3면을 운영합니다. 배드민턴장 겸용이 아닌 피클볼 전용 규격 코트입니다." } },
         { "@type": "Question", "name": "부산 피클볼 동호회에 들어가려면 어떻게 하나요?",
           "acceptedAnswer": { "@type": "Answer", "text": "동호회 가입 없이도 소셜매치에 1인 신청하면 바로 경기할 수 있습니다. 매주 화·목 저녁과 토요일에 운영하며 회당 10,000원입니다." } },
         { "@type": "Question", "name": "부산 도심에서 정관까지 얼마나 걸리나요?",
@@ -209,6 +212,23 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
   .cta-band .hero-cta .btn,
   .cta-band a.btn{flex:1 1 100%;width:100%}
 }
+
+/* ══════════ 로고 ══════════ */
+.logo-mark{flex:none;display:block;border-radius:50%}
+.logo-txt small{letter-spacing:.16em}
+
+/* ══════════ 로고 타이포 — 상호가 길어져 폭 조정 ══════════ */
+.logo{font-size:15px;gap:9px}
+.logo-txt small{font-size:7.6px;letter-spacing:.08em;white-space:nowrap}
+.nav{gap:14px}
+.nav-links{gap:14px;font-size:13.5px}
+.nav .btn{padding:10px 15px;font-size:13.5px;margin-left:4px}
+@media (max-width:1180px){
+  .nav .btn{display:none}
+  .navtoggle{display:flex}
+  .nav-links{display:none}
+  .nav-links.open{display:flex}
+}
 </style>
 </head>
 <body>
@@ -216,12 +236,8 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
 <header>
   <div class="wrap nav">
     <a class="logo" href="index.html">
-      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
-        <circle cx="15" cy="15" r="13" fill="#FFC93C"/><circle cx="15" cy="15" r="13" fill="none" stroke="#F57C00" stroke-width="2"/>
-        <circle cx="10.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="19.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="15" cy="17.5" r="1.7" fill="#F57C00"/>
-        <circle cx="9.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="20.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="15" cy="7.5" r="1.7" fill="#F57C00"/>
-      </svg>
-      <span class="logo-txt">정관 피클볼 클럽<small>Jeonggwan Pickleball Club</small></span>
+      <img class="logo-mark" src="assets/logo.png" alt="" width="30" height="30" loading="eager">
+      <span class="logo-txt">딩크라운지 피클볼 클럽<small>DINK LOUNGE PICKLEBALL CLUB</small></span>
     </a>
     <button class="navtoggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
@@ -282,7 +298,7 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
     <span class="chip">📍 Busan Indoor<span class="ko">부산 실내 피클볼</span></span>
     <h1>부산에서 실내 피클볼,<br><em>전용 코트</em>에서 치세요</h1>
     <div class="answer-first">
-      <p><b>부산에서 피클볼 전용 실내 코트를 찾는다면 기장군 정관읍의 정관 피클볼 클럽이 있습니다.</b> 배드민턴장에 선만 그은 겸용 코트가 아니라 피클볼 규격(13.4×6.1m)으로 지은 전용 코트 3면이며, 도심에서 차량 30~40분 거리입니다. 소셜매치·레슨·대관을 연중무휴로 운영합니다.</p>
+      <p><b>부산에서 피클볼 전용 실내 코트를 찾는다면 기장군 정관읍의 딩크라운지 피클볼 클럽이 있습니다.</b> 배드민턴장에 선만 그은 겸용 코트가 아니라 피클볼 규격(13.4×6.1m)으로 지은 전용 코트 3면이며, 도심에서 차량 30~40분 거리입니다. 소셜매치·레슨·대관을 연중무휴로 운영합니다.</p>
     </div>
     <div style="display:flex;gap:12px;flex-wrap:wrap">
       <a class="btn btn-sun" href="first-visit.html#trial-form">🎾 무료 체험 신청</a>
@@ -353,7 +369,7 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
     <div style="margin-top:28px">
       <details open>
         <summary><span class="q">Q</span>부산에 실내 피클볼 전용 코트가 있나요?<span class="arrow">▼</span></summary>
-        <div class="a"><b>네.</b> 기장군 정관읍의 정관 피클볼 클럽이 실내 전용 코트 3면을 운영합니다. 겸용이 아닌 피클볼 규격 전용 코트입니다.</div>
+        <div class="a"><b>네.</b> 기장군 정관읍의 딩크라운지 피클볼 클럽이 실내 전용 코트 3면을 운영합니다. 겸용이 아닌 피클볼 규격 전용 코트입니다.</div>
       </details>
       <details>
         <summary><span class="q">Q</span>부산 피클볼 동호회에 들어가려면 어떻게 하나요?<span class="arrow">▼</span></summary>
@@ -388,11 +404,11 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
 <footer>
   <div class="wrap">
     <p class="foot-info">
-      <b>정관 피클볼 클럽 · Jeonggwan Pickleball Club</b><br>
+      <b>딩크라운지 피클볼 클럽 · DINK LOUNGE PICKLEBALL CLUB</b><br>
       부산광역시 기장군 정관읍 ○○로 00 (2층) · 051-000-0000<br>
       평일 09:00–23:00 · 주말 08:00–22:00 · 연중무휴
     </p>
-    <p class="updated">최종 수정일: 2026년 7월 29일 · © 2026 Jeonggwan Pickleball Club, Busan, Korea.</p>
+    <p class="updated">최종 수정일: 2026년 7월 29일 · © 2026 DINK LOUNGE PICKLEBALL CLUB, Busan, Korea.</p>
   </div>
 </footer>
 
@@ -502,7 +518,7 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
 
   // 뷰포트가 데스크톱으로 넓어지면 모바일 메뉴 상태 초기화
   window.addEventListener('resize', function(){
-    if (window.innerWidth > 1060){ setOpen(false); document.body.classList.remove('nav-lock'); }
+    if (window.innerWidth > 1180){ setOpen(false); document.body.classList.remove('nav-lock'); }
   });
 })();
 </script>

@@ -1,5 +1,5 @@
 """
-정관 피클볼 클럽 — 백엔드 API
+딩크라운지 피클볼 클럽 — 백엔드 API
 FastAPI + SQLite. 정적 사이트(public/)도 같은 서버에서 서빙합니다.
 
 실행:  uvicorn server.main:app --reload --port 8000
@@ -53,7 +53,7 @@ async def lifespan(_: FastAPI):
 
 
 app = FastAPI(
-    title="정관 피클볼 클럽 API",
+    title="딩크라운지 피클볼 클럽 API",
     version="1.0.0",
     docs_url="/api/docs",
     redoc_url=None,

@@ -1,7 +1,7 @@
 [project]
-name = "jeonggwan-pickleball-club"
+name = "dink-lounge-pickleball-club"
 version = "1.0.0"
-description = "정관 피클볼 클럽 웹사이트 — FastAPI + SQLite 백엔드"
+description = "딩크라운지 피클볼 클럽 웹사이트 — FastAPI + SQLite 백엔드"
 requires-python = ">=3.11"
 dependencies = [
     "fastapi>=0.115",

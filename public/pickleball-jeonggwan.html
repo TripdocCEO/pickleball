@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>정관 실내 피클볼 — 전용 코트 3면, 연중 이용 | 정관 피클볼 클럽</title>
+<title>정관 실내 피클볼 — 전용 코트 3면, 연중 이용 | 딩크라운지 피클볼 클럽</title>
 <meta name="description" content="정관에 피클볼장 있나요? 네. 부산 기장군 정관읍에 실내 전용 코트 3면이 있습니다. 시간당 20,000원부터, 패들 무료 대여, 무료 주차 30면, 연중무휴.">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +22,7 @@
   "@graph": [
     {
       "@type": "SportsActivityLocation",
-      "name": "정관 피클볼 클럽",
+      "name": "딩크라운지 피클볼 클럽",
       "description": "부산 기장군 정관 실내 피클볼 전용 코트 3면. 코트 대관·입문 클래스·소셜매치·유소년 아카데미 운영. 패들·볼 무료 대여, 무료 주차.",
       "url": "https://example.com/pickleball-jeonggwan",
       "telephone": "+82-51-000-0000",
@@ -35,12 +38,12 @@
       "@type": "FAQPage",
       "mainEntity": [
         { "@type": "Question", "name": "정관에 피클볼장이 있나요?",
-          "acceptedAnswer": { "@type": "Answer", "text": "네. 부산 기장군 정관읍에 실내 피클볼 전용 코트 3면을 갖춘 정관 피클볼 클럽이 있습니다. 연중무휴로 운영하며 패들과 볼은 무료 대여입니다." } },
+          "acceptedAnswer": { "@type": "Answer", "text": "네. 부산 기장군 정관읍에 실내 피클볼 전용 코트 3면을 갖춘 딩크라운지 피클볼 클럽이 있습니다. 연중무휴로 운영하며 패들과 볼은 무료 대여입니다." } },
         { "@type": "Question", "name": "정관 피클볼 이용 요금은 얼마인가요?",
           "acceptedAnswer": { "@type": "Answer", "text": "코트 대관은 평일 주간 시간당 20,000원, 평일 저녁·주말 30,000원입니다. 소셜매치는 회당 10,000원, 입문 클래스는 4주 80,000원입니다." } },
         { "@type": "Question", "name": "기장군에서 피클볼을 배울 수 있는 곳이 있나요?",
-          "acceptedAnswer": { "@type": "Answer", "text": "네. 정관 피클볼 클럽에서 성인 입문 클래스, 유소년 아카데미, 시니어 주간반을 운영합니다. 무료 체험 수업부터 시작할 수 있습니다." } },
-        { "@type": "Question", "name": "정관 피클볼 클럽에 주차할 수 있나요?",
+          "acceptedAnswer": { "@type": "Answer", "text": "네. 딩크라운지 피클볼 클럽에서 성인 입문 클래스, 유소년 아카데미, 시니어 주간반을 운영합니다. 무료 체험 수업부터 시작할 수 있습니다." } },
+        { "@type": "Question", "name": "딩크라운지 피클볼 클럽에 주차할 수 있나요?",
           "acceptedAnswer": { "@type": "Answer", "text": "네. 건물 전용 주차장 30면을 무료로 이용할 수 있습니다." } }
       ]
     }
@@ -230,6 +233,23 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
   .cta-band .hero-cta .btn,
   .cta-band a.btn{flex:1 1 100%;width:100%}
 }
+
+/* ══════════ 로고 ══════════ */
+.logo-mark{flex:none;display:block;border-radius:50%}
+.logo-txt small{letter-spacing:.16em}
+
+/* ══════════ 로고 타이포 — 상호가 길어져 폭 조정 ══════════ */
+.logo{font-size:15px;gap:9px}
+.logo-txt small{font-size:7.6px;letter-spacing:.08em;white-space:nowrap}
+.nav{gap:14px}
+.nav-links{gap:14px;font-size:13.5px}
+.nav .btn{padding:10px 15px;font-size:13.5px;margin-left:4px}
+@media (max-width:1180px){
+  .nav .btn{display:none}
+  .navtoggle{display:flex}
+  .nav-links{display:none}
+  .nav-links.open{display:flex}
+}
 </style>
 </head>
 <body>
@@ -237,12 +257,8 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
 <header>
   <div class="wrap nav">
     <a class="logo" href="index.html">
-      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
-        <circle cx="15" cy="15" r="13" fill="#FFC93C"/><circle cx="15" cy="15" r="13" fill="none" stroke="#F57C00" stroke-width="2"/>
-        <circle cx="10.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="19.5" cy="11" r="1.7" fill="#F57C00"/><circle cx="15" cy="17.5" r="1.7" fill="#F57C00"/>
-        <circle cx="9.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="20.5" cy="19" r="1.7" fill="#F57C00"/><circle cx="15" cy="7.5" r="1.7" fill="#F57C00"/>
-      </svg>
-      <span class="logo-txt">정관 피클볼 클럽<small>Jeonggwan Pickleball Club</small></span>
+      <img class="logo-mark" src="assets/logo.png" alt="" width="30" height="30" loading="eager">
+      <span class="logo-txt">딩크라운지 피클볼 클럽<small>DINK LOUNGE PICKLEBALL CLUB</small></span>
     </a>
     <button class="navtoggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
@@ -304,7 +320,7 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
     <h1>정관 실내 피클볼 —<br><em>전용 코트 3면</em>, 연중 이용</h1>
     <!-- AEO: 첫 문단에 답 — 위치·코트 수·운영시간·요금·대여 여부를 한 단락에 -->
     <div class="answer-first">
-      <p><b>정관에서 피클볼을 치려면 정관읍 ○○로 00, 정관 피클볼 클럽으로 오시면 됩니다.</b> 실내 전용 코트 3면을 갖춰 날씨와 무관하게 연중 이용할 수 있고, 코트 대관은 시간당 20,000원부터입니다. 패들과 볼은 무료로 대여하며, 평일 09:00–23:00 · 주말 08:00–22:00 운영, 건물 전용 주차 30면이 무료입니다.</p>
+      <p><b>정관에서 피클볼을 치려면 정관읍 ○○로 00, 딩크라운지 피클볼 클럽으로 오시면 됩니다.</b> 실내 전용 코트 3면을 갖춰 날씨와 무관하게 연중 이용할 수 있고, 코트 대관은 시간당 20,000원부터입니다. 패들과 볼은 무료로 대여하며, 평일 09:00–23:00 · 주말 08:00–22:00 운영, 건물 전용 주차 30면이 무료입니다.</p>
     </div>
     <div style="display:flex;gap:12px;flex-wrap:wrap">
       <a class="btn btn-sun" href="first-visit.html#trial-form">🎾 무료 체험 신청</a>
@@ -397,7 +413,7 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
     <div style="margin-top:28px">
       <details open>
         <summary><span class="q">Q</span>정관에 피클볼장이 있나요?<span class="arrow">▼</span></summary>
-        <div class="a"><b>네.</b> 정관읍 ○○로 00에 실내 전용 코트 3면을 갖춘 정관 피클볼 클럽이 있습니다. 연중무휴이며 패들·볼은 무료 대여입니다.</div>
+        <div class="a"><b>네.</b> 정관읍 ○○로 00에 실내 전용 코트 3면을 갖춘 딩크라운지 피클볼 클럽이 있습니다. 연중무휴이며 패들·볼은 무료 대여입니다.</div>
       </details>
       <details>
         <summary><span class="q">Q</span>기장군에서 피클볼을 배울 수 있는 곳이 있나요?<span class="arrow">▼</span></summary>
@@ -433,11 +449,11 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
 <footer>
   <div class="wrap">
     <p class="foot-info">
-      <b>정관 피클볼 클럽 · Jeonggwan Pickleball Club</b><br>
+      <b>딩크라운지 피클볼 클럽 · DINK LOUNGE PICKLEBALL CLUB</b><br>
       부산광역시 기장군 정관읍 ○○로 00 (2층) · 051-000-0000<br>
       평일 09:00–23:00 · 주말 08:00–22:00 · 연중무휴
     </p>
-    <p class="updated">최종 수정일: 2026년 7월 29일 · © 2026 Jeonggwan Pickleball Club, Busan, Korea.</p>
+    <p class="updated">최종 수정일: 2026년 7월 29일 · © 2026 DINK LOUNGE PICKLEBALL CLUB, Busan, Korea.</p>
   </div>
 </footer>
 
@@ -514,7 +530,7 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
 
   // 뷰포트가 데스크톱으로 넓어지면 모바일 메뉴 상태 초기화
   window.addEventListener('resize', function(){
-    if (window.innerWidth > 1060){ setOpen(false); document.body.classList.remove('nav-lock'); }
+    if (window.innerWidth > 1180){ setOpen(false); document.body.classList.remove('nav-lock'); }
   });
 })();
 </script>
