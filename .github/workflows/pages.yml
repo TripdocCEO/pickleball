@@ -33,11 +33,9 @@ jobs:
       - name: Jekyll 처리 비활성화 (_ 로 시작하는 파일 보존)
         run: touch public/.nojekyll
 
-      # enablement: true — Settings 에서 Pages 를 켜 두지 않았어도 워크플로가 직접 활성화합니다.
-      # (이게 없으면 "Get Pages site failed ... Not Found" 로 실패합니다)
+      # Pages 는 Settings → Pages → Source: GitHub Actions 로 이미 활성화돼 있어야 합니다.
+      # (enablement: true 는 토큰 권한 문제로 실패할 수 있어 사용하지 않습니다)
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:
