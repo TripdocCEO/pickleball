@@ -497,11 +497,30 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
   var errBox = document.getElementById('trialErr');
   var btn    = document.getElementById('trialSubmit');
   var PHONE  = /^01[0-9][-\s]?\d{3,4}[-\s]?\d{4}$/;
+  var HAS_API = null;   // null=확인중 / true=서버 있음 / false=정적 배포
+
+  /* 백엔드 존재 여부를 미리 확인.
+     정적 호스팅에서는 /api/* 가 404(또는 HTML)로 응답하므로 상태코드만으로는 구분할 수 없어
+     /api/health 의 JSON 응답 여부로 판단합니다. */
+  (async function probe(){
+    try {
+      var ctl = new AbortController();
+      var t = setTimeout(function(){ ctl.abort(); }, 2500);
+      var r = await fetch('/api/health', { cache:'no-store', signal: ctl.signal });
+      clearTimeout(t);
+      HAS_API = r.ok && (r.headers.get('content-type') || '').indexOf('json') > -1;
+    } catch(e){ HAS_API = false; }
+  })();
 
   function showErr(msg){
     errBox.textContent = msg;
     errBox.style.display = 'block';
     okBox.style.display = 'none';
+  }
+  function showDemo(){
+    okBox.textContent = '✅ (데모) 신청 화면은 정상 동작합니다. 실제 접수는 오픈 후 가능합니다.';
+    okBox.style.display = 'block';
+    errBox.style.display = 'none';
   }
 
   form.addEventListener('submit', async function(e){
@@ -533,6 +552,14 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
     btn.disabled = true;
     var prev = btn.textContent;
     btn.textContent = '접수 중…';
+
+    // 정적 배포(백엔드 없음) — 서버에 보내지 않고 데모 안내
+    if (HAS_API === false){
+      showDemo();
+      form.querySelectorAll('input[type=text],input[type=tel]').forEach(function(i){ i.value=''; });
+      return;
+    }
+
     try {
       var res = await fetch('/api/trials', {
         method: 'POST',
@@ -553,9 +580,8 @@ footer{padding:48px 0 110px;border-top:1px solid var(--line);margin-top:56px}
       showErr(msg);
       btn.disabled = false; btn.textContent = prev;
     } catch(err){
-      // 서버 미가동(정적 파일로 열람) — 데모 안내
-      okBox.textContent = '✅ (데모) 신청 화면이 정상 동작합니다. 서버 연결 시 실제로 접수됩니다.';
-      okBox.style.display = 'block';
+      showDemo();   // 네트워크 자체가 안 되는 경우(file:// 등)
+      form.querySelectorAll('input[type=text],input[type=tel]').forEach(function(i){ i.value=''; });
     }
   });
 })();

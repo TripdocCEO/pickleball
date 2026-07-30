@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+
+# 배포 후 실제 도메인으로 바꿔 주세요
+Sitemap: https://example.com/sitemap.xml

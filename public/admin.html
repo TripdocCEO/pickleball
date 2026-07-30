@@ -30,6 +30,11 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 .hd .logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:16px}
 .hd .badge{font-family:'Outfit',sans-serif;font-size:10px;font-weight:800;letter-spacing:.14em;
   background:var(--ink);color:#FFE9B8;padding:4px 10px;border-radius:6px;text-transform:uppercase}
+.hd .badge.demo{background:var(--sun-soft);color:#B26A00;font-family:'Pretendard',sans-serif;letter-spacing:0}
+.demo-bar{background:var(--sun-soft);border-bottom:1px solid #F3D9A0;color:#8A6A1F;
+  font-size:13px;font-weight:700;text-align:center;padding:9px 16px;display:none}
+.demo-bar.on{display:block}
+.demo-bar b{color:#B26A00}
 .hd .sp{margin-left:auto;display:flex;gap:8px;align-items:center}
 .lnk{font-size:13.5px;font-weight:700;color:var(--ink-soft);padding:8px 12px;border-radius:9px}
 .lnk:hover{background:var(--sun-soft);color:#B26A00}
@@ -140,11 +145,7 @@ input.memo:focus{border-color:var(--sun);background:#fff}
   <div class="err" id="loginErr"></div>
   <input type="password" id="token" placeholder="관리자 토큰" autocomplete="current-password">
   <button class="btn btn-sun" id="loginBtn">로그인</button>
-  <p class="hint">
-    토큰은 서버 환경변수 <b>JGPC_ADMIN_TOKEN</b> 값입니다.<br>
-    설정하지 않았다면 개발 기본값 <code>changeme-dev-token</code> 이며,
-    운영 배포 전 반드시 변경하세요.
-  </p>
+  <p class="hint" id="loginHint">연결 상태를 확인하는 중…</p>
 </section>
 
 <!-- ══════ 대시보드 ══════ -->
@@ -159,7 +160,7 @@ input.memo:focus{border-color:var(--sun);background:#fff}
       </svg>
       정관 피클볼 클럽
     </span>
-    <span class="badge">Admin</span>
+    <span class="badge" id="modeBadge">Admin</span>
     <span class="sp">
       <a class="lnk" href="index.html" target="_blank">사이트 보기 ↗</a>
       <a class="lnk" href="/api/docs" target="_blank">API 문서 ↗</a>
@@ -167,6 +168,10 @@ input.memo:focus{border-color:var(--sun);background:#fff}
     </span>
   </div>
 </header>
+
+<div class="demo-bar" id="demoBar">
+  🧪 <b>데모 모드</b> — 예시 데이터입니다. 실제 신청 내역이 아니며, 변경 사항은 이 브라우저에만 저장됩니다.
+</div>
 
 <main id="app">
   <div class="wrap">
@@ -229,6 +234,8 @@ input.memo:focus{border-color:var(--sun);background:#fff}
    ───────────────────────────────────────────── */
 var KEY = 'jgpc_admin_token';
 var token = '';
+var MODE = 'api';              // 'api' = 서버 연결 / 'demo' = 정적 배포(브라우저에만 저장)
+var DEMO_PASS = 'demo';        // 데모 모드 로그인 비밀번호
 var STATUS = { new:'🆕 신규', contacted:'📞 연락함', booked:'📅 예약확정', done:'✅ 방문완료', canceled:'✖ 취소' };
 var EXP = { first:['처음', 'p-first'], some:['조금', 'p-some'], regular:['자주', 'p-regular'] };
 var CATS = { notice:['공지','c-notice'], free:['자유','c-free'], review:['후기','c-review'],
@@ -244,7 +251,133 @@ function toast(msg){
   clearTimeout(el._t); el._t = setTimeout(function(){ el.classList.remove('on'); }, 2600);
 }
 
+/* ══════════════════════════════════════════════════════════════
+   데모 모드 — 백엔드 없이 정적 호스팅에 올렸을 때 사용됩니다.
+   서버 응답과 같은 모양을 만들어 돌려주므로 화면 코드는 그대로입니다.
+   데이터는 이 브라우저(localStorage)에만 저장되고 실제 신청이 아닙니다.
+   ══════════════════════════════════════════════════════════════ */
+var DKEY_T = 'jgpc_demo_trials';
+var DKEY_P = 'jgpc_demo_posts';
+var BOARD_KEY = 'jgpc_board_v1';   // 게시판 페이지가 쓰는 키 (있으면 그걸 우선 사용)
+
+function ymd(offset){
+  var d = new Date(); d.setDate(d.getDate() + (offset||0));
+  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+}
+function lsGet(k, fb){ try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : fb; } catch(e){ return fb; } }
+function lsSet(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+
+var DEMO_TRIALS = [
+  { id:5, name:'김민수', phone:'010-2841-7733', slot:'토요일 오전 (10:00)', headcount:'1명 (혼자 가요)',
+    experience:'first', memo:'', source:'first-visit', status:'new',    created_at: ymd(0)  + ' 09:14:22' },
+  { id:4, name:'박지영', phone:'010-5520-1188', slot:'화요일 저녁 (19:30)', headcount:'2명',
+    experience:'some',  memo:'', source:'first-visit', status:'new',    created_at: ymd(-1) + ' 21:03:47' },
+  { id:3, name:'이서준', phone:'010-3377-9021', slot:'목요일 저녁 (19:30)', headcount:'4명 이상',
+    experience:'first', memo:'회사 동료들과 함께 방문 예정', source:'pickleball-busan',
+    status:'contacted', created_at: ymd(-2) + ' 14:38:10' },
+  { id:2, name:'최유진', phone:'010-8814-2260', slot:'토요일 오후 (15:00)', headcount:'2명',
+    experience:'regular', memo:'', source:'social', status:'booked',    created_at: ymd(-4) + ' 11:22:05' },
+  { id:1, name:'정하윤', phone:'010-6093-4417', slot:'토요일 오전 (10:00)', headcount:'1명 (혼자 가요)',
+    experience:'first', memo:'무릎 통증 있음 — 저강도로 안내함', source:'first-visit',
+    status:'done',      created_at: ymd(-6) + ' 10:05:31' }
+];
+
+/* 게시판 데모 시드 (제목·작성자 등 메타만) */
+var DEMO_POSTS = [
+  { id:1,  category:'notice',  title:'8월 소셜매치 일정 오픈 안내 (화·목·토)', author:'운영팀',      pinned:1, views:412, comment_count:2, deleted:0, created_at: ymd(-2) },
+  { id:2,  category:'notice',  title:'추석 연휴 운영 시간 안내 (9/24–9/27)',   author:'운영팀',      pinned:1, views:288, comment_count:0, deleted:0, created_at: ymd(-4) },
+  { id:3,  category:'partner', title:'토요일 오전에 같이 치실 분! (루키·30대)', author:'주말러',      pinned:0, views:96,  comment_count:2, deleted:0, created_at: ymd(-1) },
+  { id:4,  category:'review',  title:'운동 10년 쉰 40대의 첫 방문 후기',        author:'김코트',      pinned:0, views:231, comment_count:3, deleted:0, created_at: ymd(-3) },
+  { id:5,  category:'review',  title:'초3 아들 유소년반 한 달 후기 (학부모)',   author:'정관맘',      pinned:0, views:187, comment_count:2, deleted:0, created_at: ymd(-5) },
+  { id:6,  category:'market',  title:'[나눔] 입문용 패들 2자루 무료로 드려요',  author:'장비병말기',  pinned:0, views:154, comment_count:2, deleted:0, created_at: ymd(-6) },
+  { id:7,  category:'free',    title:'키친 라인 자꾸 밟습니다... 다들 어떻게 고치셨나요', author:'키친불법침입', pinned:0, views:203, comment_count:3, deleted:0, created_at: ymd(-7) },
+  { id:8,  category:'free',    title:'비 오는 날 실내 코트의 소중함을 느낍니다', author:'장마싫어',    pinned:0, views:118, comment_count:1, deleted:0, created_at: ymd(-8) },
+  { id:9,  category:'partner', title:'평일 오전 시니어 함께하실 분 (60대)',     author:'해운대신사',  pinned:0, views:87,  comment_count:1, deleted:0, created_at: ymd(-9) },
+  { id:10, category:'free',    title:'대회 나가보신 분 계신가요? (루키 부문)',  author:'첫대회',      pinned:0, views:142, comment_count:2, deleted:0, created_at: ymd(-10) }
+];
+
+function demoTrials(){ return lsGet(DKEY_T, null) || (lsSet(DKEY_T, DEMO_TRIALS), DEMO_TRIALS.slice()); }
+
+/* 게시판 페이지에서 만든 데이터가 있으면 그걸 읽어 관리 목록으로 변환 */
+function demoPosts(){
+  var board = lsGet(BOARD_KEY, null);
+  if (board && board.length){
+    var ov = lsGet(DKEY_P, {});
+    return board.map(function(p){
+      var o = ov[p.id] || {};
+      return { id:p.id, category:p.cat, title:p.title, author:p.author,
+               pinned: o.pinned != null ? o.pinned : (p.pinned ? 1 : 0),
+               views:p.views, comment_count:(p.comments||[]).length,
+               deleted: o.deleted != null ? o.deleted : 0, created_at:p.date };
+    });
+  }
+  return lsGet(DKEY_P + '_own', null) || (lsSet(DKEY_P + '_own', DEMO_POSTS), DEMO_POSTS.slice());
+}
+function savePostFlag(id, patch){
+  var board = lsGet(BOARD_KEY, null);
+  if (board && board.length){
+    var ov = lsGet(DKEY_P, {});
+    ov[id] = Object.assign({}, ov[id], patch);
+    lsSet(DKEY_P, ov);
+  } else {
+    var own = demoPosts();
+    var i = own.findIndex(function(p){ return p.id === Number(id); });
+    if (i > -1){ own[i] = Object.assign({}, own[i], patch); lsSet(DKEY_P + '_own', own); }
+  }
+}
+
+function demoApi(path, opt){
+  var method = (opt && opt.method) || 'GET';
+  var body = opt && opt.body ? JSON.parse(opt.body) : null;
+  var m;
+
+  if (path === '/api/admin/verify') return { ok:true };
+
+  if (path === '/api/admin/stats'){
+    var ts = demoTrials(), ps = demoPosts().filter(function(p){ return !p.deleted; });
+    var by = {};
+    ts.forEach(function(t){ by[t.status] = (by[t.status]||0) + 1; });
+    var wk = ts.filter(function(t){ return (Date.now() - new Date(t.created_at.replace(' ','T')).getTime()) < 7*864e5; }).length;
+    return { ok:true, posts: ps.length,
+             comments: ps.reduce(function(a,p){ return a + p.comment_count; }, 0),
+             trials: { total: ts.length, last7days: wk, by_status: by } };
+  }
+
+  if (path.indexOf('/api/admin/trials') === 0 && method === 'GET'){
+    return { ok:true, items: demoTrials(), total: demoTrials().length };
+  }
+
+  if ((m = path.match(/^\/api\/admin\/trials\/(\d+)$/)) && method === 'PATCH'){
+    var list = demoTrials();
+    var i = list.findIndex(function(t){ return t.id === Number(m[1]); });
+    if (i < 0) throw new Error('신청 건을 찾을 수 없습니다.');
+    if (body.status != null) list[i].status = body.status;
+    if (body.memo != null)   list[i].memo = body.memo;
+    lsSet(DKEY_T, list);
+    return { ok:true, trial: list[i] };
+  }
+
+  if (path.indexOf('/api/admin/posts') === 0 && method === 'GET'){
+    var pl = demoPosts();
+    return { ok:true, items: pl, total: pl.length };
+  }
+  if ((m = path.match(/^\/api\/admin\/posts\/(\d+)\/pin$/)) && method === 'PATCH'){
+    savePostFlag(m[1], { pinned: body.pinned ? 1 : 0 });
+    return { ok:true, id:Number(m[1]), pinned: body.pinned };
+  }
+  if ((m = path.match(/^\/api\/admin\/posts\/(\d+)\/restore$/)) && method === 'POST'){
+    savePostFlag(m[1], { deleted: 0 });
+    return { ok:true, id:Number(m[1]), restored:true };
+  }
+  if ((m = path.match(/^\/api\/posts\/(\d+)$/)) && method === 'DELETE'){
+    savePostFlag(m[1], { deleted: 1 });
+    return { ok:true, deleted:Number(m[1]) };
+  }
+  throw new Error('데모 모드에서는 지원하지 않는 기능입니다.');
+}
+
 async function api(path, opt){
+  if (MODE === 'demo') return demoApi(path, opt);
   opt = opt || {};
   opt.headers = Object.assign({ 'Content-Type':'application/json', 'x-admin-token': token }, opt.headers||{});
   var res = await fetch(path, opt);
@@ -271,14 +404,56 @@ function showApp(){
   document.getElementById('login').style.display = 'none';
   document.getElementById('hdr').style.display = 'block';
   document.getElementById('app').classList.add('on');
+  document.getElementById('demoBar').classList.toggle('on', MODE === 'demo');
 }
 function logout(msg){
   token = '';
   try { sessionStorage.removeItem(KEY); } catch(e){}
+  document.getElementById('demoBar').classList.remove('on');
   showLogin(msg || '');
 }
 
+/* 서버가 떠 있는지 확인해 모드를 정한다 */
+async function detectMode(){
+  try {
+    var ctl = new AbortController();
+    var timer = setTimeout(function(){ ctl.abort(); }, 2500);
+    var r = await fetch('/api/health', { cache:'no-store', signal: ctl.signal });
+    clearTimeout(timer);
+    MODE = r.ok ? 'api' : 'demo';
+  } catch(e){ MODE = 'demo'; }
+  applyModeUi();
+  return MODE;
+}
+function applyModeUi(){
+  var badge = document.getElementById('modeBadge');
+  var hint  = document.getElementById('loginHint');
+  var input = document.getElementById('token');
+  if (MODE === 'demo'){
+    if (badge){ badge.textContent = '데모'; badge.className = 'badge demo'; badge.title = '서버 없이 동작하는 데모 모드'; }
+    if (input) input.placeholder = '데모 비밀번호';
+    if (hint) hint.innerHTML =
+      '<b>데모 모드</b> — 서버 없이 화면만 배포된 상태입니다.<br>' +
+      '비밀번호 <code>demo</code> 로 들어가시면 예시 데이터로 관리 화면을 둘러보실 수 있습니다.<br>' +
+      '<span style="color:#C0504D">표시되는 신청·게시글은 실제 데이터가 아니며, 변경 내용은 이 브라우저에만 저장됩니다.</span>';
+  } else {
+    if (badge){ badge.textContent = 'Admin'; badge.className = 'badge'; badge.title = '서버 연결됨'; }
+    if (input) input.placeholder = '관리자 토큰';
+    if (hint) hint.innerHTML =
+      '토큰은 서버 환경변수 <b>JGPC_ADMIN_TOKEN</b> 값입니다.<br>' +
+      '설정하지 않았다면 개발 기본값 <code>changeme-dev-token</code> 이며, 운영 배포 전 반드시 변경하세요.';
+  }
+}
+
 async function tryLogin(t){
+  if (MODE === 'demo'){
+    if (t !== DEMO_PASS){ showLogin('데모 비밀번호가 올바르지 않습니다. (demo)'); return false; }
+    token = t;
+    try { sessionStorage.setItem(KEY, t); } catch(e){}
+    showApp();
+    await refreshAll();
+    return true;
+  }
   token = t;
   try {
     await api('/api/admin/verify');
@@ -498,7 +673,8 @@ async function refreshAll(){
 }
 
 /* ── 부팅 ── */
-(function(){
+(async function(){
+  await detectMode();
   var saved = '';
   try { saved = sessionStorage.getItem(KEY) || ''; } catch(e){}
   if (saved) tryLogin(saved); else showLogin('');

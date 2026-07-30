@@ -1,0 +1,43 @@
+name: Deploy to GitHub Pages
+
+# public/ 폴더를 GitHub Pages 로 배포합니다.
+# ⚠️ 무료 플랜에서는 저장소가 Public 이어야 동작합니다. (Private 은 GitHub Pro 이상)
+#    Private 을 유지하려면 Cloudflare Pages 를 쓰세요 — DEPLOY.md 참고
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'public/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Jekyll 처리 비활성화 (_ 로 시작하는 파일 보존)
+        run: touch public/.nojekyll
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - id: deploy
+        uses: actions/deploy-pages@v4
